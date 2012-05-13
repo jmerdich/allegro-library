@@ -1,0 +1,431 @@
+(edif fd16re
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 14 00 32 16)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000EX\FD16RE.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell fdre
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port C (direction INPUT)(designator "C"))
+     (port CE (direction INPUT)(designator "CE"))
+     (port D (direction INPUT)(designator "D"))
+     (port Q (direction OUTPUT)(designator "Q"))
+     (port R (direction INPUT)(designator "R"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell fd16re
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port Q15 (direction OUTPUT))
+     (port D3 (direction INPUT))
+     (port D11 (direction INPUT))
+     (port Q0 (direction OUTPUT))
+     (port D4 (direction INPUT))
+     (port D12 (direction INPUT))
+     (port CE (direction INPUT))
+     (port Q1 (direction OUTPUT))
+     (port D5 (direction INPUT))
+     (port D13 (direction INPUT))
+     (port Q2 (direction OUTPUT))
+     (port D6 (direction INPUT))
+     (port D14 (direction INPUT))
+     (port Q3 (direction OUTPUT))
+     (port D7 (direction INPUT))
+     (port D15 (direction INPUT))
+     (port Q4 (direction OUTPUT))
+     (port D8 (direction INPUT))
+     (port Q5 (direction OUTPUT))
+     (port D9 (direction INPUT))
+     (port Q6 (direction OUTPUT))
+     (port Q7 (direction OUTPUT))
+     (port Q8 (direction OUTPUT))
+     (port Q9 (direction OUTPUT))
+     (port Q10 (direction OUTPUT))
+     (port Q11 (direction OUTPUT))
+     (port R (direction INPUT))
+     (port Q12 (direction OUTPUT))
+     (port D0 (direction INPUT))
+     (port Q13 (direction OUTPUT))
+     (port D1 (direction INPUT))
+     (port C (direction INPUT))
+     (port Q14 (direction OUTPUT))
+     (port D2 (direction INPUT))
+     (port D10 (direction INPUT)))
+    (contents
+     (instance U13
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U13")
+      (property Name (string "Q6"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U14
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U14")
+      (property Name (string "Q14"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U15
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U15")
+      (property Name (string "Q7"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U16
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U16")
+      (property Name (string "Q15"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U1
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "Q0"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "Q8"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "Q1"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U4")
+      (property Name (string "Q9"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U5
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U5")
+      (property Name (string "Q2"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U6
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U6")
+      (property Name (string "Q10"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U7
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U7")
+      (property Name (string "Q3"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U8
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U8")
+      (property Name (string "Q11"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U9
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U9")
+      (property Name (string "Q4"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U10
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U10")
+      (property Name (string "Q12"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U11
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U11")
+      (property Name (string "Q5"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (instance U12
+      (viewRef NetlistView
+       (cellRef fdre
+        (libraryRef OrCAD_LIB))) (designator "U12")
+      (property Name (string "Q13"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdre")))
+     (net Q1
+      (joined
+       (portRef Q (instanceRef U3))
+       (portRef Q1))
+      (property Name (string "Q1")))
+     (net D14
+      (joined
+       (portRef D (instanceRef U14))
+       (portRef D14))
+      (property Name (string "D14")))
+     (net D1
+      (joined
+       (portRef D (instanceRef U3))
+       (portRef D1))
+      (property Name (string "D1")))
+     (net D8
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D8))
+      (property Name (string "D8")))
+     (net D7
+      (joined
+       (portRef D (instanceRef U15))
+       (portRef D7))
+      (property Name (string "D7")))
+     (net D9
+      (joined
+       (portRef D (instanceRef U4))
+       (portRef D9))
+      (property Name (string "D9")))
+     (net Q12
+      (joined
+       (portRef Q (instanceRef U10))
+       (portRef Q12))
+      (property Name (string "Q12")))
+     (net D10
+      (joined
+       (portRef D (instanceRef U6))
+       (portRef D10))
+      (property Name (string "D10")))
+     (net D15
+      (joined
+       (portRef D (instanceRef U16))
+       (portRef D15))
+      (property Name (string "D15")))
+     (net Q3
+      (joined
+       (portRef Q (instanceRef U7))
+       (portRef Q3))
+      (property Name (string "Q3")))
+     (net D6
+      (joined
+       (portRef D (instanceRef U13))
+       (portRef D6))
+      (property Name (string "D6")))
+     (net Q0
+      (joined
+       (portRef Q (instanceRef U1))
+       (portRef Q0))
+      (property Name (string "Q0")))
+     (net D0
+      (joined
+       (portRef D (instanceRef U1))
+       (portRef D0))
+      (property Name (string "D0")))
+     (net Q6
+      (joined
+       (portRef Q (instanceRef U13))
+       (portRef Q6))
+      (property Name (string "Q6")))
+     (net D13
+      (joined
+       (portRef D (instanceRef U12))
+       (portRef D13))
+      (property Name (string "D13")))
+     (net Q5
+      (joined
+       (portRef Q (instanceRef U11))
+       (portRef Q5))
+      (property Name (string "Q5")))
+     (net D2
+      (joined
+       (portRef D (instanceRef U5))
+       (portRef D2))
+      (property Name (string "D2")))
+     (net Q2
+      (joined
+       (portRef Q (instanceRef U5))
+       (portRef Q2))
+      (property Name (string "Q2")))
+     (net R
+      (joined
+       (portRef R (instanceRef U2))
+       (portRef R (instanceRef U4))
+       (portRef R (instanceRef U6))
+       (portRef R (instanceRef U8))
+       (portRef R (instanceRef U10))
+       (portRef R (instanceRef U12))
+       (portRef R (instanceRef U14))
+       (portRef R (instanceRef U16))
+       (portRef R (instanceRef U1))
+       (portRef R (instanceRef U3))
+       (portRef R (instanceRef U5))
+       (portRef R (instanceRef U7))
+       (portRef R (instanceRef U9))
+       (portRef R (instanceRef U11))
+       (portRef R (instanceRef U13))
+       (portRef R (instanceRef U15))
+       (portRef R))
+      (property Name (string "R")))
+     (net Q4
+      (joined
+       (portRef Q (instanceRef U9))
+       (portRef Q4))
+      (property Name (string "Q4")))
+     (net Q15
+      (joined
+       (portRef Q (instanceRef U16))
+       (portRef Q15))
+      (property Name (string "Q15")))
+     (net Q8
+      (joined
+       (portRef Q (instanceRef U2))
+       (portRef Q8))
+      (property Name (string "Q8")))
+     (net D12
+      (joined
+       (portRef D (instanceRef U10))
+       (portRef D12))
+      (property Name (string "D12")))
+     (net Q14
+      (joined
+       (portRef Q (instanceRef U14))
+       (portRef Q14))
+      (property Name (string "Q14")))
+     (net Q9
+      (joined
+       (portRef Q (instanceRef U4))
+       (portRef Q9))
+      (property Name (string "Q9")))
+     (net Q10
+      (joined
+       (portRef Q (instanceRef U6))
+       (portRef Q10))
+      (property Name (string "Q10")))
+     (net Q13
+      (joined
+       (portRef Q (instanceRef U12))
+       (portRef Q13))
+      (property Name (string "Q13")))
+     (net Q11
+      (joined
+       (portRef Q (instanceRef U8))
+       (portRef Q11))
+      (property Name (string "Q11")))
+     (net D11
+      (joined
+       (portRef D (instanceRef U8))
+       (portRef D11))
+      (property Name (string "D11")))
+     (net D5
+      (joined
+       (portRef D (instanceRef U11))
+       (portRef D5))
+      (property Name (string "D5")))
+     (net D3
+      (joined
+       (portRef D (instanceRef U7))
+       (portRef D3))
+      (property Name (string "D3")))
+     (net CE
+      (joined
+       (portRef CE (instanceRef U2))
+       (portRef CE (instanceRef U4))
+       (portRef CE (instanceRef U6))
+       (portRef CE (instanceRef U8))
+       (portRef CE (instanceRef U10))
+       (portRef CE (instanceRef U12))
+       (portRef CE (instanceRef U14))
+       (portRef CE (instanceRef U16))
+       (portRef CE (instanceRef U1))
+       (portRef CE (instanceRef U3))
+       (portRef CE (instanceRef U5))
+       (portRef CE (instanceRef U7))
+       (portRef CE (instanceRef U9))
+       (portRef CE (instanceRef U11))
+       (portRef CE (instanceRef U13))
+       (portRef CE (instanceRef U15))
+       (portRef CE))
+      (property Name (string "CE")))
+     (net Q7
+      (joined
+       (portRef Q (instanceRef U15))
+       (portRef Q7))
+      (property Name (string "Q7")))
+     (net D4
+      (joined
+       (portRef D (instanceRef U9))
+       (portRef D4))
+      (property Name (string "D4")))
+     (net C
+      (joined
+       (portRef C (instanceRef U2))
+       (portRef C (instanceRef U4))
+       (portRef C (instanceRef U6))
+       (portRef C (instanceRef U8))
+       (portRef C (instanceRef U10))
+       (portRef C (instanceRef U12))
+       (portRef C (instanceRef U14))
+       (portRef C (instanceRef U16))
+       (portRef C (instanceRef U1))
+       (portRef C (instanceRef U3))
+       (portRef C (instanceRef U5))
+       (portRef C (instanceRef U7))
+       (portRef C (instanceRef U9))
+       (portRef C (instanceRef U11))
+       (portRef C (instanceRef U13))
+       (portRef C (instanceRef U15))
+       (portRef C))
+      (property Name (string "C")))))))
+ (design fd16re
+  (cellRef fd16re
+   (libraryRef MAIN_LIB))))

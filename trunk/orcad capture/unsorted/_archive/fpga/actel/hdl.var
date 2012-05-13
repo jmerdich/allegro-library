@@ -1,0 +1,8 @@
+include $CDS_INST_DIR/tools/inca/files/hdl.var 
+define WORK act1
+define WORK act2
+define WORK act3
+define WORK a3200dx
+define WORK a40mx
+define WORK a42mx
+define WORK a54sx

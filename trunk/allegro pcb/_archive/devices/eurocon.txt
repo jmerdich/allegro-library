@@ -1,0 +1,5 @@
+package 96euro
+class ic
+pincount 98
+end
+

@@ -1,0 +1,9 @@
+(device file for cap200)
+package cap200
+class discrete
+pincount 2
+pinorder cap200 a b
+pinswap cap200 a b
+function g1 cap200 1 2
+end
+

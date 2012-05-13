@@ -1,0 +1,6 @@
+(device file for capel750)
+package capel750
+class discrete
+pincount 2
+end
+

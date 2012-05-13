@@ -1,0 +1,93 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  S.LST
+-- Resource:	  National, Logic Data Book, 1984
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+
+:74S00                  TTL     14
+:74S02                  TTL     14
+:74S03                  TTL     14
+:74S04                  TTL     14
+:74S05                  TTL     14
+:74S08                  TTL     14
+:74S09                  TTL     14
+:74S10                  TTL     14
+:74S11                  TTL     14
+:74S15                  TTL     14
+:74S20                  TTL     14
+:74S22                  TTL     14
+:74S30                  TTL     14
+:74S32                  TTL     14
+:74S37                  TTL     14
+:74S38                  TTL     14
+:74S40                  TTL     14
+:74S51                  TTL     14
+:74S64                  TTL     14
+:74S65                  TTL     14
+:74S74                  TTL     14
+:74S85   TTL  16
+:74S86                  TTL     14
+:74S112                 TTL     16
+:74S112A                TTL     16
+:74S113                 TTL     14
+:74S113A                TTL     14
+:74S114                 TTL     14
+:74S114A                TTL     14
+:74S132   TTL  14
+:74S133                 TTL     16
+:74S134   TTL  16
+:74S135   TTL  16
+:74S136                 TTL     14
+:74S138                 TTL     16
+:74S138A                TTL     16
+:74S139                 TTL     16
+:74S139A                TTL     16
+:74S140   TTL  14
+:74S151                 TTL     16
+:74S153   TTL  16
+:74S157                 TTL     16
+:74S158                 TTL     16
+:74S162  TTL  16
+:74S163  TTL  16
+:74S168   TTL  16
+:74S169  TTL  16
+:74S174                 TTL     16
+:74S175                 TTL     16
+:74S181   TTL  24
+:74S182   TTL  16
+:74S194 TTL 16
+:74S195 TTL 16
+:74S196   TTL  14
+:74S197   TTL  14
+:74S226   TTL  16
+:74S240                         TTL     20
+:74S241                         TTL     20
+:74S242                         TTL     14
+:74S243                         TTL     14
+:74S244                         TTL     20
+:74S251                 TTL     16
+:74S253                 TTL     16
+:74S257                 TTL     16
+:74S258                 TTL     16
+:74S260   TTL  14
+:74S268   TTL  16
+:74S280  TTL  14
+:74S283   TTL  16
+:74S299 TTL 20
+:74S350  TTL 16
+:74S373   TTL  20
+:74S374                         TTL     20
+:74S381   TTL  20
+:74S412   TTL  24
+
+<eof>

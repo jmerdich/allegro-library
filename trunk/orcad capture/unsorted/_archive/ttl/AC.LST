@@ -1,0 +1,63 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  AC.LST
+-- Resource:	  Motorola, FACT Data, Q4/93, DL138, REV 3
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:74AC00  TTL  14
+:74AC02  TTL  14
+:74AC04  TTL  14
+:74AC05  TTL  14
+:74AC08  TTL  14
+:74AC10  TTL  14
+:74AC11  TTL  14
+:74AC14  TTL  14
+:74AC20  TTL  14
+:74AC32  TTL  14
+:74AC74  TTL  14
+:74AC86  TTL  14
+:74AC109  TTL  16
+:74AC112  TTL  16
+:74AC113  TTL  14
+:74AC125  TTL  14
+:74AC126  TTL  14
+:74AC132  TTL  14
+:74AC138  TTL  16
+:74AC139  TTL  16
+:74AC151  TTL  16
+:74AC153  TTL  16
+:74AC157  TTL  16
+:74AC158  TTL  16
+:74AC163  TTL  16
+:74AC174  TTL  16
+:74AC175  TTL  16
+:74AC191  TTL  16
+:74AC193  TTL  16
+:74AC240  TTL  20
+:74AC241  TTL  20
+:74AC244  TTL  20
+:74AC245  TTL  20
+:74AC251  TTL  16
+:74AC253  TTL  16
+:74AC257  TTL  16
+:74AC258  TTL  16
+:74AC273  TTL  20
+:74AC280  TTL  14
+:74AC283  TTL  16
+:74AC373  TTL  20
+:74AC374  TTL  20
+:74AC533  TTL  20
+:74AC534  TTL  20
+:74AC540  TTL  20
+:74AC541  TTL  20
+:74AC646  TTL  24
+:74AC648  TTL  24

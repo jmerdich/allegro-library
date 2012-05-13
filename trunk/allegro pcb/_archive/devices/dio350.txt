@@ -1,0 +1,6 @@
+(device file for dio350)
+package dio350
+class discrete
+pincount 2
+end
+

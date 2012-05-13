@@ -1,0 +1,120 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  F.LST
+-- Resource:        Motorola, FAST and LS TTL Data, Q2/92, DL121/D, REV 5
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:74F00  TTL  14
+:74F02  TTL  14
+:74F04  TTL  14
+:74F08  TTL  14
+:74F10  TTL  14
+:74F11  TTL  14
+:74F14  TTL  14
+:74F20  TTL  14
+:74F27  TTL  14
+:74F30  TTL  14
+:74F32  TTL  14
+:74F37  TTL  14
+:74F38  TTL  14
+:74F40  TTL  14
+:74F51  TTL  14
+:74F64  TTL  14
+:74F74  TTL  14
+:74F85  TTL  16
+:74F86  TTL  14
+:74F109  TTL  16
+:74F112  TTL  16
+:74F113  TTL  14
+:74F114  TTL  14
+:74F132  TTL  14
+:74F138  TTL  16
+:74F139  TTL  16
+:74F148  TTL  16
+:74F151  TTL  16
+:74F151A  TTL  16
+:74F153  TTL  16
+:74F157  TTL  16
+:74F157A  TTL  16
+:74F158  TTL  16
+:74F158A  TTL  16
+:74F160  TTL  16
+:74F160A  TTL  16
+:74F161  TTL  16
+:74F161A  TTL  16
+:74F162  TTL  16
+:74F162A  TTL  16
+:74F163  TTL  16
+:74F163A  TTL  16
+:74F164  TTL  14
+:74F168  TTL  16
+:74F169  TTL  16
+:74F174  TTL  16
+:74F175  TTL  16
+:74F181  TTL  24
+:74F182  TTL  16
+:74F190  TTL  16
+:74F191  TTL  16
+:74F192  TTL  16
+:74F193  TTL  16
+:74F194  TTL  16
+:74F240  TTL  20
+:74F241  TTL  20
+:74F242  TTL  14
+:74F243  TTL  14
+:74F244  TTL  20
+:74F245  TTL  20
+:74F251  TTL  16
+:74F251A  TTL  16
+:74F253  TTL  16
+:74F257  TTL  16
+:74F257A  TTL  16
+:74F258  TTL  16
+:74F258A  TTL  16
+:74F259  TTL  16
+:74F273  TTL  20
+:74F280  TTL  14
+:74F280A  TTL  14
+:74F280B  TTL  14
+:74F283  TTL  16
+:74F299  TTL  20
+:74F322  TTL  20
+:74F323  TTL  20
+:74F350  TTL  16
+:74F352  TTL  16
+:74F353  TTL  16
+:74F373  TTL  20
+:74F374  TTL  20
+:74F378  TTL  16
+:74F379  TTL  16
+:74F381  TTL  20
+:74F382  TTL  20
+:74F385  TTL  20
+:74F398  TTL  20
+:74F399  TTL  16
+:74F521  TTL  20
+:74F533  TTL  20
+:74F534  TTL  20
+:74F563  TTL  20
+:74F568  TTL  20
+:74F569  TTL  20
+:74F573  TTL  20
+:74F574  TTL  20
+:74F588  TTL  20
+:74F604  TTL  28
+:74F823  TTL  24
+:74F824  TTL  24
+:74F825  TTL  24
+:74F843  TTL  24
+:74F845  TTL  24
+
+<eof>

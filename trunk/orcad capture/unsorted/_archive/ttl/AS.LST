@@ -1,0 +1,166 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  AS.LST
+-- Resource:	  1984 National Logic Data book.
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:74AS00                 TTL     14
+:74AS02                 TTL     14
+:74AS04                 TTL     14
+:74AS08                 TTL     14
+:74AS10                 TTL     14
+:74AS11                 TTL     14
+:74AS20                 TTL     14
+:74AS21                 TTL     14
+:74AS27                 TTL     14
+:74AS30                 TTL     14
+:74AS32                 TTL     14
+:74AS34   TTL  14
+:74AS74                 TTL     14
+:74AS86                 TTL     14
+:74AS95   TTL  14
+:74AS109                TTL     16
+:74AS131   TTL  16
+:74AS131A   TTL  16
+:74AS136                TTL     14
+:74AS137   TTL  16
+:74AS138                        TTL     16
+:74AS139                        TTL     16
+:74AS151                        TTL     16
+:74AS153   TTL  16
+:74AS157                        TTL     16
+:74AS158                        TTL     16
+:74AS160  TTL  16
+:74AS161  TTL  16
+:74AS162  TTL  16
+:74AS163  TTL  16
+:74AS168   TTL  16
+:74AS169  TTL  16
+:74AS174                TTL     16
+:74AS175                TTL     16
+:74AS175A               TTL     16
+:74AS181   TTL  24
+:74AS181A   TTL  24
+:74AS182   TTL  16
+:74AS194 TTL 16
+:74AS195 TTL 16
+:74AS240                        TTL     20
+:74AS241                        TTL     20
+:74AS242                        TTL     14
+:74AS243                        TTL     14
+:74AS244                        TTL     20
+:74AS245                        TTL             20
+:74AS250   TTL  24
+:74AS251                        TTL     16
+:74AS253                        TTL     16
+:74AS257                        TTL     16
+:74AS258                        TTL     16
+:74AS280  TTL  14
+:74AS282   TTL  20
+:74AS286   TTL  14
+:74AS298   TTL  16
+:74AS352   TTL  16
+:74AS353   TTL  16
+:74AS353A   TTL  16
+:74AS373   TTL  20
+:74AS374                        TTL     20
+:74AS533   TTL  20
+:74AS534                        TTL     20
+:74AS573   TTL  20
+:74AS574                        TTL     20
+:74AS575                        TTL     24
+:74AS576                        TTL     20
+:74AS577                        TTL     24
+:74AS580   TTL  20
+:74AS620                        TTL     20
+:74AS621                        TTL     20
+:74AS622                        TTL     20
+:74AS623                        TTL     20
+:74AS638                        TTL     20
+:74AS639                        TTL     20
+:74AS640                        TTL     20
+:74AS641                        TTL     20
+:74AS642                        TTL     20
+:74AS643                        TTL     20
+:74AS644                        TTL     20
+:74AS645                        TTL     20
+:74AS646   TTL  24
+:74AS648   TTL  24
+:74AS651   TTL  24
+:74AS652   TTL  24
+:74AS756                        TTL     20
+:74AS757   TTL  20
+:74AS758   TTL  14
+:74AS759   TTL  14
+:74AS760   TTL  20
+:74AS763                        TTL     20
+:74AS800                        TTL     20
+:74AS802                        TTL     20
+:74AS804                        TTL     20
+:74AS804B    TTL  20
+:74AS805                        TTL     20
+:74AS805B    TTL  20
+:74AS808                        TTL     20
+:74AS808B     TTL  20
+:74AS810                        TTL     14
+:74AS811                        TTL     14
+:74AS821                        TTL     24
+:74AS822                        TTL     24
+:74AS823   TTL  24
+:74AS824   TTL  24
+:74AS825   TTL  24
+:74AS826   TTL  24
+:74AS832                        TTL     20
+:74AS832B      TTL  20
+:74AS841   TTL  24
+:74AS842   TTL  24
+:74AS843   TTL  24
+:74AS844   TTL  24
+:74AS845   TTL  24
+:74AS846   TTL  24
+:74AS850   TTL  28
+:74AS851   TTL  28
+:74AS857   TTL  24
+:74AS866   TTL  28
+:74AS867   TTL  24
+:74AS869   TTL  60
+:74AS873   TTL  24
+:74AS874                        TTL     24
+:74AS876                        TTL     24
+:74AS878                        TTL     24
+:74AS879                        TTL     24
+:74AS880   TTL  24
+:74AS882   TTL  24
+:74AS885   TTL  24
+:74AS1000                       TTL     14
+:74AS1000A                      TTL     14
+:74AS1004                       TTL     14
+:74AS1004A                      TTL     14
+:74AS1008                       TTL     14
+:74AS1008A                      TTL     14
+:74AS1032                       TTL     14
+:74AS1032A                      TTL     14
+:74AS1034                       TTL     14
+:74AS1034A                      TTL     14
+:74AS1036                       TTL     14
+:74AS1036A                      TTL     14
+:74AS1181   TTL  24
+:74AS1804   TTL  20
+:74AS1805   TTL  20
+:74AS1808   TTL 20
+:74AS1832   TTL  20
+:74AS2620   TTL  20
+:74AS2623   TTL  20
+:74AS2640                       TTL     20
+:74AS2645                       TTL     20
+
+<eof>

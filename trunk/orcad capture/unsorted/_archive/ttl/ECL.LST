@@ -1,0 +1,89 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  ECL.LST
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:MC10100                        ECL     16
+:MC10101                        ECL     16
+:MC10102                        ECL     16
+:MC10103                        ECL     16
+:MC10104                        ECL     16
+:MC10105                        ECL     16
+:MC10106                        ECL     16
+:MC10107                        ECL     16
+:MC10108                        ECL     16
+:MC10109                        ECL     16
+:MC10110                        ECL     16
+:MC10111                        ECL     16
+:MC10113   ECL  16
+:MC10117                        ECL     16
+:MC10118                        ECL     16
+:MC10119                        ECL     16
+:MC10121                        ECL     16
+:MC10123                        ECL     16
+:MC10124                        ECL     16
+:MC10129   ECL  16
+:MC10130   ECL  16
+:MC10131   ECL  16
+:MC10H131   ECL  16
+:MC10132   ECL  16
+:MC10133   ECL  16
+:MC10134   ECL  16
+:MC10135   ECL  16
+:MC10141   ECL  16
+:MC10153   ECL  16
+:MC10154   ECL  16
+:MC10158                        ECL     16
+:MC10159                        ECL     16
+:MC10160                        ECL     16
+:MC10162   ECL  16
+:MC10163                        ECL     16
+:MC10164                        ECL     16
+:MC10165   ECL  16
+:MC10166   ECL  16
+:MC10168   ECL  16
+:MC10170   ECL  16
+:MC10171   ECL  16
+:MC10172   ECL  16
+:MC10173   ECL  16
+:MC10174   ECL  16
+:MC10175   ECL  16
+:MC10176   ECL  16
+:MC10181   ECL  24
+:MC10186   ECL  16
+:MC10188                        ECL     16
+:MC10189                        ECL     16
+:MC10191                        ECL     16
+:MC10193                        ECL     16
+:MC10195                        ECL     16
+:MC10197                        ECL     16
+:MC10210                        ECL     16
+:MC10211   ECL  16
+:MC10212                        ECL     16
+;Resource 2:      Fairchild F100K ECL Data Book, 1986
+:F100101  ECL  24
+:F100102  ECL  24
+:F100104  ECL  24
+:F100107  ECL  24
+:F100112  ECL  24
+:F100113  ECL  24
+:F100117  ECL  24
+:F100118  ECL  24
+:F100121  ECL  24
+:F100122  ECL  24
+:F100123  ECL  24
+:F100124  ECL  24
+:F100126  ECL  24
+:F100151  ECL  24
+:F100160  ECL  24
+
+<eof>

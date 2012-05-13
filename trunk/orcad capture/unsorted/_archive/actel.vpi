@@ -1,0 +1,51 @@
+(VPIFile 980127
+	(Vendor Actel)
+      (Family "ACT1 Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "ACT2 Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "ACT3 Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "1200XL Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "3200DX Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "40MX Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "42MX Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+	(Family "54SX Family"
+		(SymbolLib "\actel\Act_Comb.olb")
+		(SymbolLib "\actel\Act_Seq.olb")
+		(SymbolLib "\actel\Act_IO.olb")
+		(SymbolLib "\actel\Act_RAM.olb")
+	)
+)

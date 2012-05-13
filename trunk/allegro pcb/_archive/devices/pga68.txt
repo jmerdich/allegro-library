@@ -1,0 +1,29 @@
+(DEVICE DESCRIPTION FILE: PGA68)
+PACKAGE PGA68
+CLASS IC
+PINCOUNT 68
+PINORDER PGA68 ASN D1 D2 D4 D5 D7 D8 D10 D12,
+               DTACKN LDSN UDSN D0 D3 D6 D9 D11 D14 D15,
+               BGACKN BGN R/WN D13 A23 A22,
+               BRN A21,
+               CLK A20,
+               HALTN RESET A18 A19,
+               VMAN VPAN A15 A17,
+               E IPL2N IPL1N A13 A12 A16,
+               BERRN IPLON FC1 A2 A5 A8 A10 A11 A14,
+               FC2 FCD A1 A3 A4 A6 A7 A9
+FUNCTION G1 PGA68 A2 A3 A4 A5 A6 A7 A8 A9 A10,
+                  B1 B2 B3 B4 B5 B6 B7 B8 B9 B10,
+                  C1 C2 C3 C8 C9 C10,
+                  D1 D10,
+                  E1 E10,
+                  F1 F2 F9 F10,
+                  G1 G2 G9 G10,
+                  H1 H2 H3 H8 H9 H10,
+                  J1 J2 J3 J5 J6 J7 J8 J9 J10,
+                  K2 K3 K4 K5 K6 K7 K8 K9
+POWER +5V; D2 E9
+GROUND VSS; D9 E2
+NC; A1 J4 K1 K10
+END
+

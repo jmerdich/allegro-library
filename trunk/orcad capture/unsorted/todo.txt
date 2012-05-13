@@ -1,0 +1,7 @@
+Structural:
+* Search on part number
+
+Libraries:
+* Update NCP519x to include ON logo
+* Add NCP108x family
+* Add NCP109x family

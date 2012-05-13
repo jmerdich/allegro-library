@@ -1,0 +1,394 @@
+(edif ram16x8d
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 13 23 18 30)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000E\RAM16X8D.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram16x1d
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT)(designator "A0"))
+     (port A1 (direction INPUT)(designator "A1"))
+     (port A2 (direction INPUT)(designator "A2"))
+     (port A3 (direction INPUT)(designator "A3"))
+     (port D (direction INPUT)(designator "D"))
+     (port DPO (direction OUTPUT)(designator "DPO"))
+     (port DPRA0 (direction INPUT)(designator "DPRA0"))
+     (port DPRA1 (direction INPUT)(designator "DPRA1"))
+     (port DPRA2 (direction INPUT)(designator "DPRA2"))
+     (port DPRA3 (direction INPUT)(designator "DPRA3"))
+     (port SPO (direction OUTPUT)(designator "SPO"))
+     (port WCLK (direction INPUT)(designator "WCLK"))
+     (port WE (direction INPUT)(designator "WE"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram16x8d
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT))
+     (port D3 (direction INPUT))
+     (port SPO0 (direction OUTPUT))
+     (port DPO2 (direction OUTPUT))
+     (port A1 (direction INPUT))
+     (port D4 (direction INPUT))
+     (port SPO1 (direction OUTPUT))
+     (port DPO3 (direction OUTPUT))
+     (port A2 (direction INPUT))
+     (port DPRA0 (direction INPUT))
+     (port D5 (direction INPUT))
+     (port SPO2 (direction OUTPUT))
+     (port DPO4 (direction OUTPUT))
+     (port A3 (direction INPUT))
+     (port DPRA1 (direction INPUT))
+     (port D6 (direction INPUT))
+     (port SPO3 (direction OUTPUT))
+     (port DPO5 (direction OUTPUT))
+     (port DPRA2 (direction INPUT))
+     (port D7 (direction INPUT))
+     (port SPO4 (direction OUTPUT))
+     (port DPO6 (direction OUTPUT))
+     (port DPRA3 (direction INPUT))
+     (port SPO5 (direction OUTPUT))
+     (port DPO7 (direction OUTPUT))
+     (port SPO6 (direction OUTPUT))
+     (port SPO7 (direction OUTPUT))
+     (port WCLK (direction INPUT))
+     (port D0 (direction INPUT))
+     (port D1 (direction INPUT))
+     (port DPO0 (direction OUTPUT))
+     (port WE (direction INPUT))
+     (port D2 (direction INPUT))
+     (port DPO1 (direction OUTPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "O0"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "O4"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "O1"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U4")
+      (property Name (string "O5"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U5
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U5")
+      (property Name (string "O2"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U6
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U6")
+      (property Name (string "O6"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U7
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U7")
+      (property Name (string "O3"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U8
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U8")
+      (property Name (string "O7"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (net WE
+      (joined
+       (portRef WE (instanceRef U2))
+       (portRef WE (instanceRef U4))
+       (portRef WE (instanceRef U6))
+       (portRef WE (instanceRef U8))
+       (portRef WE (instanceRef U1))
+       (portRef WE (instanceRef U3))
+       (portRef WE (instanceRef U5))
+       (portRef WE (instanceRef U7))
+       (portRef WE))
+      (property Name (string "WE")))
+     (net DPO0
+      (joined
+       (portRef DPO (instanceRef U1))
+       (portRef DPO0))
+      (property Name (string "DPO0")))
+     (net DPRA3
+      (joined
+       (portRef DPRA3 (instanceRef U2))
+       (portRef DPRA3 (instanceRef U4))
+       (portRef DPRA3 (instanceRef U6))
+       (portRef DPRA3 (instanceRef U8))
+       (portRef DPRA3 (instanceRef U1))
+       (portRef DPRA3 (instanceRef U3))
+       (portRef DPRA3 (instanceRef U5))
+       (portRef DPRA3 (instanceRef U7))
+       (portRef DPRA3))
+      (property Name (string "DPRA3")))
+     (net DPO2
+      (joined
+       (portRef DPO (instanceRef U5))
+       (portRef DPO2))
+      (property Name (string "DPO2")))
+     (net D0
+      (joined
+       (portRef D (instanceRef U1))
+       (portRef D0))
+      (property Name (string "D0")))
+     (net A1
+      (joined
+       (portRef A1 (instanceRef U2))
+       (portRef A1 (instanceRef U4))
+       (portRef A1 (instanceRef U6))
+       (portRef A1 (instanceRef U8))
+       (portRef A1 (instanceRef U1))
+       (portRef A1 (instanceRef U3))
+       (portRef A1 (instanceRef U5))
+       (portRef A1 (instanceRef U7))
+       (portRef A1))
+      (property Name (string "A1")))
+     (net DPO3
+      (joined
+       (portRef DPO (instanceRef U7))
+       (portRef DPO3))
+      (property Name (string "DPO3")))
+     (net DPO7
+      (joined
+       (portRef DPO (instanceRef U8))
+       (portRef DPO7))
+      (property Name (string "DPO7")))
+     (net A2
+      (joined
+       (portRef A2 (instanceRef U2))
+       (portRef A2 (instanceRef U4))
+       (portRef A2 (instanceRef U6))
+       (portRef A2 (instanceRef U8))
+       (portRef A2 (instanceRef U1))
+       (portRef A2 (instanceRef U3))
+       (portRef A2 (instanceRef U5))
+       (portRef A2 (instanceRef U7))
+       (portRef A2))
+      (property Name (string "A2")))
+     (net WCLK
+      (joined
+       (portRef WCLK (instanceRef U2))
+       (portRef WCLK (instanceRef U4))
+       (portRef WCLK (instanceRef U6))
+       (portRef WCLK (instanceRef U8))
+       (portRef WCLK (instanceRef U1))
+       (portRef WCLK (instanceRef U3))
+       (portRef WCLK (instanceRef U5))
+       (portRef WCLK (instanceRef U7))
+       (portRef WCLK))
+      (property Name (string "WCLK")))
+     (net DPO6
+      (joined
+       (portRef DPO (instanceRef U6))
+       (portRef DPO6))
+      (property Name (string "DPO6")))
+     (net DPRA2
+      (joined
+       (portRef DPRA2 (instanceRef U2))
+       (portRef DPRA2 (instanceRef U4))
+       (portRef DPRA2 (instanceRef U6))
+       (portRef DPRA2 (instanceRef U8))
+       (portRef DPRA2 (instanceRef U1))
+       (portRef DPRA2 (instanceRef U3))
+       (portRef DPRA2 (instanceRef U5))
+       (portRef DPRA2 (instanceRef U7))
+       (portRef DPRA2))
+      (property Name (string "DPRA2")))
+     (net SPO5
+      (joined
+       (portRef SPO (instanceRef U4))
+       (portRef SPO5))
+      (property Name (string "SPO5")))
+     (net D5
+      (joined
+       (portRef D (instanceRef U4))
+       (portRef D5))
+      (property Name (string "D5")))
+     (net A0
+      (joined
+       (portRef A0 (instanceRef U2))
+       (portRef A0 (instanceRef U4))
+       (portRef A0 (instanceRef U6))
+       (portRef A0 (instanceRef U8))
+       (portRef A0 (instanceRef U1))
+       (portRef A0 (instanceRef U3))
+       (portRef A0 (instanceRef U5))
+       (portRef A0 (instanceRef U7))
+       (portRef A0))
+      (property Name (string "A0")))
+     (net SPO4
+      (joined
+       (portRef SPO (instanceRef U2))
+       (portRef SPO4))
+      (property Name (string "SPO4")))
+     (net DPO5
+      (joined
+       (portRef DPO (instanceRef U4))
+       (portRef DPO5))
+      (property Name (string "DPO5")))
+     (net SPO0
+      (joined
+       (portRef SPO (instanceRef U1))
+       (portRef SPO0))
+      (property Name (string "SPO0")))
+     (net D6
+      (joined
+       (portRef D (instanceRef U6))
+       (portRef D6))
+      (property Name (string "D6")))
+     (net A3
+      (joined
+       (portRef A3 (instanceRef U2))
+       (portRef A3 (instanceRef U4))
+       (portRef A3 (instanceRef U6))
+       (portRef A3 (instanceRef U8))
+       (portRef A3 (instanceRef U1))
+       (portRef A3 (instanceRef U3))
+       (portRef A3 (instanceRef U5))
+       (portRef A3 (instanceRef U7))
+       (portRef A3))
+      (property Name (string "A3")))
+     (net DPO4
+      (joined
+       (portRef DPO (instanceRef U2))
+       (portRef DPO4))
+      (property Name (string "DPO4")))
+     (net SPO6
+      (joined
+       (portRef SPO (instanceRef U6))
+       (portRef SPO6))
+      (property Name (string "SPO6")))
+     (net D7
+      (joined
+       (portRef D (instanceRef U8))
+       (portRef D7))
+      (property Name (string "D7")))
+     (net DPO1
+      (joined
+       (portRef DPO (instanceRef U3))
+       (portRef DPO1))
+      (property Name (string "DPO1")))
+     (net DPRA0
+      (joined
+       (portRef DPRA0 (instanceRef U2))
+       (portRef DPRA0 (instanceRef U4))
+       (portRef DPRA0 (instanceRef U6))
+       (portRef DPRA0 (instanceRef U8))
+       (portRef DPRA0 (instanceRef U1))
+       (portRef DPRA0 (instanceRef U3))
+       (portRef DPRA0 (instanceRef U5))
+       (portRef DPRA0 (instanceRef U7))
+       (portRef DPRA0))
+      (property Name (string "DPRA0")))
+     (net D4
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D4))
+      (property Name (string "D4")))
+     (net SPO7
+      (joined
+       (portRef SPO (instanceRef U8))
+       (portRef SPO7))
+      (property Name (string "SPO7")))
+     (net D1
+      (joined
+       (portRef D (instanceRef U3))
+       (portRef D1))
+      (property Name (string "D1")))
+     (net SPO1
+      (joined
+       (portRef SPO (instanceRef U3))
+       (portRef SPO1))
+      (property Name (string "SPO1")))
+     (net SPO2
+      (joined
+       (portRef SPO (instanceRef U5))
+       (portRef SPO2))
+      (property Name (string "SPO2")))
+     (net D2
+      (joined
+       (portRef D (instanceRef U5))
+       (portRef D2))
+      (property Name (string "D2")))
+     (net SPO3
+      (joined
+       (portRef SPO (instanceRef U7))
+       (portRef SPO3))
+      (property Name (string "SPO3")))
+     (net DPRA1
+      (joined
+       (portRef DPRA1 (instanceRef U2))
+       (portRef DPRA1 (instanceRef U4))
+       (portRef DPRA1 (instanceRef U6))
+       (portRef DPRA1 (instanceRef U8))
+       (portRef DPRA1 (instanceRef U1))
+       (portRef DPRA1 (instanceRef U3))
+       (portRef DPRA1 (instanceRef U5))
+       (portRef DPRA1 (instanceRef U7))
+       (portRef DPRA1))
+      (property Name (string "DPRA1")))
+     (net D3
+      (joined
+       (portRef D (instanceRef U7))
+       (portRef D3))
+      (property Name (string "D3")))))))
+ (design ram16x8d
+  (cellRef ram16x8d
+   (libraryRef MAIN_LIB))))

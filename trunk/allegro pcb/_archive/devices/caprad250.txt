@@ -1,0 +1,7 @@
+(device file for caprad250)
+package caprad250
+pincount 2
+pinorder caprad250 a b
+pinswap caprad250 a b
+function g1 caprad250 1 2
+end

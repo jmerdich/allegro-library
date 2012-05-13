@@ -1,0 +1,108 @@
+(edif opad4
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1998 01 29 17 30 10)
+   (program "CAPTURE.EXE" (Version "7.20.145"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "January 29, 1998")
+  (comment "G:\MANUFACTURER\XILINXM1\WORKINPROGRESS\XC3X00\OPAD4.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell opad
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port OPAD (direction INOUT))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell opad4
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port O0 (direction INOUT))
+     (port O1 (direction INOUT))
+     (port O2 (direction INOUT))
+     (port O3 (direction INOUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef opad
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I49"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "opad"))
+      (property EXT (string "OPAD"))
+      (portInstance OPAD))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef opad
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I50"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "opad"))
+      (property EXT (string "OPAD"))
+      (portInstance OPAD))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef opad
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I51"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "opad"))
+      (property EXT (string "OPAD"))
+      (portInstance OPAD))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef opad
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I52"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "opad"))
+      (property EXT (string "OPAD"))
+      (portInstance OPAD))
+     (net O1
+      (joined
+       (portRef OPAD (instanceRef U2))
+       (portRef O1))
+      (property Name (string "O1")))
+     (net O2
+      (joined
+       (portRef OPAD (instanceRef U3))
+       (portRef O2))
+      (property Name (string "O2")))
+     (net O3
+      (joined
+       (portRef OPAD (instanceRef U4))
+       (portRef O3))
+      (property Name (string "O3")))
+     (net O0
+      (joined
+       (portRef OPAD (instanceRef U1))
+       (portRef O0))
+      (property Name (string "O0")))))))
+ (design opad4
+  (cellRef opad4
+   (libraryRef MAIN_LIB))))

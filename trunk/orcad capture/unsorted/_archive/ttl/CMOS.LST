@@ -1,0 +1,61 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  CMOS.LST
+-- Resource:	  National Semiconductor, CMOS Logic Databook, 1988, Rev. 1
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:4000  CMOS  14
+:4001  CMOS  14
+:4002  CMOS  14
+:4009  CMOS  16
+:4010  CMOS  16
+:4011  CMOS  14
+:4012  CMOS  14
+:4013  CMOS  14
+:4015A  CMOS  16
+:4019  CMOS  16
+:4023  CMOS  14
+:4025  CMOS  14
+:4027  CMOS  16
+:4028  CMOS  16
+:4030  CMOS  14
+:4041  CMOS  14
+:4049  CMOS  16
+:4050  CMOS  16
+:4063  CMOS  16
+:4068  CMOS  14
+:4069  CMOS  14
+:4070  CMOS  14
+:4071  CMOS  14
+:4072  CMOS  14
+:4073  CMOS  14
+:4075  CMOS  14
+:4076  CMOS  16
+:4077  CMOS  14
+:4078  CMOS  14
+:4081  CMOS  14
+:4082  CMOS  14
+:4085  CMOS  14
+:4086  CMOS  14
+:4093  CMOS  14
+:4095  CMOS  14
+:4096  CMOS  14
+:4502  CMOS  16
+:4503  CMOS  16
+:4532  CMOS  16
+:4555  CMOS  16
+:4556  CMOS  16
+:4585  CMOS  16
+:40101  CMOS  14
+:40106  CMOS  14
+:40174  CMOS  16
+:40175  CMOS  16

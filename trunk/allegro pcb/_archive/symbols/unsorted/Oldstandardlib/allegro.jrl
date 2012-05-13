@@ -1,0 +1,162 @@
+\t (00:00:13) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:13) 
+
+\t (00:00:16) Starting new drawing...
+\i (00:00:16) trapsize 1717
+\i (00:00:16) trapsize 1613
+\i (00:00:17) trapsize 1245
+\i (00:00:17) trapsize 1613
+\i (00:00:20) generaledit 
+\i (00:00:22) new 
+\i (00:00:47) newdrawfillin "TP.dra" "Package Symbol"
+\t (00:00:47) Starting new drawing...
+\i (00:00:47) trapsize 1151
+\i (00:00:48) trapsize 1192
+\i (00:00:48) trapsize 1613
+\i (00:00:48) trapsize 1613
+\i (00:00:48) generaledit 
+\i (00:00:58) add pin 
+\i (00:01:04) setwindow form.mini
+\i (00:01:04) FORM mini pad_browse  
+\f (00:01:04) Select a padstack:
+\i (00:01:15) fillin "Via26"
+\w (00:01:15) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:01:15) Using 'VIA26.pad'.
+\i (00:01:22) setwindow pcb
+\i (00:01:22) pick grid 14742.0 10064.5
+\t (00:01:22) last pick:  14700.0  10100.0
+\t (00:01:22) Using 'VIA26.pad'.
+\i (00:01:23) zoom in 
+\i (00:01:23) setwindow pcb
+\i (00:01:23) zoom in 14193.6 8483.9
+\i (00:01:23) trapsize 806
+\i (00:01:26) roam y 96 
+\i (00:01:26) roam y 96
+\i (00:01:26) roam y 96 
+\i (00:01:26) roam y 96
+\i (00:01:26) roam y 96 
+\i (00:01:26) roam y 64
+\i (00:01:27) roam y -96 
+\i (00:01:27) roam y -96
+\i (00:01:27) roam y -96 
+\i (00:01:27) roam y -96
+\i (00:01:27) roam y -96 
+\i (00:01:27) roam y -96
+\i (00:01:27) roam y -96 
+\i (00:01:27) roam y -96
+\i (00:01:27) roam y -96 
+\i (00:01:27) roam y -96
+\i (00:01:28) roam y -96 
+\i (00:01:28) roam y -32
+\i (00:01:28) roam y -96 
+\i (00:01:29) roam y 96 
+\i (00:01:29) roam y 96
+\i (00:01:29) roam y 96 
+\i (00:01:29) roam y 96
+\i (00:01:29) roam y 96 
+\i (00:01:29) roam y 96
+\i (00:01:30) roam y 96 
+\i (00:01:30) roam y 96
+\i (00:01:30) roam y -96 
+\i (00:01:30) roam y -96
+\i (00:01:31) zoom out 
+\i (00:01:31) setwindow pcb
+\i (00:01:31) zoom out 13887.1 7967.7
+\i (00:01:31) trapsize 1613
+\i (00:01:34) zoom fit 
+\i (00:01:34) trapsize 5
+\i (00:01:36) pick grid 14717.6 10124.8
+\t (00:01:36) last pick:  14700.0  10100.0
+\t (00:01:36) Using 'VIA26.pad'.
+\i (00:01:38) pick grid 14695.9 10105.1
+\t (00:01:38) last pick:  14700.0  10100.0
+\t (00:01:38) Using 'VIA26.pad'.
+\i (00:01:40) pick grid 14737.4 10104.7
+\t (00:01:40) last pick:  14700.0  10100.0
+\t (00:01:40) Using 'VIA26.pad'.
+\i (00:01:41) prepopup 14696.3 10102.2
+\i (00:01:43) done 
+\t (00:01:43) Exiting from Add Pin.
+\i (00:01:43) generaledit 
+\i (00:01:44) pick grid 14734.6 10093.0
+\t (00:01:44) last pick:  14700.0  10100.0
+\i (00:01:45) pick grid 14713.5 10100.3
+\t (00:01:45) last pick:  14700.0  10100.0
+\i (00:01:45) prepopup 14713.4 10100.3
+\i (00:01:52) pop dyn_option_select '@:@Show element' 
+\i (00:01:52) show element 
+\i (00:01:52) generaledit 
+\i (00:02:02) pick grid 14697.2 10103.0
+\t (00:02:02) last pick:  14700.0  10100.0
+\i (00:02:05) prepopup 14698.3 10102.5
+\i (00:02:07) pick grid 14693.2 10101.1
+\t (00:02:07) last pick:  14700.0  10100.0
+\i (00:02:08) undo 
+\i (00:02:08) generaledit 
+\i (00:02:09) undo 
+\i (00:02:09) generaledit 
+\i (00:02:09) undo 
+\i (00:02:10) generaledit 
+\i (00:02:10) pick grid 14696.5 10100.6
+\t (00:02:10) last pick:  14700.0  10100.0
+\i (00:02:10) prepopup 14696.5 10101.1
+\i (00:02:16) pick grid 14699.3 10105.2
+\t (00:02:16) last pick:  14700.0  10100.0
+\i (00:02:17) pick grid 14711.8 10101.0
+\t (00:02:17) last pick:  14700.0  10100.0
+\i (00:02:18) pick grid 14712.7 10103.8
+\t (00:02:18) last pick:  14700.0  10100.0
+\i (00:02:18) pick grid 14712.2 10103.8
+\t (00:02:18) last pick:  14700.0  10100.0
+\i (00:02:23) delete 
+\t (00:02:23) Selected item not valid for current operation, ignored: Connect Pin "Via26, 4"
+\t (00:02:23) No valid items selected for the current operation, exiting.
+\i (00:02:23) generaledit 
+\i (00:02:24) pick grid 14698.1 10107.6
+\t (00:02:24) last pick:  14700.0  10100.0
+\i (00:02:25) drag_start grid 14682.8 10115.2
+\i (00:02:25) drag_stop 14727.1 10080.0
+\e (00:02:26) Command not found: Del
+\e (00:02:27) Command not found: Del
+\i (00:02:28) pick grid 14699.2 10099.2
+\t (00:02:28) last pick:  14700.0  10100.0
+\i (00:02:29) prepopup 14699.2 10099.2
+\i (00:02:35) pick grid 14734.9 10113.3
+\t (00:02:35) last pick:  14700.0  10100.0
+\i (00:02:40) new 
+\f (00:02:40) Do you want to save the changes you made to TP.dra?
+\i (00:02:42) fillin no 
+\i (00:02:50) newdrawfillin "TP.dra" "Package Symbol"
+\t (00:02:50) Starting new drawing...
+\i (00:02:50) trapsize 1613
+\i (00:02:50) trapsize 1613
+\i (00:02:50) generaledit 
+\i (00:02:52) add pin 
+\i (00:02:55) setwindow form.mini
+\i (00:02:55) FORM mini pad_browse  
+\f (00:02:55) Select a padstack:
+\i (00:03:17) fillin "Smd86x127"
+\w (00:03:17) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:03:17) Using 'SMD86X127.pad'.
+\i (00:03:19) setwindow pcb
+\i (00:03:19) pick grid 12000.0 11032.3
+\t (00:03:19) last pick:  12000.0  11000.0
+\t (00:03:19) Using 'SMD86X127.pad'.
+\i (00:03:20) zoom fit 
+\i (00:03:20) trapsize 3
+\i (00:03:22) zoom out 
+\i (00:03:22) setwindow pcb
+\i (00:03:22) zoom out 12003.5 10999.9
+\i (00:03:22) trapsize 7
+\i (00:03:24) prepopup 11986.9 11000.6
+\i (00:03:25) done 
+\t (00:03:25) Exiting from Add Pin.
+\i (00:03:25) generaledit 
+\i (00:03:43) add text 
+\t (00:03:43) Pick text location.
+\i (00:03:55) setwindow form.mini
+\i (00:03:55) FORM mini class USER PART NUMBER 
+\i (00:03:57) setwindow pcb
+\i (00:03:57) exit 
+\f (00:03:57) Do you want to save the changes you made to TP.dra?
+\i (00:03:58) fillin no 

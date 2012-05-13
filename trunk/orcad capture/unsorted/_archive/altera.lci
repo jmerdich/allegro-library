@@ -1,0 +1,12 @@
+(LCIFile 970326
+	(Vendor "Altera VHDL Libraries")
+	(CompileRef "Altera VHDL Libraries Compilation")
+	(CompileTip "Before Compilation locate Altera VHDL Command Files")
+
+	(Family "Altlib VHDL Libraries"
+		(CompileCMD "C_alt.cmd")
+		(CompileRef "Altera VHDL Models")
+		(CompileTip "Altera VHDL")
+	)
+
+)

@@ -1,0 +1,141 @@
+(edif ram32x2s
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 13 23 19 35)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000E\RAM32X2S.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram32x1s
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT)(designator "A0"))
+     (port A1 (direction INPUT)(designator "A1"))
+     (port A2 (direction INPUT)(designator "A2"))
+     (port A3 (direction INPUT)(designator "A3"))
+     (port A4 (direction INPUT)(designator "A4"))
+     (port D (direction INPUT)(designator "D"))
+     (port O (direction OUTPUT)(designator "O"))
+     (port WCLK (direction INPUT)(designator "WCLK"))
+     (port WE (direction INPUT)(designator "WE"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram32x2s
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port O0 (direction OUTPUT))
+     (port A3 (direction INPUT))
+     (port O1 (direction OUTPUT))
+     (port A4 (direction INPUT))
+     (port WCLK (direction INPUT))
+     (port D0 (direction INPUT))
+     (port D1 (direction INPUT))
+     (port WE (direction INPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef ram32x1s
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "O0"))
+      (property EDIForiginalOrigin (string "(pt 20 -200)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1s")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ram32x1s
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "O1"))
+      (property EDIForiginalOrigin (string "(pt 20 -200)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1s")))
+     (net A1
+      (joined
+       (portRef A1 (instanceRef U2))
+       (portRef A1 (instanceRef U1))
+       (portRef A1))
+      (property Name (string "A1")))
+     (net O1
+      (joined
+       (portRef O (instanceRef U2))
+       (portRef O1))
+      (property Name (string "O1")))
+     (net A0
+      (joined
+       (portRef A0 (instanceRef U2))
+       (portRef A0 (instanceRef U1))
+       (portRef A0))
+      (property Name (string "A0")))
+     (net O0
+      (joined
+       (portRef O (instanceRef U1))
+       (portRef O0))
+      (property Name (string "O0")))
+     (net D0
+      (joined
+       (portRef D (instanceRef U1))
+       (portRef D0))
+      (property Name (string "D0")))
+     (net D1
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D1))
+      (property Name (string "D1")))
+     (net WCLK
+      (joined
+       (portRef WCLK (instanceRef U2))
+       (portRef WCLK (instanceRef U1))
+       (portRef WCLK))
+      (property Name (string "WCLK")))
+     (net A3
+      (joined
+       (portRef A3 (instanceRef U2))
+       (portRef A3 (instanceRef U1))
+       (portRef A3))
+      (property Name (string "A3")))
+     (net WE
+      (joined
+       (portRef WE (instanceRef U2))
+       (portRef WE (instanceRef U1))
+       (portRef WE))
+      (property Name (string "WE")))
+     (net A4
+      (joined
+       (portRef A4 (instanceRef U2))
+       (portRef A4 (instanceRef U1))
+       (portRef A4))
+      (property Name (string "A4")))
+     (net A2
+      (joined
+       (portRef A2 (instanceRef U2))
+       (portRef A2 (instanceRef U1))
+       (portRef A2))
+      (property Name (string "A2")))))))
+ (design ram32x2s
+  (cellRef ram32x2s
+   (libraryRef MAIN_LIB))))

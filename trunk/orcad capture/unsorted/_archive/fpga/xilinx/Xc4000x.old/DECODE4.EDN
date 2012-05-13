@@ -1,0 +1,114 @@
+(edif decode4
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 14 00 30 52)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000EX\DECODE4.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell wand1
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I (direction INPUT)(designator "I"))
+     (port O (direction OUTPUT)(designator "O"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell decode4
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port A3 (direction INPUT))
+     (port O (direction INOUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef wand1
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "$1I45"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "wand1")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef wand1
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "$1I51"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "wand1")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef wand1
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "$1I52"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "wand1")))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef wand1
+        (libraryRef OrCAD_LIB))) (designator "U4")
+      (property Name (string "$1I53"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "wand1")))
+     (net A1
+      (joined
+       (portRef I (instanceRef U2))
+       (portRef A1))
+      (property FLOATVAL (string "1"))
+      (property Name (string "A1")))
+     (net A2
+      (joined
+       (portRef I (instanceRef U3))
+       (portRef A2))
+      (property FLOATVAL (string "1"))
+      (property Name (string "A2")))
+     (net A0
+      (joined
+       (portRef I (instanceRef U1))
+       (portRef A0))
+      (property FLOATVAL (string "1"))
+      (property Name (string "A0")))
+     (net A3
+      (joined
+       (portRef I (instanceRef U4))
+       (portRef A3))
+      (property FLOATVAL (string "1"))
+      (property Name (string "A3")))
+     (net O
+      (joined
+       (portRef O (instanceRef U1))
+       (portRef O (instanceRef U4))
+       (portRef O (instanceRef U3))
+       (portRef O (instanceRef U2))
+       (portRef O))
+      (property Name (string "O")))))))
+ (design decode4
+  (cellRef decode4
+   (libraryRef MAIN_LIB))))

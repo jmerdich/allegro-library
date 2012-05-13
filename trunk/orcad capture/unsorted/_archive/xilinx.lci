@@ -1,0 +1,67 @@
+(LCIFile 000510
+(Vendor "Xilinx VHDL Libraries")
+	(CompileRef "Xilinx VHDL Libraries Compilation")
+	(CompileTip "Before Compilation locate Xilinx Command Files")
+
+	(Family "UNISIM VHDL Libraries"
+		(CompileCMD "C_Unisim.cmd")
+		(CompileRef "Xilinx Unisim VHDL Models")
+		(CompileTip "Xilinx V3.1 Unisim generic. Used with XC4K/Spartan/Virtex Families")
+	)
+
+	(Family "SIMPRIM VHDL Libraries"
+		(CompileCMD "C_Simprim.cmd")
+		(CompileRef "Xilinx Simprim VHDL Models")
+		(CompileTip "Xilinx V3.1 Simprim generic. Post P&R Simulation Libraries")
+	)
+
+	(Family "XC3000A/L VHDL Libraries"
+		(CompileCMD "C_x3k.cmd")
+		(CompileRef "Xilinx XC3000A/L VHDL Models")
+		(CompileTip "Xilinx V3.1 XC3000A/L")
+	)
+
+	(Family "XC5200 VHDL Libraries"
+		(CompileCMD "C_x5k.cmd")
+		(CompileRef "Xilinx XC5200 VHDL Models")
+		(CompileTip "Xilinx V3.1 XC5200")
+	)
+
+	(Family "XC9500 VHDL Libraries"
+		(CompileCMD "C_x9k.cmd")
+		(CompileRef "Xilinx XC9500 VHDL Models")
+		(CompileTip "Xilinx V3.1 XC9500")
+	)
+
+	(Family "LogiBlox VHDL Libraries"
+		(CompileCMD "C_LogiBlox.cmd")
+		(CompileRef "Xilinx LogiBlox VHDL Models")
+		(CompileTip "Xilinx V3.1 LogiBlox")
+	)
+
+
+	(Family "XilinxCoreLib VHDL Libraries"
+		(CompileCMD "C_XilinxCoreLib.cmd")
+		(CompileRef "Xilinx XilinxCoreLib VHDL Models")
+		(CompileTip "Xilinx V3.1 XilinxCoreLib")
+	)
+
+	(Family "Xilinx Coolpack VHDL Libraries"
+		(CompileCMD "C_coolpack.cmd")
+		(CompileRef "Xilinx Coolpack VHDL Models")
+		(CompileTip "Xilinx V3.1 XilinxCoolpackLib")
+	)
+
+	//(Family "XC4000E.OLD VHDL Libraries"
+	//	(CompileCMD "C_x4ke_old.cmd")
+	//	(CompileRef "Xilinx XC4000E.OLD VHDL Models")
+	//	(CompileTip "Xilinx V3.1 XC4000E.OLD")
+	//)
+	
+	//(Family "XC4000X.OLD VHDL Libraries"
+	//	(CompileCMD "C_x4kx_old.cmd")
+	//	(CompileRef "Xilinx XC4000X.OLD VHDL Models")
+	//	(CompileTip "Xilinx V3.1 XC4000X.OLD")
+	//)
+
+)

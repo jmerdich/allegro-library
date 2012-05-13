@@ -1,0 +1,9 @@
+(device file for capax750)
+package capax750
+class discrete
+pincount 2
+pinorder capax750 a b
+pinswap capax750 a b
+function g1 capax750 1 2
+end
+

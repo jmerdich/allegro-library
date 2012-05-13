@@ -1,0 +1,289 @@
+(edif ram32x8
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 14 01 32 02)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000EX\RAM32X8.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram32x1
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT)(designator "A0"))
+     (port A1 (direction INPUT)(designator "A1"))
+     (port A2 (direction INPUT)(designator "A2"))
+     (port A3 (direction INPUT)(designator "A3"))
+     (port A4 (direction INPUT)(designator "A4"))
+     (port D (direction INPUT)(designator "D"))
+     (port O (direction OUTPUT)(designator "O"))
+     (port WE (direction INPUT)(designator "WE"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram32x8
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT))
+     (port D3 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port D4 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port D5 (direction INPUT))
+     (port A3 (direction INPUT))
+     (port O0 (direction OUTPUT))
+     (port D6 (direction INPUT))
+     (port A4 (direction INPUT))
+     (port O1 (direction OUTPUT))
+     (port D7 (direction INPUT))
+     (port O2 (direction OUTPUT))
+     (port O3 (direction OUTPUT))
+     (port O4 (direction OUTPUT))
+     (port O5 (direction OUTPUT))
+     (port O6 (direction OUTPUT))
+     (port O7 (direction OUTPUT))
+     (port D0 (direction INPUT))
+     (port D1 (direction INPUT))
+     (port WE (direction INPUT))
+     (port D2 (direction INPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "O0"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "O4"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "O1"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U4")
+      (property Name (string "O5"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U5
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U5")
+      (property Name (string "O2"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U6
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U6")
+      (property Name (string "O6"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U7
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U7")
+      (property Name (string "O3"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (instance U8
+      (viewRef NetlistView
+       (cellRef ram32x1
+        (libraryRef OrCAD_LIB))) (designator "U8")
+      (property Name (string "O7"))
+      (property EDIForiginalOrigin (string "(pt 20 -180)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram32x1")))
+     (net A1
+      (joined
+       (portRef A1 (instanceRef U2))
+       (portRef A1 (instanceRef U4))
+       (portRef A1 (instanceRef U6))
+       (portRef A1 (instanceRef U8))
+       (portRef A1 (instanceRef U1))
+       (portRef A1 (instanceRef U3))
+       (portRef A1 (instanceRef U5))
+       (portRef A1 (instanceRef U7))
+       (portRef A1))
+      (property Name (string "A1")))
+     (net O4
+      (joined
+       (portRef O (instanceRef U2))
+       (portRef O4))
+      (property Name (string "O4")))
+     (net D5
+      (joined
+       (portRef D (instanceRef U4))
+       (portRef D5))
+      (property Name (string "D5")))
+     (net D4
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D4))
+      (property Name (string "D4")))
+     (net O3
+      (joined
+       (portRef O (instanceRef U7))
+       (portRef O3))
+      (property Name (string "O3")))
+     (net D1
+      (joined
+       (portRef D (instanceRef U3))
+       (portRef D1))
+      (property Name (string "D1")))
+     (net D0
+      (joined
+       (portRef D (instanceRef U1))
+       (portRef D0))
+      (property Name (string "D0")))
+     (net O6
+      (joined
+       (portRef O (instanceRef U6))
+       (portRef O6))
+      (property Name (string "O6")))
+     (net A0
+      (joined
+       (portRef A0 (instanceRef U2))
+       (portRef A0 (instanceRef U4))
+       (portRef A0 (instanceRef U6))
+       (portRef A0 (instanceRef U8))
+       (portRef A0 (instanceRef U1))
+       (portRef A0 (instanceRef U3))
+       (portRef A0 (instanceRef U5))
+       (portRef A0 (instanceRef U7))
+       (portRef A0))
+      (property Name (string "A0")))
+     (net D2
+      (joined
+       (portRef D (instanceRef U5))
+       (portRef D2))
+      (property Name (string "D2")))
+     (net A3
+      (joined
+       (portRef A3 (instanceRef U2))
+       (portRef A3 (instanceRef U4))
+       (portRef A3 (instanceRef U6))
+       (portRef A3 (instanceRef U8))
+       (portRef A3 (instanceRef U1))
+       (portRef A3 (instanceRef U3))
+       (portRef A3 (instanceRef U5))
+       (portRef A3 (instanceRef U7))
+       (portRef A3))
+      (property Name (string "A3")))
+     (net O1
+      (joined
+       (portRef O (instanceRef U3))
+       (portRef O1))
+      (property Name (string "O1")))
+     (net O5
+      (joined
+       (portRef O (instanceRef U4))
+       (portRef O5))
+      (property Name (string "O5")))
+     (net O7
+      (joined
+       (portRef O (instanceRef U8))
+       (portRef O7))
+      (property Name (string "O7")))
+     (net WE
+      (joined
+       (portRef WE (instanceRef U2))
+       (portRef WE (instanceRef U4))
+       (portRef WE (instanceRef U6))
+       (portRef WE (instanceRef U8))
+       (portRef WE (instanceRef U1))
+       (portRef WE (instanceRef U3))
+       (portRef WE (instanceRef U5))
+       (portRef WE (instanceRef U7))
+       (portRef WE))
+      (property Name (string "WE")))
+     (net O0
+      (joined
+       (portRef O (instanceRef U1))
+       (portRef O0))
+      (property Name (string "O0")))
+     (net D7
+      (joined
+       (portRef D (instanceRef U8))
+       (portRef D7))
+      (property Name (string "D7")))
+     (net O2
+      (joined
+       (portRef O (instanceRef U5))
+       (portRef O2))
+      (property Name (string "O2")))
+     (net A2
+      (joined
+       (portRef A2 (instanceRef U2))
+       (portRef A2 (instanceRef U4))
+       (portRef A2 (instanceRef U6))
+       (portRef A2 (instanceRef U8))
+       (portRef A2 (instanceRef U1))
+       (portRef A2 (instanceRef U3))
+       (portRef A2 (instanceRef U5))
+       (portRef A2 (instanceRef U7))
+       (portRef A2))
+      (property Name (string "A2")))
+     (net D3
+      (joined
+       (portRef D (instanceRef U7))
+       (portRef D3))
+      (property Name (string "D3")))
+     (net A4
+      (joined
+       (portRef A4 (instanceRef U2))
+       (portRef A4 (instanceRef U4))
+       (portRef A4 (instanceRef U6))
+       (portRef A4 (instanceRef U8))
+       (portRef A4 (instanceRef U1))
+       (portRef A4 (instanceRef U3))
+       (portRef A4 (instanceRef U5))
+       (portRef A4 (instanceRef U7))
+       (portRef A4))
+      (property Name (string "A4")))
+     (net D6
+      (joined
+       (portRef D (instanceRef U6))
+       (portRef D6))
+      (property Name (string "D6")))))))
+ (design ram32x8
+  (cellRef ram32x8
+   (libraryRef MAIN_LIB))))

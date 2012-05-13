@@ -1,0 +1,63 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  ACT.LST
+-- Resource:	  Motorola, FACT Data, Q4/93, DL138, REV 3
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:74ACT00  TTL  14
+:74ACT02  TTL  14
+:74ACT04  TTL  14
+:74ACT05  TTL  14
+:74ACT08  TTL  14
+:74ACT10  TTL  14
+:74ACT11  TTL  14
+:74ACT14  TTL  14
+:74ACT20  TTL  14
+:74ACT32  TTL  14
+:74ACT74  TTL  14
+:74ACT86  TTL  14
+:74ACT109  TTL  16
+:74ACT112  TTL  16
+:74ACT113  TTL  14
+:74ACT125  TTL  14
+:74ACT126  TTL  14
+:74ACT132  TTL  14
+:74ACT138  TTL  16
+:74ACT139  TTL  16
+:74ACT151  TTL  16
+:74ACT153  TTL  16
+:74ACT157  TTL  16
+:74ACT158  TTL  16
+:74ACT163  TTL  16
+:74ACT174  TTL  16
+:74ACT175  TTL  16
+:74ACT191  TTL  16
+:74ACT193  TTL  16
+:74ACT240  TTL  20
+:74ACT241  TTL  20
+:74ACT244  TTL  20
+:74ACT245  TTL  20
+:74ACT251  TTL  16
+:74ACT253  TTL  16
+:74ACT257  TTL  16
+:74ACT258  TTL  16
+:74ACT273  TTL  20
+:74ACT280  TTL  14
+:74ACT283  TTL  16
+:74ACT373  TTL  20
+:74ACT374  TTL  20
+:74ACT533  TTL  20
+:74ACT534  TTL  20
+:74ACT540  TTL  20
+:74ACT541  TTL  20
+:74ACT646  TTL  24
+:74ACT648  TTL  24

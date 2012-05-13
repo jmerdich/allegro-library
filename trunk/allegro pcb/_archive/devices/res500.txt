@@ -1,0 +1,9 @@
+(device file for res500)
+package res500
+class discrete
+pincount 2
+pinorder res500 a b
+pinswap res500 a b
+function g1 res500 1 2
+end
+

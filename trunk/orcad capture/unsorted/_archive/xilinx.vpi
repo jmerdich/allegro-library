@@ -1,0 +1,53 @@
+(VPIFile 000510
+	(Vendor "Xilinx")	
+	(Family "XC3000A/L Family"	
+		(SymbolLib "\Xilinx\XUnified.olb")
+		(SymbolLib "\Xilinx\X3K_Misc.olb")
+	)
+	(Family "XC4000E Family"
+		(SymbolLib "\Xilinx\Xc4000e\XC4000E.olb")		
+	)
+	(Family "XC4000EX Family"
+		(SymbolLib "\Xilinx\Xc4000e\XC4000E.olb")				
+	)
+	(Family "XC4000XL Family"			
+		(SymbolLib "\Xilinx\Xc4000e\XC4000E.olb")
+	)
+	(Family "XC5200 Family"			
+		(SymbolLib "\xilinx\XUnified.olb")
+		(SymbolLib "\xilinx\X5K_Misc.olb")
+	)
+	(Family "XC9500 Family"			
+		(SymbolLib "\xilinx\XUnified.olb")
+	)
+	(Family "Spartan Family"			
+		(SymbolLib "\Xilinx\Spartan2\spartan2.olb")
+	)
+	(Family "Spartan XL Family"			
+		(SymbolLib "\Xilinx\SpartanXL\spartanXL.olb")
+	) 
+	(Family "Spartan2 Family"			
+		(SymbolLib "\Xilinx\Spartan2\spartan2.olb")
+	)
+	(Family "Virtex Family"			
+		(SymbolLib "\Xilinx\Virtex\virtex.olb")
+	)
+	(Family "Virtex2 Family"			
+		(SymbolLib "\Xilinx\Virtex2\virtex2.olb")
+	)
+	(Family "Virtex E Family"			
+		(SymbolLib "\Xilinx\Virtex2\virtex2.olb")
+	)
+	(Family "Coolpack"			
+		(SymbolLib "\Xilinx\xpla\coolpack.olb")
+	)
+	//(Family "XC4000E.OLD Family"
+	//	(SymbolLib "\Xilinx\XUnified.olb")
+	//	(SymbolLib "\Xilinx\X4K_Misc.olb")		
+	//)
+	//(Family "XC4000X.OLD Family"
+	//	(SymbolLib "\Xilinx\XUnified.olb")
+	//	(SymbolLib "\Xilinx\X4K_Misc.olb")		
+	//)
+)
+

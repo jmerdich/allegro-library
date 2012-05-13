@@ -1,0 +1,93 @@
+(edif obufe
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 13 22 57 26)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000E\OBUFE.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell inv
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I (direction INPUT)(designator "I"))
+     (port O (direction OUTPUT)(designator "O")))))
+  (cell obuft
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I (direction INPUT)(designator "I"))
+     (port O (direction OUTPUT)(designator "O"))
+     (port T (direction INPUT)(designator "T"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell obufe
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port E (direction INPUT))
+     (port I (direction INPUT))
+     (port O (direction OUTPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef inv
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "$1I12"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "inv")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef obuft
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "$1I10"))
+      (property EDIForiginalOrigin (string "(pt 20 -30)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "obuft")))
+     (net E
+      (joined
+       (portRef I (instanceRef U1))
+       (portRef E))
+      (property Name (string "E")))
+     (net T
+      (joined
+       (portRef T (instanceRef U2))
+       (portRef O (instanceRef U1)))
+      (property Name (string "T")))
+     (net I
+      (joined
+       (portRef I (instanceRef U2))
+       (portRef I))
+      (property Name (string "I")))
+     (net O
+      (joined
+       (portRef O (instanceRef U2))
+       (portRef O))
+      (property Name (string "O")))))))
+ (design obufe
+  (cellRef obufe
+   (libraryRef MAIN_LIB))))

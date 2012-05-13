@@ -1,0 +1,143 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  AHCT.LST
+-- Resource:	  Samsung, High Performance CMOS Logic Data Book, 1989
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:74AHCT00                       TTL     14
+:74AHCT01                       TTL     14
+:74AHCT02                       TTL     14
+:74AHCT03                       TTL     14
+:74AHCT04                       TTL     14
+:74AHCT05                       TTL     14
+:74AHCT08                       TTL     14
+:74AHCT09                       TTL     14
+:74AHCT10                       TTL     14
+:74AHCT11                       TTL     14
+:74AHCT12                       TTL     14
+:74AHCT14                       TTL     14
+:74AHCT20                       TTL     14
+:74AHCT21                       TTL     14
+:74AHCT22                       TTL     14
+:74AHCT27                       TTL     14
+:74AHCT32                       TTL     14
+:74AHCT42                       TTL     16
+:74AHCT51                       TTL     14
+:74AHCT73                       TTL     14
+:74AHCT74                       TTL     14
+:74AHCT76                       TTL     16
+:74AHCT78  TTL  14
+:74AHCT86                       TTL     14
+:74AHCT107              TTL     14
+:74AHCT109              TTL     16
+:74AHCT112              TTL     16
+:74AHCT125   TTL  14
+:74AHCT126   TTL  14
+:74AHCT132              TTL     14
+:74AHCT133                      TTL     16
+:74AHCT138                      TTL     16
+:74AHCT139                      TTL     16
+:74AHCT148   TTL  16
+:74AHCT151                      TTL     16
+:74AHCT153   TTL  16
+:74AHCT154   TTL  24
+:74AHCT155   TTL  16
+:74AHCT157                      TTL     16
+:74AHCT158                      TTL     16
+:74AHCT160  TTL  16
+:74AHCT161  TTL  16
+:74AHCT162  TTL  16
+:74AHCT163  TTL  16
+:74AHCT164   TTL  14
+:74AHCT165   TTL  16
+:74AHCT166   TTL  16
+:74AHCT168   TTL  16
+:74AHCT169  TTL  16
+:74AHCT173   TTL  16
+:74AHCT174              TTL     16
+:74AHCT175              TTL     16
+:74AHCT191   TTL  16
+:74AHCT193   TTL  16
+:74AHCT194 TTL 16
+:74AHCT195 TTL 16
+:74AHCT240                      TTL     20
+:74AHCT241                      TTL     20
+:74AHCT242                      TTL     14
+:74AHCT243                      TTL     14
+:74AHCT244                      TTL     20
+:74AHCT245                      TTL             20
+:74AHCT251                      TTL     16
+:74AHCT253                      TTL     16
+:74AHCT257                      TTL     16
+:74AHCT258                      TTL     16
+:74AHCT259   TTL  16
+:74AHCT266   TTL  14
+:74AHCT273              TTL     20
+:74AHCT280  TTL  14
+:74AHCT299 TTL 20
+:74AHCT352   TTL  16
+:74AHCT353   TTL  16
+:74AHCT365   TTL  16
+:74AHCT366   TTL  16
+:74AHCT367   TTL  16
+:74AHCT368   TTL  16
+:74AHCT373   TTL  20
+:74AHCT374                      TTL     20
+:74AHCT377   TTL  20
+:74AHCT390   TTL  16
+:74AHCT393   TTL  14
+:74AHCT399   TTL  16
+:74AHCT465                      TTL     20
+:74AHCT466                      TTL     20
+:74AHCT467                      TTL     20
+:74AHCT468                      TTL     20
+:74AHCT518                      TTL     20
+:74AHCT519                      TTL     20
+:74AHCT520                      TTL     20
+:74AHCT521                      TTL     20
+:74AHCT522                      TTL     20
+:74AHCT533   TTL  20
+:74AHCT534                      TTL     20
+:74AHCT540   TTL 20
+:74AHCT541   TTL  20
+:74AHCT563   TTL  20
+:74AHCT564                      TTL     20
+:74AHCT573   TTL  20
+:74AHCT574                      TTL     20
+:74AHCT592   TTL  16
+:74AHCT595   TTL  16
+:74AHCT596   TTL  16
+:74AHCT597   TTL  16
+:74AHCT640                      TTL     20
+:74AHCT643                      TTL     20
+:74AHCT645                      TTL     20
+:74AHCT646   TTL  24
+:74AHCT648   TTL  24
+:74AHCT651   TTL  24
+:74AHCT652   TTL  24
+:74AHCT679   TTL  20
+:74AHCT680   TTL  20
+:74AHCT682   TTL  20
+:74AHCT684   TTL  20
+:74AHCT686   TTL  24
+:74AHCT688                      TTL     20
+:74AHCT689                      TTL     20
+:74AHCT821                      TTL     24
+:74AHCT822                      TTL     24
+:74AHCT823   TTL  24
+:74AHCT824   TTL  24
+:74AHCT825   TTL  24
+:74AHCT826   TTL  24
+:74AHCT841   TTL  24
+:74AHCT842   TTL  24
+:74AHCT843   TTL  24
+:74AHCT844   TTL  24
