@@ -1,0 +1,100 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Dump Library Log                                                 )
+(                                                                     )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Wed Mar 09 11:13:39 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+*** file: c:/documents and settings/ffywzq/desktop/on semi/poe/openpeak redesign/redesign/allegro/unnamed.brd ***
+
+
+
+  *** Creating all device files (see create_devices.log) ***
+
+
+  *** Creating padstacks. ***
+
+  SQ30SM being dumped.
+
+  T1_11_1 being dumped.
+
+  T1_1_1_1 being dumped.
+
+  RD75D42_1 being dumped.
+
+  T8_2_1_1 being dumped.
+
+  RT50X40SM being dumped.
+
+  RT30X35SM being dumped.
+
+  RT60X50SM being dumped.
+
+  RT65X40SM being dumped.
+
+  RT35X45SM being dumped.
+
+  RT40X100SM being dumped.
+
+  RT50X100SM being dumped.
+
+  RT60X125SM being dumped.
+
+  T1_2 being dumped.
+
+  T8_2 being dumped.
+
+  RECT30X35SM being dumped.
+
+
+  *** Creating package symbols (.dra and .psm) ***
+
+  to277a1 being dumped.
+
+ERROR: WARNING(SPMHA1-299): Create symbol multiple text lines are not supported on a single component type subclass.
+  ssop4a being dumped.
+
+  sot23_123 being dumped.
+
+  sm_c_1210 being dumped.
+
+  sm_c_0603 being dumped.
+
+  sm_c_1206 being dumped.
+
+  sm_c_0805 being dumped.
+
+  sm_r_1210 being dumped.
+
+  sm_l_0805 being dumped.
+
+  sm_r_0603 being dumped.
+
+  sm_r_1206 being dumped.
+
+  sm_r_2512 being dumped.
+
+  sm_r_0805 being dumped.
+
+  sod_123_ca being dumped.
+
+  sod_323_ca being dumped.
+
+  jumper_th being dumped.
+
+  head_04_pin being dumped.
+
+
+
+*********************** Summary *********************
+ERRORs reported:                           1
+
+Number of padstacks dumped:               16
+Number of package symbols dumped:         17
+
+Total number of symbols dumped:           17
+*****************************************************
+

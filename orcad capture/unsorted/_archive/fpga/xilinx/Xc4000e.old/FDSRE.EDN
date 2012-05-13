@@ -1,0 +1,138 @@
+(edif fdsre
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 13 22 31 38)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000E\FDSRE.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell fdse
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port C (direction INPUT)(designator "C"))
+     (port CE (direction INPUT)(designator "CE"))
+     (port D (direction INPUT)(designator "D"))
+     (port Q (direction OUTPUT)(designator "Q"))
+     (port S (direction INPUT)(designator "S")))))
+  (cell and2b1
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I0 (direction INPUT)(designator "I0"))
+     (port I1 (direction INPUT)(designator "I1"))
+     (port O (direction OUTPUT)(designator "O")))))
+  (cell or2
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I0 (direction INPUT)(designator "I0"))
+     (port I1 (direction INPUT)(designator "I1"))
+     (port O (direction OUTPUT)(designator "O"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell fdsre
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port D (direction INPUT))
+     (port CE (direction INPUT))
+     (port Q (direction OUTPUT))
+     (port R (direction INPUT))
+     (port S (direction INPUT))
+     (port C (direction INPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef fdse
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "$1I79"))
+      (property EDIForiginalOrigin (string "(pt 20 -110)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "fdse"))
+      (property RLOC (string "R0C0")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef and2b1
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "$1I75"))
+      (property EDIForiginalOrigin (string "(pt 0 -50)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "and2b1")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef or2
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "$1I84"))
+      (property EDIForiginalOrigin (string "(pt 0 -50)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "or2")))
+     (net D_R
+      (joined
+       (portRef D (instanceRef U1))
+       (portRef O (instanceRef U2)))
+      (property Name (string "D_R")))
+     (net CE
+      (joined
+       (portRef I0 (instanceRef U3))
+       (portRef CE))
+      (property Name (string "CE")))
+     (net R
+      (joined
+       (portRef I0 (instanceRef U2))
+       (portRef I1 (instanceRef U3))
+       (portRef R))
+      (property Name (string "R")))
+     (net Q
+      (joined
+       (portRef Q (instanceRef U1))
+       (portRef Q))
+      (property Name (string "Q")))
+     (net S
+      (joined
+       (portRef S (instanceRef U1))
+       (portRef S))
+      (property Name (string "S")))
+     (net CE_R
+      (joined
+       (portRef O (instanceRef U3))
+       (portRef CE (instanceRef U1)))
+      (property Name (string "CE_R")))
+     (net C
+      (joined
+       (portRef C (instanceRef U1))
+       (portRef C))
+      (property Name (string "C")))
+     (net D
+      (joined
+       (portRef I1 (instanceRef U2))
+       (portRef D))
+      (property Name (string "D")))))))
+ (design fdsre
+  (cellRef fdsre
+   (libraryRef MAIN_LIB))))

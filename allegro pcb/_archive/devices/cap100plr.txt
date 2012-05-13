@@ -1,0 +1,6 @@
+(device file for cap100plr)
+package cap100plr
+class discrete
+pincount 2
+end
+

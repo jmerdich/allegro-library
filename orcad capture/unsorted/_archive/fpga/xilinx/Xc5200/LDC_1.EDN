@@ -1,0 +1,139 @@
+(edif ldc_1
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1998 01 29 18 23 48)
+   (program "CAPTURE.EXE" (Version "7.20.145"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "January 29, 1998")
+  (comment "G:\MANUFACTURER\XILINXM1\WORKINPROGRESS\XC5200\LDC_1.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell VCC
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port P (direction OUTPUT)))))
+  (cell ldce
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port CLR (direction INPUT))
+     (port D (direction INPUT))
+     (port G (direction INPUT))
+     (port GE (direction INPUT))
+     (port Q (direction OUTPUT)))))
+  (cell inv
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I (direction INPUT))
+     (port O (direction OUTPUT))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ldc_1
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port D (direction INPUT))
+     (port G (direction INPUT))
+     (port CLR (direction INPUT))
+     (port Q (direction OUTPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef VCC
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I37"))
+      (property EDIForiginalOrigin (string "(pt 10 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "VCC"))
+      (portInstance P
+       (property PINTYPE (string "OUT"))))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ldce
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I30"))
+      (property EDIForiginalOrigin (string "(pt 20 -100)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ldce"))
+      (property RLOC (string "R0C0"))
+      (portInstance CLR
+       (property PINTYPE (string "IN")))
+      (portInstance D
+       (property PINTYPE (string "IN")))
+      (portInstance G
+       (property PINTYPE (string "IN")))
+      (portInstance GE
+       (property PINTYPE (string "IN")))
+      (portInstance Q
+       (property PINTYPE (string "OUT"))))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef inv
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I39"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "inv"))
+      (portInstance I
+       (property PINTYPE (string "IN")))
+      (portInstance O
+       (property PINTYPE (string "OUT"))
+       (property PARAM (string "INV"))))
+     (net D
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D))
+      (property Name (string "D")))
+     (net G
+      (joined
+       (portRef I (instanceRef U3))
+       (portRef G))
+      (property Name (string "G")))
+     (net GB
+      (joined
+       (portRef O (instanceRef U3))
+       (portRef G (instanceRef U2)))
+      (property Name (string "GB")))
+     (net Q
+      (joined
+       (portRef Q (instanceRef U2))
+       (portRef Q))
+      (property Name (string "Q")))
+     (net N00396
+      (joined
+       (portRef P (instanceRef U1))
+       (portRef GE (instanceRef U2)))
+      (property Name (string "N00396")))
+     (net CLR
+      (joined
+       (portRef CLR (instanceRef U2))
+       (portRef CLR))
+      (property Name (string "CLR")))))))
+ (design ldc_1
+  (cellRef ldc_1
+   (libraryRef MAIN_LIB))))

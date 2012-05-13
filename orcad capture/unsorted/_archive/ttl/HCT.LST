@@ -1,0 +1,87 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  HCT.LST
+-- Resource:	  Signetics, 1986 Logic Databook
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+
+:74HCT00  TTL  14
+:74HCT02  TTL  14
+:74HCT03  TTL  14
+:74HCT04  TTL  14
+:74HCT05  TTL  14
+:74HCT08  TTL  14
+:74HCT10  TTL  14
+:74HCT11  TTL  14
+:74HCT14  TTL  14
+:74HCT20  TTL  14
+:74HCT27  TTL  14
+:74HCT30  TTL  14
+:74HCT32  TTL  14
+:74HCT34  TTL  14
+:74HCT74  TTL  14
+:74HCT76  TTL  16
+:74HCT86  TTL  14
+:74HCT107  TTL  14
+:74HCT109  TTL  16
+:74HCT112  TTL  16
+:74HCT132  TTL  14
+:74HCT137  TTL  16
+:74HCT138  TTL  16
+:74HCT138A  TTL  16
+:74HCT139  TTL  16
+:74HCT151  TTL  16
+:74HCT157  TTL  16
+:74HCT158  TTL  16
+:74HCT160  TTL  16
+:74HCT161  TTL  16
+:74HCT162  TTL  16
+:74HCT163  TTL  16
+:74HCT164  TTL  14
+:74HCT174  TTL  16
+:74HCT175  TTL  16
+:74HCT240  TTL  20
+:74HCT241  TTL  20
+:74HCT241A  TTL  20
+:74HCT242  TTL  14
+:74HCT243  TTL  14
+:74HCT244  TTL  20
+:74HCT244A  TTL  20
+:74HCT245  TTL  20
+:74HCT251  TTL  16
+:74HCT253  TTL  16
+:74HCT253B  TTL  16
+:74HCT257  TTL  16
+:74HCT273  TTL  20
+:74HCT373  TTL  20
+:74HCT373A  TTL  20
+:74HCT374  TTL  20
+:74HCT374A  TTL  20
+:74HCT521  TTL  20
+:74HCT533  TTL  20
+:74HCT534  TTL  20
+:74HCT540  TTL  20
+:74HCT541  TTL  20
+:74HCT563  TTL  20
+:74HCT564  TTL  20
+:74HCT573  TTL  20
+:74HCT574  TTL  20
+:74HCT620  TTL  20
+:74HCT623  TTL  20
+:74HCT640  TTL  20
+:74HCT643  TTL  20
+:74HCT645  TTL  20
+:74HCT646  TTL  24
+:74HCT648  TTL  24
+:74HCT651  TTL  24
+:74HCT652  TTL  24
+:74HCT688  TTL  20

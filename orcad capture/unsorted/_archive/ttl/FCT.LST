@@ -1,0 +1,40 @@
+--***************************************************************************
+--*                                                                         *
+--*                         Copyright (C) 1987-1995                         *
+--*                              by OrCAD, INC.                             *
+--*                                                                         *
+--*                           All rights reserved.                          *
+--*                                                                         *
+--***************************************************************************
+   
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  FCT.LST
+-- Resource:	  Integrated Device Technology, Inc. 1994 Data Book
+--                High-Performance Logic
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+74FCT138 
+74FCT139 
+74FCT161 
+74FCT163 
+74FCT191 
+74FCT193 
+74FCT240 
+74FCT241 
+74FCT244 
+74FCT245 
+74FCT273 
+74FCT373 
+74FCT374 
+74FCT399 
+74FCT533 
+74FCT534 
+74FCT540 
+74FCT541 
+74FCT573 
+74FCT574 
+74FCT640 
+74FCT645 
+
+<eof>

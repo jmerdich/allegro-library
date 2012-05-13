@@ -1,0 +1,11 @@
+include $CDS_INST_DIR/tools/inca/files/cds.lib 
+define simprim ./sim_lib/simprim
+define x4kelib ./sim_lib/x4kelib
+define x4kxlib ./sim_lib/x4kxlib
+define x5klib ./sim_lib/x5klib
+define x3klib ./sim_lib/x3klib
+define x9klib ./sim_lib/x9klib
+define logiblox ./sim_lib/logiblox
+define unisim ./sim_lib/unisim
+define xilinxcorelib ./sim_lib/xilinxcorelib
+define coolpack ./sim_lib/coolpack

@@ -1,0 +1,542 @@
+(edif add16x2
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1998 03 14 20 34 02)
+   (program "EXPRESS.EXE" (Version "7.20.171"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "January 29, 1998")
+  (comment "E:\LIBRARY\MAINTENANCE\XILINXM1\XC9500\WORKINPROGRESS\ADD16X2.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell add8x2
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A7 (direction INPUT))
+     (port A6 (direction INPUT))
+     (port A5 (direction INPUT))
+     (port A4 (direction INPUT))
+     (port A3 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port A0 (direction INPUT))
+     (port B7 (direction INPUT))
+     (port B6 (direction INPUT))
+     (port B5 (direction INPUT))
+     (port B4 (direction INPUT))
+     (port B3 (direction INPUT))
+     (port B2 (direction INPUT))
+     (port B1 (direction INPUT))
+     (port B0 (direction INPUT))
+     (port CI (direction INPUT))
+     (port CO (direction OUTPUT))
+     (port S7 (direction OUTPUT))
+     (port S6 (direction OUTPUT))
+     (port S5 (direction OUTPUT))
+     (port S4 (direction OUTPUT))
+     (port S3 (direction OUTPUT))
+     (port S2 (direction OUTPUT))
+     (port S1 (direction OUTPUT))
+     (port S0 (direction OUTPUT))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell add16x2
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port S1 (direction OUTPUT))
+     (port S13 (direction OUTPUT))
+     (port B1 (direction INPUT))
+     (port B13 (direction INPUT))
+     (port A0 (direction INPUT))
+     (port A14 (direction INPUT))
+     (port S2 (direction OUTPUT))
+     (port S14 (direction OUTPUT))
+     (port B2 (direction INPUT))
+     (port B14 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port A15 (direction INPUT))
+     (port S3 (direction OUTPUT))
+     (port S15 (direction OUTPUT))
+     (port B3 (direction INPUT))
+     (port B15 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port S4 (direction OUTPUT))
+     (port B4 (direction INPUT))
+     (port A3 (direction INPUT))
+     (port S5 (direction OUTPUT))
+     (port B5 (direction INPUT))
+     (port A4 (direction INPUT))
+     (port S6 (direction OUTPUT))
+     (port B6 (direction INPUT))
+     (port A5 (direction INPUT))
+     (port CI (direction INPUT))
+     (port S7 (direction OUTPUT))
+     (port B7 (direction INPUT))
+     (port A6 (direction INPUT))
+     (port S8 (direction OUTPUT))
+     (port B8 (direction INPUT))
+     (port A7 (direction INPUT))
+     (port S9 (direction OUTPUT))
+     (port B9 (direction INPUT))
+     (port A8 (direction INPUT))
+     (port A9 (direction INPUT))
+     (port CO (direction OUTPUT))
+     (port A10 (direction INPUT))
+     (port S10 (direction OUTPUT))
+     (port B10 (direction INPUT))
+     (port A11 (direction INPUT))
+     (port S11 (direction OUTPUT))
+     (port B11 (direction INPUT))
+     (port A12 (direction INPUT))
+     (port S0 (direction OUTPUT))
+     (port S12 (direction OUTPUT))
+     (port B0 (direction INPUT))
+     (port B12 (direction INPUT))
+     (port A13 (direction INPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef add8x2
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "S7_0"))
+      (property EDIForiginalOrigin (string "(pt 20 -140)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "add8x2"))
+      (portInstance A7
+       (property PINTYPE (string "IN")))
+      (portInstance A6
+       (property PINTYPE (string "IN")))
+      (portInstance A5
+       (property PINTYPE (string "IN")))
+      (portInstance A4
+       (property PINTYPE (string "IN")))
+      (portInstance A3
+       (property PINTYPE (string "IN")))
+      (portInstance A2
+       (property PINTYPE (string "IN")))
+      (portInstance A1
+       (property PINTYPE (string "IN")))
+      (portInstance A0
+       (property PINTYPE (string "IN")))
+      (portInstance B7
+       (property PINTYPE (string "IN")))
+      (portInstance B6
+       (property PINTYPE (string "IN")))
+      (portInstance B5
+       (property PINTYPE (string "IN")))
+      (portInstance B4
+       (property PINTYPE (string "IN")))
+      (portInstance B3
+       (property PINTYPE (string "IN")))
+      (portInstance B2
+       (property PINTYPE (string "IN")))
+      (portInstance B1
+       (property PINTYPE (string "IN")))
+      (portInstance B0
+       (property PINTYPE (string "IN")))
+      (portInstance CI
+       (property PINTYPE (string "IN")))
+      (portInstance CO
+       (property PINTYPE (string "OUT")))
+      (portInstance S7
+       (property PINTYPE (string "OUT")))
+      (portInstance S6
+       (property PINTYPE (string "OUT")))
+      (portInstance S5
+       (property PINTYPE (string "OUT")))
+      (portInstance S4
+       (property PINTYPE (string "OUT")))
+      (portInstance S3
+       (property PINTYPE (string "OUT")))
+      (portInstance S2
+       (property PINTYPE (string "OUT")))
+      (portInstance S1
+       (property PINTYPE (string "OUT")))
+      (portInstance S0
+       (property PINTYPE (string "OUT"))))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef add8x2
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "S15_8"))
+      (property EDIForiginalOrigin (string "(pt 20 -140)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "add8x2"))
+      (portInstance A7
+       (property PINTYPE (string "IN")))
+      (portInstance A6
+       (property PINTYPE (string "IN")))
+      (portInstance A5
+       (property PINTYPE (string "IN")))
+      (portInstance A4
+       (property PINTYPE (string "IN")))
+      (portInstance A3
+       (property PINTYPE (string "IN")))
+      (portInstance A2
+       (property PINTYPE (string "IN")))
+      (portInstance A1
+       (property PINTYPE (string "IN")))
+      (portInstance A0
+       (property PINTYPE (string "IN")))
+      (portInstance B7
+       (property PINTYPE (string "IN")))
+      (portInstance B6
+       (property PINTYPE (string "IN")))
+      (portInstance B5
+       (property PINTYPE (string "IN")))
+      (portInstance B4
+       (property PINTYPE (string "IN")))
+      (portInstance B3
+       (property PINTYPE (string "IN")))
+      (portInstance B2
+       (property PINTYPE (string "IN")))
+      (portInstance B1
+       (property PINTYPE (string "IN")))
+      (portInstance B0
+       (property PINTYPE (string "IN")))
+      (portInstance CI
+       (property PINTYPE (string "IN")))
+      (portInstance CO
+       (property PINTYPE (string "OUT")))
+      (portInstance S7
+       (property PINTYPE (string "OUT")))
+      (portInstance S6
+       (property PINTYPE (string "OUT")))
+      (portInstance S5
+       (property PINTYPE (string "OUT")))
+      (portInstance S4
+       (property PINTYPE (string "OUT")))
+      (portInstance S3
+       (property PINTYPE (string "OUT")))
+      (portInstance S2
+       (property PINTYPE (string "OUT")))
+      (portInstance S1
+       (property PINTYPE (string "OUT")))
+      (portInstance S0
+       (property PINTYPE (string "OUT"))))
+     (net A14
+      (joined
+       (portRef A6 (instanceRef U2))
+       (portRef A14))
+      (property Name (string "A14"))
+      (property LABEL (string "A[15:8]")))
+     (net A15
+      (joined
+       (portRef A7 (instanceRef U2))
+       (portRef A15))
+      (property Name (string "A15"))
+      (property LABEL (string "A[15:8]")))
+     (net CO
+      (joined
+       (portRef CO (instanceRef U2))
+       (portRef CO))
+      (property Name (string "CO")))
+     (net CI
+      (joined
+       (portRef CI (instanceRef U1))
+       (portRef CI))
+      (property Name (string "CI")))
+     (net C7
+      (joined
+       (portRef CI (instanceRef U2))
+       (portRef CO (instanceRef U1)))
+      (property Name (string "C7")))
+     (net B14
+      (joined
+       (portRef B6 (instanceRef U2))
+       (portRef B14))
+      (property Name (string "B14"))
+      (property LABEL (string "B[15:8]")))
+     (net B15
+      (joined
+       (portRef B7 (instanceRef U2))
+       (portRef B15))
+      (property Name (string "B15"))
+      (property LABEL (string "B[15:8]")))
+     (net A0
+      (joined
+       (portRef A0 (instanceRef U1))
+       (portRef A0))
+      (property Name (string "A0"))
+      (property LABEL (string "A[7:0]")))
+     (net A1
+      (joined
+       (portRef A1 (instanceRef U1))
+       (portRef A1))
+      (property Name (string "A1"))
+      (property LABEL (string "A[7:0]")))
+     (net A2
+      (joined
+       (portRef A2 (instanceRef U1))
+       (portRef A2))
+      (property Name (string "A2"))
+      (property LABEL (string "A[7:0]")))
+     (net A3
+      (joined
+       (portRef A3 (instanceRef U1))
+       (portRef A3))
+      (property Name (string "A3"))
+      (property LABEL (string "A[7:0]")))
+     (net A4
+      (joined
+       (portRef A4 (instanceRef U1))
+       (portRef A4))
+      (property Name (string "A4"))
+      (property LABEL (string "A[7:0]")))
+     (net A5
+      (joined
+       (portRef A5 (instanceRef U1))
+       (portRef A5))
+      (property Name (string "A5"))
+      (property LABEL (string "A[7:0]")))
+     (net A6
+      (joined
+       (portRef A6 (instanceRef U1))
+       (portRef A6))
+      (property Name (string "A6"))
+      (property LABEL (string "A[7:0]")))
+     (net A7
+      (joined
+       (portRef A7 (instanceRef U1))
+       (portRef A7))
+      (property Name (string "A7"))
+      (property LABEL (string "A[7:0]")))
+     (net A8
+      (joined
+       (portRef A0 (instanceRef U2))
+       (portRef A8))
+      (property Name (string "A8"))
+      (property LABEL (string "A[15:8]")))
+     (net A9
+      (joined
+       (portRef A1 (instanceRef U2))
+       (portRef A9))
+      (property Name (string "A9"))
+      (property LABEL (string "A[15:8]")))
+     (net A10
+      (joined
+       (portRef A2 (instanceRef U2))
+       (portRef A10))
+      (property Name (string "A10"))
+      (property LABEL (string "A[15:8]")))
+     (net A11
+      (joined
+       (portRef A3 (instanceRef U2))
+       (portRef A11))
+      (property Name (string "A11"))
+      (property LABEL (string "A[15:8]")))
+     (net A12
+      (joined
+       (portRef A4 (instanceRef U2))
+       (portRef A12))
+      (property Name (string "A12"))
+      (property LABEL (string "A[15:8]")))
+     (net A13
+      (joined
+       (portRef A5 (instanceRef U2))
+       (portRef A13))
+      (property Name (string "A13"))
+      (property LABEL (string "A[15:8]")))
+     (net S14
+      (joined
+       (portRef S6 (instanceRef U2))
+       (portRef S14))
+      (property Name (string "S14"))
+      (property LABEL (string "S[15:8]")))
+     (net S15
+      (joined
+       (portRef S7 (instanceRef U2))
+       (portRef S15))
+      (property Name (string "S15"))
+      (property LABEL (string "S[15:8]")))
+     (net B0
+      (joined
+       (portRef B0 (instanceRef U1))
+       (portRef B0))
+      (property Name (string "B0"))
+      (property LABEL (string "B[15:8]")))
+     (net B1
+      (joined
+       (portRef B1 (instanceRef U1))
+       (portRef B1))
+      (property Name (string "B1"))
+      (property LABEL (string "B[15:8]")))
+     (net B2
+      (joined
+       (portRef B2 (instanceRef U1))
+       (portRef B2))
+      (property Name (string "B2"))
+      (property LABEL (string "B[15:8]")))
+     (net B3
+      (joined
+       (portRef B3 (instanceRef U1))
+       (portRef B3))
+      (property Name (string "B3"))
+      (property LABEL (string "B[15:8]")))
+     (net B4
+      (joined
+       (portRef B4 (instanceRef U1))
+       (portRef B4))
+      (property Name (string "B4"))
+      (property LABEL (string "B[15:8]")))
+     (net B5
+      (joined
+       (portRef B5 (instanceRef U1))
+       (portRef B5))
+      (property Name (string "B5"))
+      (property LABEL (string "B[15:8]")))
+     (net B6
+      (joined
+       (portRef B6 (instanceRef U1))
+       (portRef B6))
+      (property Name (string "B6"))
+      (property LABEL (string "B[15:8]")))
+     (net B7
+      (joined
+       (portRef B7 (instanceRef U1))
+       (portRef B7))
+      (property Name (string "B7"))
+      (property LABEL (string "B[15:8]")))
+     (net B8
+      (joined
+       (portRef B0 (instanceRef U2))
+       (portRef B8))
+      (property Name (string "B8"))
+      (property LABEL (string "B[15:8]")))
+     (net B9
+      (joined
+       (portRef B1 (instanceRef U2))
+       (portRef B9))
+      (property Name (string "B9"))
+      (property LABEL (string "B[15:8]")))
+     (net B10
+      (joined
+       (portRef B2 (instanceRef U2))
+       (portRef B10))
+      (property Name (string "B10"))
+      (property LABEL (string "B[15:8]")))
+     (net B11
+      (joined
+       (portRef B3 (instanceRef U2))
+       (portRef B11))
+      (property Name (string "B11"))
+      (property LABEL (string "B[15:8]")))
+     (net B12
+      (joined
+       (portRef B4 (instanceRef U2))
+       (portRef B12))
+      (property Name (string "B12"))
+      (property LABEL (string "B[15:8]")))
+     (net B13
+      (joined
+       (portRef B5 (instanceRef U2))
+       (portRef B13))
+      (property Name (string "B13"))
+      (property LABEL (string "B[15:8]")))
+     (net S0
+      (joined
+       (portRef S0 (instanceRef U1))
+       (portRef S0))
+      (property Name (string "S0"))
+      (property LABEL (string "S[15:8]")))
+     (net S1
+      (joined
+       (portRef S1 (instanceRef U1))
+       (portRef S1))
+      (property Name (string "S1"))
+      (property LABEL (string "S[15:8]")))
+     (net S2
+      (joined
+       (portRef S2 (instanceRef U1))
+       (portRef S2))
+      (property Name (string "S2"))
+      (property LABEL (string "S[15:8]")))
+     (net S3
+      (joined
+       (portRef S3 (instanceRef U1))
+       (portRef S3))
+      (property Name (string "S3"))
+      (property LABEL (string "S[15:8]")))
+     (net S4
+      (joined
+       (portRef S4 (instanceRef U1))
+       (portRef S4))
+      (property Name (string "S4"))
+      (property LABEL (string "S[15:8]")))
+     (net S5
+      (joined
+       (portRef S5 (instanceRef U1))
+       (portRef S5))
+      (property Name (string "S5"))
+      (property LABEL (string "S[15:8]")))
+     (net S6
+      (joined
+       (portRef S6 (instanceRef U1))
+       (portRef S6))
+      (property Name (string "S6"))
+      (property LABEL (string "S[15:8]")))
+     (net S7
+      (joined
+       (portRef S7 (instanceRef U1))
+       (portRef S7))
+      (property Name (string "S7"))
+      (property LABEL (string "S[15:8]")))
+     (net S8
+      (joined
+       (portRef S0 (instanceRef U2))
+       (portRef S8))
+      (property Name (string "S8"))
+      (property LABEL (string "S[15:8]")))
+     (net S9
+      (joined
+       (portRef S1 (instanceRef U2))
+       (portRef S9))
+      (property Name (string "S9"))
+      (property LABEL (string "S[15:8]")))
+     (net S10
+      (joined
+       (portRef S2 (instanceRef U2))
+       (portRef S10))
+      (property Name (string "S10"))
+      (property LABEL (string "S[15:8]")))
+     (net S11
+      (joined
+       (portRef S3 (instanceRef U2))
+       (portRef S11))
+      (property Name (string "S11"))
+      (property LABEL (string "S[15:8]")))
+     (net S12
+      (joined
+       (portRef S4 (instanceRef U2))
+       (portRef S12))
+      (property Name (string "S12"))
+      (property LABEL (string "S[15:8]")))
+     (net S13
+      (joined
+       (portRef S5 (instanceRef U2))
+       (portRef S13))
+      (property Name (string "S13"))
+      (property LABEL (string "S[15:8]")))))))
+ (design add16x2
+  (cellRef add16x2
+   (libraryRef MAIN_LIB))))

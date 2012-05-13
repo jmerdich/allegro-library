@@ -1,0 +1,51 @@
+\t (00:00:13) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:13) 
+
+\t (00:00:15) Opening existing drawing...
+\d (00:00:15) Database opened: C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/TSSOP20EP.dra
+\i (00:00:15) trapsize 83
+\i (00:00:15) trapsize 80
+\i (00:00:15) trapsize 79
+\i (00:00:16) trapsize 66
+\i (00:00:16) trapsize 66
+\i (00:00:16) generaledit 
+\i (00:00:20) open 
+\i (00:00:23) fillin "TSSOP20EP.dra"
+\t (00:00:23) Opening existing drawing...
+\i (00:00:23) trapsize 66
+\d (00:00:23) Database opened: C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/TSSOP20EP.dra
+\i (00:00:23) generaledit 
+\i (00:00:26) add pin 
+\i (00:00:29) setwindow form.mini
+\i (00:00:29) FORM mini pad_browse  
+\f (00:00:29) Select a padstack:
+\i (00:00:32) fillin "Exposedpad_Ssop20"
+\t (00:00:32) Using 'EXPOSEDPAD_SSOP20.pad'.
+\i (00:00:39) FORM mini next_pin_number 21 
+\i (00:00:41) FORM mini increment 21 
+\i (00:00:45) setwindow pcb
+\i (00:00:45) pick grid 0.039 -0.042
+\t (00:00:45) last pick:  0.000  0.000
+\t (00:00:45) Using 'EXPOSEDPAD_SSOP20.pad'.
+\i (00:00:46) Esc 
+\w (00:00:46) WARNING(SPMHA1-314): Illegal event.
+\i (00:00:47) prepopup -5.296 -0.594
+\i (00:00:48) done 
+\t (00:00:48) Exiting from Add Pin.
+\i (00:00:48) generaledit 
+\i (00:00:52) prepopup -0.329 -1.027
+\i (00:00:53) pick grid -1.446 -0.291
+\t (00:00:53) last pick:  -1.400  -0.300
+\i (00:00:54) prepopup -1.380 0.063
+\i (00:00:59) pop dyn_option_select '@:@Show element' 
+\i (00:00:59) show element 
+\i (00:00:59) generaledit 
+\i (00:01:00) setwindow text
+\i (00:01:00) close 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) save 
+\f (00:01:02) C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/TSSOP20EP.dra: File Exists. Overwrite? 
+\i (00:01:05) fillin yes 
+\t (00:01:06) Symbol 'tssop20ep.psm' created.
+\i (00:01:06) generaledit 
+\i (00:01:09) exit 

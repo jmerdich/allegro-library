@@ -1,0 +1,4570 @@
+LIBRARY orc2alt
+
+% OrCAD Altera Library Logic Mapping File %
+% Mapping for Altera_M Library (Altera old-style macros) %
+% Date:		  3/04/97 %
+% Rev Notes:	  %
+%%
+% Author History    |Last Touched   |Reason:                                  %
+%%
+%    RBH            |11/16/98       | Added new mappings for cells whose name %
+%                                   | begin with a number; Exemplar prefixes  %
+%                                   | them with a "U".                        %
+%                                                                             %
+%    Brian J. Smith |11/13/98		| Changed INV pin names to in1 and y      %
+%                                   | instead of I and O.                     %
+%                                                                             %
+%    Jim Davis      |10/30/98       | Changed pin name on Wire to be In1 in-  %
+%                                   | stead of I.                             %
+%                                                                             %
+%    RBH            |10/??/98       | Made fixes to SClk and Wire             %
+%                                                                             %
+%    Jim Davis      |01/05/98       | Modified 75153 to change typo in port   %
+%                                   | list. Changed cb2 to cb0 as there was a %
+%                                   | already cb2 and no cb0.                 %
+%                                                                             %
+%    Jim Davis      |07/07/97       | Modified 74374 description to add an    %
+%                                   | Output Enable Pin (OEN). This change was%
+%                                   | prompted by the change to the ALTERA_M  %
+%                                   | Capture library.                        %
+%                                                                             %
+%                   |3/04/97        | Corrected pin q2 on 16cudslr and 16dmux %
+%                                   | RETURN lists.                           %
+%                                                                             %
+%                   |2/18/97        | Corrected pin q2 in 16dmux RETURN list. %
+%                                                                             %
+%                   |10/16/96       | Changed pin d/upn to dnup on 74297 to   %
+%                                   | match part.                             %
+%                                                                             %
+%                   |5/23/96        | Changed NOT component to INV.NOT is VHDL%
+%                                   | keyword. Still maps to NOT in Altera    %
+%                                   | environment.                            %
+
+% BARRELST %
+BEGIN
+FUNCTION barrelst (s2, s1, s0, ldst, a, b, c, d, e, f, g, h, clk)
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh)
+FUNCTION "barrelst" ("s2", "s1", "s0", "stld", "a", "b", "c", "d", "e", "f", "g", "h", "clk")
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh")
+END
+
+% BTRI %
+BEGIN
+FUNCTION btri (oen, in)
+RETURNS (out)
+FUNCTION "btri" ("oen", "i")
+RETURNS ("o")
+END
+
+% CBUF %
+BEGIN
+FUNCTION cbuf (1) 
+RETURNS (2, 3)
+FUNCTION "cbuf" ("i") 
+RETURNS ("o", "outn")
+END
+
+% ENADFF %
+BEGIN
+FUNCTION enadff (d, clk, clrn, prn, ena) 
+RETURNS (q)
+FUNCTION "enadff" ("d", "clk", "clrn", "prn", "ena") 
+RETURNS ("q")
+END
+
+% EXPDFF %
+BEGIN
+FUNCTION expdff (d, clk, clrn, prn) 
+RETURNS (q, /q)
+FUNCTION "expdff" ("d", "clk", "clrn", "prn") 
+RETURNS ("q", "qn")
+END
+
+% EXPLATCH %
+BEGIN
+FUNCTION explatch (d, ena) 
+RETURNS (q)
+FUNCTION "explatch" ("d", "ena") 
+RETURNS ("q")
+END
+
+% FREQDIV %
+BEGIN
+FUNCTION freqdiv (clr, clk, g) 
+RETURNS (dv2, dv4, dv8, dv16)
+FUNCTION "freqdiv" ("clr", "clk", "g") 
+RETURNS ("dv2", "dv4", "dv8", "dv16")
+END
+
+% GRAY4 %
+BEGIN
+FUNCTION gray4 (clk, ena) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "gray4" ("clk", "ena") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% INHB %
+BEGIN
+FUNCTION inhb (2, 3) 
+RETURNS (1)
+FUNCTION "inhb" ("in1", "in2") 
+RETURNS ("o")
+END
+
+% INPLTCH %
+BEGIN
+FUNCTION inpltch (d, g) 
+RETURNS (q)
+FUNCTION "inpltch" ("d", "g") 
+RETURNS ("q")
+END
+
+% MULT2 %
+BEGIN
+FUNCTION mult2 (a2, a1, a0, b2, b1, b0, g) 
+RETURNS (y4, y3, y2, y1, y0)
+FUNCTION "mult2" ("a2", "a1", "a0", "b2", "b1", "b0", "g") 
+RETURNS ("y4", "y3", "y2", "y1", "y0")
+END
+
+% MULT4 %
+BEGIN
+FUNCTION mult4 (a5, a4, a3, a2, a1, b5, b4, b3, b2, b1, g) 
+RETURNS (y9, y8, y7, y6, y5, y4, y3, y2, y1)
+FUNCTION "mult4" ("a5", "a4", "a3", "a2", "a1", "b5", "b4", "b3", "b2", "b1", "g") 
+RETURNS ("y9", "y8", "y7", "y6", "y5", "y4", "y3", "y2", "y1")
+END
+
+% MULT24 %
+BEGIN
+FUNCTION mult24 (a5, a4, a3, a2, a1, b3, b2, b1, g) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1) 
+FUNCTION "mult24" ("a5", "a4", "a3", "a2", "a1", "b3", "b2", "b1", "g") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1") 
+END
+
+% NANDLTCH %
+BEGIN
+FUNCTION nandltch (sn, rn) 
+RETURNS (q, qn)
+FUNCTION "nandltch" ("sn", "rn") 
+RETURNS ("q", "qn")
+END
+
+% NORLTCH %
+BEGIN
+FUNCTION norltch (s, r) 
+RETURNS (q, qn)
+FUNCTION "norltch" ("s", "r") 
+RETURNS ("q", "qn")
+END
+
+% TMULT4 %
+BEGIN
+FUNCTION tmult4 (gan, gbn, a5, a4, a3, a2, a1, b5, b4, b3, b2, b1) 
+RETURNS (y9, y8, y7, y6, y5, y4, y3, y2, y1)
+FUNCTION "tmult4" ("gan", "gbn", "a5", "a4", "a3", "a2", "a1", "b5", "b4", "b3", "b2", "b1") 
+RETURNS ("y9", "y8", "y7", "y6", "y5", "y4", "y3", "y2", "y1")
+END
+
+% UNICNT %
+BEGIN
+FUNCTION unicnt (clk, clr, set, load, ctst, dnup, rtlt, cin, data, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, cout)
+FUNCTION "unicnt" ("clk", "clr", "set", "load", "ctst", "dnup", "rtlt", "cin", "data", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "cout")
+END
+
+% 4COUNT %
+BEGIN
+FUNCTION 4count (clk, clrn, setn, ldn, cin, dnup, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, cout)
+FUNCTION "4count" ("clk", "clrn", "setn", "ldn", "cin", "dnup", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "cout")
+END
+
+% 81MUX %
+BEGIN
+FUNCTION 81mux (d0, d1, d2, d3, d4, d5, d6, d7, a, b, c, gn) 
+RETURNS (wn, y)
+FUNCTION "81mux" ("d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "a", "b", "c", "gn") 
+RETURNS ("wn", "y")
+END
+
+% 8COUNT %
+BEGIN
+FUNCTION 8count (clk, clrn, setn, ldn, dnup, gn, h, g, f, e, d, c, b, a) 
+RETURNS (qh, qg, qf, qe, qd, qc, qb, qa, cout)
+FUNCTION "8count" ("clk", "clrn", "setn", "ldn", "dnup", "gn", "h", "g", "f", "e", "d", "c", "b", "a") 
+RETURNS ("qh", "qg", "qf", "qe", "qd", "qc", "qb", "qa", "cout")
+END
+
+% 8FADD %
+BEGIN
+FUNCTION 8fadd (cin, a8, a7, a6, a5, a4, a3, a2, a1, b8, b7, b6, b5, b4, b3, b2, b1) 
+RETURNS (cout, sum8, sum7, sum6, sum5, sum4, sum3, sum2, sum1)
+FUNCTION "8fadd" ("cin", "a8", "a7", "a6", "a5", "a4", "a3", "a2", "a1", "b8", "b7", "b6", "b5", "b4", "b3", "b2", "b1")
+RETURNS ("cout", "sum8", "sum7", "sum6", "sum5", "sum4", "sum3", "sum2", "sum1")
+END
+
+% 8MCOMP %
+BEGIN
+FUNCTION 8mcomp (a7, a6, a5, a4, a3, a2, a1, a0, b7, b6, b5, b4, b3, b2, b1, b0) 
+RETURNS (altb, aeqb, agtb, aeb7, aeb6, aeb5, aeb4, aeb3, aeb2, aeb1, aeb0)
+FUNCTION "8mcomp" ("a7", "a6", "a5", "a4", "a3", "a2", "a1", "a0", "b7", "b6", "b5", "b4", "b3", "b2", "b1", "b0") 
+RETURNS ("altb", "aeqb", "agtb", "aeb7", "aeb6", "aeb5", "aeb4", "aeb3", "aeb2", "aeb1", "aeb0")
+END
+
+% 2X8MUX %
+BEGIN
+FUNCTION 2x8mux (sel, a7, a6, a5, a4, a3, a2, a1, a0, b7, b6, b5, b4, b3, b2, b1, b0) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1, y0)
+FUNCTION "2x8mux" ("sel", "a7", "a6", "a5", "a4", "a3", "a2", "a1", "a0", "b7", "b6", "b5", "b4", "b3", "b2", "b1", "b0") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1", "y0")
+END
+
+% 16CUDSLR %
+BEGIN
+FUNCTION 16cudslr (clk, clrn, setn, data, stct, dnup, ltrt) 
+RETURNS (q16, q15, q14, q13, q12, q11, q10, q9, q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "16cudslr" ("clk", "clrn", "setn", "data", "stct", "dnup", "ltrt") 
+RETURNS ("q16", "q15", "q14", "q13", "q12", "q11", "q10", "q9", "q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 16DMUX %
+BEGIN
+FUNCTION 16dmux (d, c, b, a) 
+RETURNS (q15, q14, q13, q12, q11, q10, q9, q8, q7, q6, q5, q4, q3, q2, q1, q0)
+FUNCTION "16dmux" ("d", "c", "b", "a") 
+RETURNS ("q15", "q14", "q13", "q12", "q11", "q10", "q9", "q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0")
+END
+
+% 16NDMUX %
+BEGIN
+FUNCTION 16ndmux (d, c, b, a) 
+RETURNS (qn15, qn14, qn13, qn12, qn11, qn10, qn9, qn8, qn7, qn6, qn5, qn4, qn3, qn2, qn1, qn0)
+FUNCTION "16ndmux" ("d", "c", "b", "a") 
+RETURNS ("qn15", "qn14", "qn13", "qn12", "qn11", "qn10", "qn9", "qn8", "qn7", "qn6", "qn5", "qn4", "qn3", "qn2", "qn1", "qn0")
+END
+
+% 21MUX %
+BEGIN
+FUNCTION 21mux (s, a, b) 
+RETURNS (y)
+FUNCTION "21mux" ("s", "a", "b") 
+RETURNS ("y")
+END
+
+% 161MUX %
+BEGIN
+FUNCTION 161mux (gn, sel3, sel2, sel1, sel0, in15, in14, in13, in12, in11, in10, in9, in8, in7, in6, in5, in4, in3, in2, in1, in0) 
+RETURNS (out)
+FUNCTION "161mux" ("gn", "sel3", "sel2", "sel1", "sel0", "in15", "in14", "in13", "in12", "in11", "in10", "in9", "in8", "in7", "in6", "in5", "in4", "in3", "in2", "in1", "in0") 
+RETURNS ("o")
+END
+
+% 7400 %
+BEGIN
+FUNCTION 7400 (2, 3) 
+RETURNS (1)
+FUNCTION "7400" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7402 %
+BEGIN
+FUNCTION 7402 (2, 3) 
+RETURNS (1)
+FUNCTION "7402" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7404 %
+BEGIN
+FUNCTION 7404 (2) 
+RETURNS (1)
+FUNCTION "7404" ("i") 
+RETURNS ("o")
+END
+
+% 7408 %
+BEGIN
+FUNCTION 7408 (2, 3) 
+RETURNS (1)
+FUNCTION "7408" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7410 %
+BEGIN
+FUNCTION 7410 (2, 3, 4) 
+RETURNS (1)
+FUNCTION "7410" ("i0", "i1", "i2") 
+RETURNS ("o")
+END
+
+% 7411 %
+BEGIN
+FUNCTION 7411 (2, 3, 4) 
+RETURNS (1)
+FUNCTION "7411" ("i0", "i1", "i2") 
+RETURNS ("o")
+END
+
+% 7420 %
+BEGIN
+FUNCTION 7420 (2, 3, 4, 5) 
+RETURNS (1)
+FUNCTION "7420" ("i0", "i1", "i2", "i3") 
+RETURNS ("o")
+END
+
+% 7421 %
+BEGIN
+FUNCTION 7421 (2, 3, 4, 5) 
+RETURNS (1)
+FUNCTION "7421" ("i0", "i1", "i2", "i3") 
+RETURNS ("o")
+END
+
+% 7423 %
+BEGIN
+FUNCTION 7423 (1a, 1b, 1c, 1d, 1g, 2a, 2b, 2c, 2d, 2g) 
+RETURNS (1y, 2y)
+FUNCTION "7423" ("a1", "b1", "c1", "d1", "g1", "a2", "b2", "c2", "d2", "g2") 
+RETURNS ("y1", "y2")
+END
+
+% 7425 %
+BEGIN
+FUNCTION 7425 (1a, 1b, 1c, 1d, 1g, 2a, 2b, 2c, 2d, 2g) 
+RETURNS (1y, 2y)
+FUNCTION "7425" ("a1", "b1", "c1", "d1", "g1", "a2", "b2", "c2", "d2", "g2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7427 %
+BEGIN
+FUNCTION 7427 (2, 3, 4) 
+RETURNS (1)
+FUNCTION "7427" ("i0", "i1", "i2") 
+RETURNS ("o")
+END
+
+% 7428 %
+BEGIN
+FUNCTION 7428 (a1, b1, a2, b2, a3, b3, a4, b4) 
+RETURNS (y1, y2, y3, y4)
+FUNCTION "7428" ("a1", "b1", "a2", "b2", "a3", "b3", "a4", "b4") 
+RETURNS ("y1n", "y2n", "y3n", "y4n")
+END
+
+% 7430 %
+BEGIN
+FUNCTION 7430 (2, 3, 4, 5, 6, 7, 8, 9) 
+RETURNS (1)
+FUNCTION "7430" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7") 
+RETURNS ("o")
+END
+
+% 7432 %
+BEGIN
+FUNCTION 7432 (2, 3) 
+RETURNS (1)
+FUNCTION "7432" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7437 %
+BEGIN
+FUNCTION 7437 (1a, 1b, 2a, 2b, 3a, 3b, 4a, 4b) 
+RETURNS (1y, 2y, 3y, 4y)
+FUNCTION "7437" ("a1", "b1", "a2", "b2", "a3", "b3", "a4", "b4") 
+RETURNS ("y1n", "y2n", "y3n", "y4n")
+END
+
+% 7440 %
+BEGIN
+FUNCTION 7440 (1a, 1b, 1c, 1d, 2a, 2b, 2c, 2d) 
+RETURNS (1y, 2y)
+FUNCTION "7440" ("a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7442 %
+BEGIN
+FUNCTION 7442 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "7442" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7443 %
+BEGIN
+FUNCTION 7443 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "7443" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7444 %
+BEGIN
+FUNCTION 7444 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "7444" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7445 %
+BEGIN
+FUNCTION 7445 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "7445" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7446 %
+BEGIN
+FUNCTION 7446 (ltn, rbin, d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "7446" ("ltn", "rbin", "d", "c", "b", "a", "binrbon") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 7447 %
+BEGIN
+FUNCTION 7447 (ltn, rbin, d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "7447" ("ltn", "rbin", "d", "c", "b", "a", "binrbon") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 7448 %
+BEGIN
+FUNCTION 7448 (ltn, rbin, d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "7448" ("ltn", "rbin", "di", "ci", "bi", "ai", "binrbon") 
+RETURNS ("a", "b", "c", "d", "e", "f", "g", "binrbon")
+END
+
+% 7449 %
+BEGIN
+FUNCTION 7449 (d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og)
+FUNCTION "7449" ("di", "ci", "bi", "ai", "bin") 
+RETURNS ("a", "b", "c", "d", "e", "f", "g")
+END
+
+% 7450 %
+BEGIN
+FUNCTION 7450 (1x, 1xn, 1a, 1b, 1c, 1d, 2a, 2b, 2c, 2d) 
+RETURNS (1yn, 2yn)
+FUNCTION "7450" ("x1", "x1n", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7451 %
+BEGIN
+FUNCTION 7451 (1a, 1b, 1c, 1d, 1e, 1f, 2a, 2b, 2c, 2d) 
+RETURNS (1yn, 2yn)
+FUNCTION "7451" ("a1", "b1", "c1", "d1", "e1", "f1", "a2", "b2", "c2", "d2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7452 %
+BEGIN
+FUNCTION 7452 (x, a, b, c, d, e, f, g, h, i) 
+RETURNS (y)
+FUNCTION "7452" ("x", "a", "b", "c", "d", "e", "f", "g", "h", "i") 
+RETURNS ("y")
+END
+
+% 7453 %
+BEGIN
+FUNCTION 7453 (xn, x, a, b, c, d, e, f, g, h) 
+RETURNS (yn)
+FUNCTION "7453" ("xn", "x", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("yn")
+END
+
+% 7454 %
+BEGIN
+FUNCTION 7454 (a, b, c, d, e, f, g, h, i, j) 
+RETURNS (yn)
+FUNCTION "7454" ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j") 
+RETURNS ("yn")
+END
+
+% 7455 %
+BEGIN
+FUNCTION 7455 (a, b, c, d, e, f, g, h) 
+RETURNS (yn)
+FUNCTION "7455" ("a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("yn")
+END
+
+% 7456 %
+BEGIN
+FUNCTION 7456 (clr, clkb, clka) 
+RETURNS (qc, qb, qa)
+FUNCTION "7456" ("clrn", "clkb", "clka") 
+RETURNS ("qc", "qb", "qa")
+END
+
+% 7457 %
+BEGIN
+FUNCTION 7457 (clrn, clkb, clka) 
+RETURNS (qc, qb, qa)
+FUNCTION "7457" ("clr", "clkb", "clka") 
+RETURNS ("qc", "qb", "qa")
+END
+
+% 7464 %
+BEGIN
+FUNCTION 7464 (a, b, c, d, e, f, g, h, i, j, k) 
+RETURNS (y)
+FUNCTION "7464" ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k") 
+RETURNS ("y")
+END
+
+% 7468 %
+BEGIN
+FUNCTION 7468 (1clk1, 1clk2, 1clrn, 2clk, 2clrn) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "7468" ("clka1", "clkb1", "clrn1", "clk2", "clrn2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 7469 %
+BEGIN
+FUNCTION 7469 (1clk1, 1clk2, 1clrn, 2clk, 2clrn) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "7469" ("clka1", "clkb1", "clrn1", "clk2", "clrn2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 7470 %
+BEGIN
+FUNCTION 7470 (prn, clrn, clk, j1, j2, jn, k1, k2, kn) 
+RETURNS (q, qn)
+FUNCTION "7470" ("prn", "clrn", "clk", "j1", "j2", "jn", "k1", "k2", "kn") 
+RETURNS ("q", "qn")
+END
+
+% 7471 %
+BEGIN
+FUNCTION 7471 (prn, clk, j1a, j1b, j2a, j2b, k1a, k1b, k2a, k2b) 
+RETURNS (q, qn)
+FUNCTION "7471" ("prn", "clk", "j1a", "j1b", "j2a", "j2b", "k1a", "k1b", "k2a", "k2b") 
+RETURNS ("q", "qn")
+END
+
+% 7472 %
+BEGIN
+FUNCTION 7472 (prn, clrn, clk, j1, j2, j3, k1, k2, k3) 
+RETURNS (q, qn)
+FUNCTION "7472" ("prn", "clrn", "clk", "j1", "j2", "j3", "k1", "k2", "k3") 
+RETURNS ("q", "qn")
+END
+
+% 7473 %
+BEGIN
+FUNCTION 7473 (1clrn, 1clk, 1j, 1k, 2clrn, 2clk, 2j, 2k) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "7473" ("clrn1", "clk1", "j1", "k1", "clrn2", "clk2", "j2", "k2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7474 %
+BEGIN
+FUNCTION 7474 (1prn, 1clrn, 1clk, 1d, 2prn, 2clrn, 2clk, 2d) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "7474" ("prn1", "clrn1", "clk1", "d1", "prn2", "clrn2", "clk2", "d2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7475 %
+BEGIN
+FUNCTION 7475 (1d, 2d, 3d, 4d, e12, e34) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "7475" ("d1", "d2", "d3", "d4", "e12", "e34") 
+RETURNS ("q1", "qn1", "q2", "qn2", "q3", "qn3", "q4", "qn4")
+END
+
+% 7476 %
+BEGIN
+FUNCTION 7476 (1prn, 1clrn, 1clk, 1j, 1k, 2prn, 2clrn, 2clk, 2j, 2k) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "7476" ("prn1", "clrn1", "clk1", "j1", "k1", "prn2", "clrn2", "clk2", "j2", "k2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7477 %
+BEGIN
+FUNCTION 7477 (1d, 2d, 3d, 4d, e12, e34) 
+RETURNS (1q, 2q, 3q, 4q)
+FUNCTION "7477" ("d1", "d2", "d3", "d4", "e12", "e34") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 7478 %
+BEGIN
+FUNCTION 7478 (clrn, 1prn, 1j, 1k, 2prn, 2j, 2k, clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "7478" ("clrn", "prn1", "j1", "k1", "prn2", "j2", "k2", "clk") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7480 %
+BEGIN
+FUNCTION 7480 (cn0, a1, a2, as, ac, b1, b2, bs, bc) 
+RETURNS (cn1n, sum, sumn)
+FUNCTION "7480" ("cn0", "a1", "a2", "as", "ac", "b1", "b2", "bs", "bc") 
+RETURNS ("cn1n", "sum", "sumn")
+END
+
+% 7482 %
+BEGIN
+FUNCTION 7482 (a2, a1, b2, b1, c0) 
+RETURNS (sum2, sum1, c2)
+FUNCTION "7482" ("a2", "a1", "b2", "b1", "c0") 
+RETURNS ("s2", "s1", "c2")
+END
+
+% 7483 %
+BEGIN
+FUNCTION 7483 (a4, a3, a2, a1, b4, b3, b2, b1, c0) 
+RETURNS (s4, s3, s2, s1, c4)
+FUNCTION "7483" ("a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1", "c0") 
+RETURNS ("s4", "s3", "s2", "s1", "c4")
+END
+
+% 7485 %
+BEGIN
+FUNCTION 7485 (a3, a2, a1, a0, b3, b2, b1, b0, agbi, albi, aebi) 
+RETURNS (agbo, albo, aebo)
+FUNCTION "7485" ("a3", "a2", "a1", "a0", "b3", "b2", "b1", "b0", "agbi", "albi", "aebi") 
+RETURNS ("agbo", "albo", "aebo")
+END
+
+% 7486 %
+BEGIN
+FUNCTION 7486 (2, 3) 
+RETURNS (1)
+FUNCTION "7486" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7487 %
+BEGIN
+FUNCTION 7487 (a4, a3, a2, a1, b, c) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "7487" ("a4", "a3", "a2", "a1", "b", "c") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 7490 %
+BEGIN
+FUNCTION 7490 (set9a, set9b, clra, clrb, clka, clkb) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "7490" ("set9a", "set9b", "clra", "clrb", "clka", "clkb") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 7491 %
+BEGIN
+FUNCTION 7491 (clk, a, b) 
+RETURNS (qh, qhn)
+FUNCTION "7491" ("clk", "a", "b") 
+RETURNS ("qh", "qhn")
+END
+
+% 7492 %
+BEGIN
+FUNCTION 7492 (clra, clrb, clka, clkb) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "7492" ("clra", "clrb", "clka", "clkb") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 7493 %
+BEGIN
+FUNCTION 7493 (clka, clkb, ro1, ro2) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "7493" ("clka", "clkb", "ro1", "ro2") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 7494 %
+BEGIN
+FUNCTION 7494 (p1a, p2a, p1b, p2b, p1c, p2c, p1d, p2d, pe1, pe2, clr, clk, ser) 
+RETURNS (out)
+FUNCTION "7494" ("p1a", "p2a", "p1b", "p2b", "p1c", "p2c", "p1d", "p2d", "pe1", "pe2", "clr", "clk", "ser") 
+RETURNS ("o")
+END
+
+% 7495 %
+BEGIN
+FUNCTION 7495 (mode, clkl, clkr, ser, d0, d1, d2, d3) 
+RETURNS (q0, q1, q2, q3)
+FUNCTION "7495" ("mode", "clkl", "clkr", "ser", "d0", "d1", "d2", "d3") 
+RETURNS ("q0", "q1", "q2", "q3")
+END
+
+% 7496 %
+BEGIN
+FUNCTION 7496 (clrn, pe, a, b, c, d, e, clk, ser) 
+RETURNS (qa, qb, qc, qd, qe)
+FUNCTION "7496" ("clrn", "pe", "a", "b", "c", "d", "e", "clk", "ser") 
+RETURNS ("qa", "qb", "qc", "qd", "qe")
+END
+
+% 7497 %
+BEGIN
+FUNCTION 7497 (clk, clr, enn, strbn, b5, b4, b3, b2, b1, b0, uni/cas) 
+RETURNS (y, zn, tcn)
+FUNCTION "7497" ("clk", "clr", "enn", "strbn", "b5", "b4", "b3", "b2", "b1", "b0", "unicas") 
+RETURNS ("y", "zn", "tcn")
+END
+
+% 7498 %
+BEGIN
+FUNCTION 7498 (clkn, wrdsl, a1, b1, c1, d1, a2, b2, c2, d2) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "7498" ("clkn", "wrdsl", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 7499 %
+BEGIN
+FUNCTION 7499 (mode, clk2, clk1, j, kn, a, b, c, d) 
+RETURNS (qa, qb, qc, qd, qdn)
+FUNCTION "7499" ("mode", "clk2", "clk1", "j", "kn", "a", "b", "c", "d") 
+RETURNS ("qa", "qb", "qc", "qd", "qdn")
+END
+
+% 74107 %
+BEGIN
+FUNCTION 74107 (1j, 1k, 1clrn, 1clk, 2j, 2k, 2clrn, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "74107" ("j1", "k1", "clrn1", "clk1", "j2", "k2", "clrn2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74109 %
+BEGIN
+FUNCTION 74109 (1prn, 1j, 1kn, 1clrn, 1clk, 2prn, 2j, 2kn, 2clrn, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "74109" ("prn1", "j1", "kn1", "clrn1", "clk1", "prn2", "j2", "kn2", "clrn2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74112 %
+BEGIN
+FUNCTION 74112 (1prn, 1j, 1k, 1clrn, 1clk, 2prn, 2j, 2k, 2clrn, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "74112" ("prn1", "j1", "k1", "clrn1", "clk1", "prn2", "j2", "k2", "clrn2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74113 %
+BEGIN
+FUNCTION 74113 (1prn, 1j, 1k, 1clk, 2prn, 2j, 2k, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "74113" ("prn1", "j1", "k1", "clk1", "prn2", "j2", "k2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74114 %
+BEGIN
+FUNCTION 74114 (1prn, 1j, 1k, 2prn, 2j, 2k, clrn, clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "74114" ("prn1", "j1", "k1", "prn2", "j2", "k2", "clrn", "clk") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74116 %
+BEGIN
+FUNCTION 74116 (1clrn, 2clrn, 1g1n, 1g2n, 2g1n, 2g2n, 1d4, 1d3, 1d2, 1d1, 2d4, 2d3, 2d2, 2d1) 
+RETURNS (1q4, 1q3, 1q2, 1q1, 2q4, 2q3, 2q2, 2q1)
+FUNCTION "74116" ("clrna", "clrnb", "g1na", "g2na", "g1nb", "g2nb", "da4", "da3", "da2", "da1", "db4", "db3", "db2", "db1") 
+RETURNS ("qa4", "qa3", "qa2", "qa1", "qb4", "qb3", "qb2", "qb1")
+END
+
+% 74133 %
+BEGIN
+FUNCTION 74133 (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) 
+RETURNS (1)
+FUNCTION "74133" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "i12") 
+RETURNS ("o")
+END
+
+% 74134 %
+BEGIN
+FUNCTION 74134 (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, oen) 
+RETURNS (1)
+FUNCTION "74134" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "oen") 
+RETURNS ("o")
+END
+
+% 74135 %
+BEGIN
+FUNCTION 74135 (1a, 1b, 12c, 2a, 2b, 3a, 3b, 34c, 4a, 4b) 
+RETURNS (1y, 2y, 3y, 4y)
+FUNCTION "74135" ("a1", "b1", "c12", "a2", "b2", "a3", "b3", "c34", "a4", "b4") 
+RETURNS ("y1", "y2", "y3", "y4")
+END
+
+% 74137 %
+BEGIN
+FUNCTION 74137 (gln, g1, g2n, c, b, a) 
+RETURNS (y0, y1, y2, y3, y4, y5, y6, y7)
+FUNCTION "74137" ("gln", "g1", "g2n", "c", "b", "a") 
+RETURNS ("y0", "y1", "y2", "y3", "y4", "y5", "y6", "y7")
+END
+
+% 74138 %
+BEGIN
+FUNCTION 74138 (g1, g2an, g2bn, c, b, a) 
+RETURNS (y0n, y1n, y2n, y3n, y4n, y5n, y6n, y7n)
+FUNCTION "74138" ("g1", "g2an", "g2bn", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n")
+END
+
+% 74139 %
+BEGIN
+FUNCTION 74139 (g1n, b1, a1, g2n, b2, a2) 
+RETURNS (y10n, y11n, y12n, y13n, y20n, y21n, y22n, y23n)
+FUNCTION "74139" ("g1n", "b1", "a1", "g2n", "b2", "a2") 
+RETURNS ("y10n", "y11n", "y12n", "y13n", "y20n", "y21n", "y22n", "y23n")
+END
+
+% 74143 %
+BEGIN
+FUNCTION 74143 (clk, clrn, strbn, pcein, scein, bin, rbin, dpi) 
+RETURNS (qd, qc, qb, qa, max, a, b, c, d, e, f, g, dpo, rbon)
+FUNCTION "74143" ("clk", "clrn", "strbn", "pcein", "scein", "bin", "rbin", "dpi") 
+RETURNS ("qd", "qc", "qb", "qa", "max", "a", "b", "c", "d", "e", "f", "g", "dpo", "rbon")
+END
+
+% 74145 %
+BEGIN
+FUNCTION 74145 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "74145" ("d", "c", "b", "a") 
+RETURNS ("o0n", "o1n", "o2n", "o3n", "o4n", "o5n", "o6n", "o7n", "o8n", "o9n")
+END
+
+% 74147 %
+BEGIN
+FUNCTION 74147 (1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n) 
+RETURNS (dn, cn, bn, an)
+FUNCTION "74147" ("i1n", "i2n", "i3n", "i4n", "i5n", "i6n", "i7n", "i8n", "i9n") 
+RETURNS ("dn", "cn", "bn", "an")
+END
+
+% 74148 %
+BEGIN
+FUNCTION 74148 (ein, 0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n) 
+RETURNS (a2n, a1n, a0n, gsn, eon)
+FUNCTION "74148" ("ein", "i0n", "i1n", "i2n", "i3n", "i4n", "i5n", "i6n", "i7n") 
+RETURNS ("a2n", "a1n", "a0n", "gsn", "eon")
+END
+
+% 74151 %
+BEGIN
+FUNCTION 74151 (c, b, a, d7, d6, d5, d4, d3, d2, d1, d0, gn) 
+RETURNS (y, wn)
+FUNCTION "74151" ("c", "b", "a", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "gn") 
+RETURNS ("y", "wn")
+END
+
+% 74153 %
+BEGIN
+FUNCTION 74153 (b, a, 1gn, 1c3, 1c2, 1c1, 1c0, 2gn, 2c3, 2c2, 2c1, 2c0) 
+RETURNS (1y, 2y)
+FUNCTION "74153" ("b", "a", "gna", "ca3", "ca2", "ca1", "ca0", "gnb", "cb3", "cb2", "cb1", "cb0")
+RETURNS ("ya", "yb")
+END
+
+% 74154 %
+BEGIN
+FUNCTION 74154 (g1n, g2n, d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n, o10n, o11n, o12n, o13n, o14n, o15n)
+FUNCTION "74154" ("g1n", "g2n", "d", "c", "b", "a") 
+RETURNS ("o0n", "o1n", "o2n", "o3n", "o4n", "o5n", "o6n", "o7n", "o8n", "o9n", "o10n", "o11n", "o12n", "o13n", "o14n", "o15n")
+END
+
+% 74155 %
+BEGIN
+FUNCTION 74155 (2cn, 1c, selb, sela, 2gn, 1gn) 
+RETURNS (2y0n, 2y1n, 2y2n, 2y3n, 1y0n, 1y1n, 1y2n, 1y3n)
+FUNCTION "74155" ("cbn", "ca", "selb", "sela", "gbn", "gan") 
+RETURNS ("yb0n", "yb1n", "yb2n", "yb3n", "ya0n", "ya1n", "ya2n", "ya3n")
+END
+
+% 74156 %
+BEGIN
+FUNCTION 74156 (2cn, 1c, selb, sela, 2gn, 1gn) 
+RETURNS (2y0n, 2y1n, 2y2n, 2y3n, 1y0n, 1y1n, 1y2n, 1y3n)
+FUNCTION "74156" ("cbn", "ca", "selb", "sela", "gbn", "gan") 
+RETURNS ("yb0n", "yb1n", "yb2n", "yb3n", "ya0n", "ya1n", "ya2n", "ya3n")
+END
+
+% 74157 %
+BEGIN
+FUNCTION 74157 (gn, sel, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "74157" ("gn", "sel", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 74158 %
+BEGIN
+FUNCTION 74158 (gn, sel, 1a, 2a, 3a, 4a, 1b, 2b, 3b, 4b) 
+RETURNS (1yn, 2yn, 3yn, 4yn)
+FUNCTION "74158" ("gn", "sel", "a1", "a2", "a3", "a4", "b1", "b2", "b3", "b4") 
+RETURNS ("y1n", "y2n", "y3n", "y4n")
+END
+
+% 74160 %
+BEGIN
+FUNCTION 74160 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "74160" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74161 %
+BEGIN
+FUNCTION 74161 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "74161" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74162 %
+BEGIN
+FUNCTION 74162 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "74162" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74163 %
+BEGIN
+FUNCTION 74163 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "74163" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74164 %
+BEGIN
+FUNCTION 74164 (clk, clrn, a, b) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh)
+FUNCTION "74164" ("clk", "clrn", "a", "b") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh")
+END
+
+% 74165 %
+BEGIN
+FUNCTION 74165 (clk, clkih, stld, ser, a, b, c, d, e, f, g, h) 
+RETURNS (qh, qhn)
+FUNCTION "74165" ("clk", "clkih", "stld", "ser", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("qh", "qhn")
+END
+
+% 74166 %
+BEGIN
+FUNCTION 74166 (clrn, stld, clkih, clk, ser, a, b, c, d, e, f, g, h) 
+RETURNS (qh)
+FUNCTION "74166" ("clrn", "stld", "clkih", "clk", "ser", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("qh")
+END
+
+% 74167 %
+BEGIN
+FUNCTION 74167 (clk, clr, enn, strbn, b3, b2, b1, b0, uni/cas, set9) 
+RETURNS (y, zn, eno)
+FUNCTION "74167" ("clk", "clr", "enn", "strbn", "b3", "b2", "b1", "b0", "unicas", "set9") 
+RETURNS ("y", "zn", "eno")
+END
+
+% 74168 %
+BEGIN
+FUNCTION 74168 (ldn, entn, enpn, u/dn, clk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "74168" ("ldn", "entn", "enpn", "udn", "clk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74169 %
+BEGIN
+FUNCTION 74169 (ldn, entn, enpn, u/dn, clk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "74169" ("ldn", "entn", "enpn", "udn", "clk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74171 %
+BEGIN
+FUNCTION 74171 (clrn, clk, d1, d2, d3, d4) 
+RETURNS (q1, qn1, q2, qn2, q3, qn3, q4, qn4)
+FUNCTION "74171" ("clrn", "clk", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "qn1", "q2", "qn2", "q3", "qn3", "q4", "qn4")
+END
+
+% 74172 %
+BEGIN
+FUNCTION 74172 (1grn, 2grn, 1r0, 1r1, 1r2, 2w/r0, 2w/r1, 2w/r2, 1w0, 1w1, 1w2, 1da, 1db, 2da, 2db, 1gwn, 2gwn, clk) 
+RETURNS (1qa, 1qb, 2qa, 2qb)
+FUNCTION "74172" ("grn_1", "grn_2", "r0_1", "r1_1", "r2_1", "wr0_2", "wr1_2", "wr2_2", "w0_1", "w1_1", "w2_1", "da_1", "db_1", "da_2", "db_2", "gwn_1", "gwn_2", "clk") 
+RETURNS ("qa_1", "qb_1", "qa_2", "qb_2")
+END
+
+% 74173 %
+BEGIN
+FUNCTION 74173 (clr, clk, mn, nn, g1n, g2n, 1d, 2d, 3d, 4d) 
+RETURNS ( 1q, 2q, 3q, 4q)
+FUNCTION "74173" ("clr", "clk", "mn", "nn", "g1n", "g2n", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 74174 %
+BEGIN
+FUNCTION 74174 (clrn, clk, 1d, 2d, 3d, 4d, 5d, 6d) 
+RETURNS (1q, 2q, 3q, 4q, 5q, 6q)
+FUNCTION "74174" ("clrn", "clk", "d1", "d2", "d3", "d4", "d5", "d6") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6")
+END
+
+% 74175 %
+BEGIN
+FUNCTION 74175 (clrn, clk, 1d, 2d, 3d, 4d) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "74175" ("clrn", "clk", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "qn1", "q2", "qn2", "q3", "qn3", "q4", "qn4")
+END
+
+% 74176 %
+BEGIN
+FUNCTION 74176 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74176" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74177 %
+BEGIN
+FUNCTION 74177 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74177" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74178 %
+BEGIN
+FUNCTION 74178 (st, ld, ser, clk, a, b, c, d) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "74178" ("st", "ld", "ser", "clk", "a", "b", "c", "d") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 74179 %
+BEGIN
+FUNCTION 74179 (clrn, st, ld, clk, ser, a, b, c, d) 
+RETURNS (qa, qb, qc, qd, qdn)
+FUNCTION "74179" ("clrn", "st", "ld", "clk", "ser", "a", "b", "c", "d") 
+RETURNS ("qa", "qb", "qc", "qd", "qdn")
+END
+
+% 74180 %
+BEGIN
+FUNCTION 74180 (a, b, c, d, e, f, g, h, evni, oddi) 
+RETURNS (evns, odds)
+FUNCTION "74180" ("a", "b", "c", "d", "e", "f", "g", "h", "evni", "oddi") 
+RETURNS ("evns", "odds")
+END
+
+% 74181 %
+BEGIN
+FUNCTION 74181 (s3, s2, s1, s0, m, cn, a3n, a2n, a1n, a0n, b3n, b2n, b1n, b0n) 
+RETURNS (gn, pn, f3n, f2n, f1n, f0n, aeqb, cn4)
+FUNCTION "74181" ("s3", "s2", "s1", "s0", "m", "cn", "a3n", "a2n", "a1n", "a0n", "b3n", "b2n", "b1n", "b0n") 
+RETURNS ("gn", "pn", "f3n", "f2n", "f1n", "f0n", "aeqb", "cn4")
+END
+
+% 74182 %
+BEGIN
+FUNCTION 74182 (pn3, pn2, pn1, pn0, gn3, gn2, gn1, gn0, ci) 
+RETURNS (pn, gn, cz, cy, cx)
+FUNCTION "74182" ("pn3", "pn2", "pn1", "pn0", "gn3", "gn2", "gn1", "gn0", "ci") 
+RETURNS ("pn", "gn", "cz", "cy", "cx")
+END
+
+% 74183 %
+BEGIN
+FUNCTION 74183 (1cn0, 1b, 1a, 2cn0, 2b, 2a) 
+RETURNS (1sum, 1cn1, 2sum, 2cn1)
+FUNCTION "74183" ("cn0_1", "b1", "a1", "cn0_2", "b2", "a2") 
+RETURNS ("sum1", "cn1_1", "sum2", "cn1_2")
+END
+
+% 74184 %
+BEGIN
+FUNCTION 74184 (e, d, c, b, a, gn) 
+RETURNS (y8, y7, y6, y5, y4, y3, y2, y1)
+FUNCTION "74184" ("e", "d", "c", "b", "a", "gn") 
+RETURNS ("y8", "y7", "y6", "y5", "y4", "y3", "y2", "y1")
+END
+
+% 74185 %
+BEGIN
+FUNCTION 74185 (e, d, c, b, a, gn) 
+RETURNS (y8, y7, y6, y5, y4, y3, y2, y1)
+FUNCTION "74185" ("e", "d", "c", "b", "a", "gn") 
+RETURNS ("y8", "y7", "y6", "y5", "y4", "y3", "y2", "y1")
+END
+
+% 74190 %
+BEGIN
+FUNCTION 74190 (clk, gn, ldn, dnup, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, mxmn, rcon)
+FUNCTION "74190" ("clk", "gn", "ldn", "dnup", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "mxmn", "rcon")
+END
+
+% 74191 %
+BEGIN
+FUNCTION 74191 (clk, gn, ldn, dnup, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, mxmn, rcon)
+FUNCTION "74191" ("clk", "gn", "ldn", "dnup", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "mxmn", "rcon")
+END
+
+% 74192 %
+BEGIN
+FUNCTION 74192 (clr, up, dn, ldn, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, con, bon)
+FUNCTION "74192" ("clr", "up", "dn", "ldn", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "con", "bon")
+END
+
+% 74193 %
+BEGIN
+FUNCTION 74193 (clr, up, dn, ldn, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, con, bon)
+FUNCTION "74193" ("clr", "up", "dn", "ldn", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "con", "bon")
+END
+
+% 74194 %
+BEGIN
+FUNCTION 74194 (clrn, s1, s0, clk, slsi, srsi, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74194" ("clrn", "s1", "s0", "clk", "slsi", "srsi", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74195 %
+BEGIN
+FUNCTION 74195 (clrn, st/ldn, clk, j, kn, d0, d1, d2, d3) 
+RETURNS (q0, q1, q2, q3, q3n)
+FUNCTION "74195" ("clrn", "stldn", "clk", "j", "kn", "d0", "d1", "d2", "d3") 
+RETURNS ("q0", "q1", "q2", "q3", "q3n")
+END
+
+% 74196 %
+BEGIN
+FUNCTION 74196 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74196" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74197 %
+BEGIN
+FUNCTION 74197 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74197" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74198 %
+BEGIN
+FUNCTION 74198 (clrn, s1, s0, clk, slsi, srsi, a, b, c, d, e, f, g, h) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh)
+FUNCTION "74198" ("clrn", "s1", "s0", "clk", "slsi", "srsi", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh")
+END
+
+% 74199 %
+BEGIN
+FUNCTION 74199 (clrn, st/ldn, clkih, clk, j, kn, d0, d1, d2, d3, d4, d5, d6, d7) 
+RETURNS (q0, q1, q2, q3, q4, q5, q6, q7)
+FUNCTION "74199" ("clrn", "stldn", "clkih", "clk", "j", "kn", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7") 
+RETURNS ("q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7")
+END
+
+% 74240 %
+BEGIN
+FUNCTION 74240 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "74240" ("gn1", "a11", "a12", "a13", "a14", "gn2", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74241 %
+BEGIN
+FUNCTION 74241 (1gn, 1a1, 1a2, 1a3, 1a4, 2g, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "74241" ("gn1", "a11", "a12", "a13", "a14", "g2", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74244 %
+BEGIN
+FUNCTION 74244 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "74244" ("gn1", "a11", "a12", "a13", "a14", "gn2", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74246 %
+BEGIN
+FUNCTION 74246 (ltn, rbin, bin, d, c, b, a) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "74246" ("ltn", "rbin", "binrbon", "d", "c", "b", "a") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 74247 %
+BEGIN
+FUNCTION 74247 (ltn, rbin, bin, d, c, b, a) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "74247" ("ltn", "rbin", "binrbon", "d", "c", "b", "a") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 74248 %
+BEGIN
+FUNCTION 74248 (ltn, rbin, bin, d, c, b, a) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "74248" ("ltn", "rbin", "binrbon", "d", "ci", "bi", "ai") 
+RETURNS ("a", "b", "c", "d", "e", "f", "g", "binrbon")
+END
+
+% 74251 %
+BEGIN
+FUNCTION 74251 (c, b, a, d7, d6, d5, d4, d3, d2, d1, d0, gn) 
+RETURNS (y, wn)
+FUNCTION "74251" ("c", "b", "a", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "gn") 
+RETURNS ("y", "wn")
+END
+
+% 74253 %
+BEGIN
+FUNCTION 74253 (b, a, 1gn, 1c0, 1c1, 1c2, 1c3, 2gn, 2c0, 2c1, 2c2, 2c3) 
+RETURNS (1y, 2y)
+FUNCTION "74253" ("b", "a", "gan", "ca0", "ca1", "ca2", "ca3", "gbn", "cb0", "cb1", "cb2", "cb3") 
+RETURNS ("ya", "yb")
+END
+
+% 74257 %
+BEGIN
+FUNCTION 74257 (gn, sel, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "74257" ("gn", "sel", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 74258 %
+BEGIN
+FUNCTION 74258 (gn, sel, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (yn4, yn3, yn2, yn1)
+FUNCTION "74258" ("gn", "sel", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("yn4", "yn3", "yn2", "yn1")
+END
+
+% 74259 %
+BEGIN
+FUNCTION 74259 (clrn, gn, s2, s1, s0, data) 
+RETURNS (q7, q6, q5, q4, q3, q2, q1, q0)
+FUNCTION "74259" ("clrn", "gn", "s2", "s1", "s0", "data") 
+RETURNS ("q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0")
+END
+
+% 74260 %
+BEGIN
+FUNCTION 74260 (a0, a1, a2, a3, a4, b0, b1, b2, b3, b4) 
+RETURNS (ayn, byn)
+FUNCTION "74260" ("a0", "a1", "a2", "a3", "a4", "b0", "b1", "b2", "b3", "b4") 
+RETURNS ("ayn", "byn")
+END
+
+% 74261 %
+BEGIN
+FUNCTION 74261 (b4, b3, b2, b1, b0, m2, m1, m0, g) 
+RETURNS (q4n, q3, q2, q1, q0)
+FUNCTION "74261" ("b4", "b3", "b2", "b1", "b0", "m2", "m1", "m0", "g") 
+RETURNS ("q4n", "q3", "q2", "q1", "q0")
+END
+
+% 74265 %
+BEGIN
+FUNCTION 74265 (1a, 2a, 2b, 3a, 3b, 4a) 
+RETURNS (1w, 1yn, 2w, 2yn, 3w, 3yn, 4w, 4yn)
+FUNCTION "74265" ("a1", "a2", "b2", "a3", "b3", "a4") 
+RETURNS ("w1", "y1n", "w2", "y2n", "w3", "y3n", "w4", "y4n")
+END
+
+% 74273 %
+BEGIN
+FUNCTION 74273 (clrn, clk, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "74273" ("clrn", "clk", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74276 %
+BEGIN
+FUNCTION 74276 (prn, clrn, 1j, 1kn, 1clk, 2j, 2kn, 2clk, 3j, 3kn, 3clk, 4j, 4kn, 4clk) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "74276" ("prn", "clrn", "j1", "k1n", "clk1", "j2", "k2n", "clk2", "j3", "k3n", "clk3", "j4", "k4n", "clk4") 
+RETURNS ("q1", "q1n", "q2", "q2n", "q3", "q3n", "q4", "q4n")
+END
+
+% 74278 %
+BEGIN
+FUNCTION 74278 (p0, g, d4, d3, d2, d1) 
+RETURNS (y4, y3, y2, y1, p1)
+FUNCTION "74278" ("p0", "g", "d4", "d3", "d2", "d1") 
+RETURNS ("y4", "y3", "y2", "y1", "p1")
+END
+
+% 74279 %
+BEGIN
+FUNCTION 74279 (s11n, s12n, r1n, s2n, r2n, s31n, s32n, r3n, s4n, r4n) 
+RETURNS (q4, q3, q2, q1)
+FUNCTION "74279" ("s11n", "s12n", "r1n", "s2n", "r2n", "s31n", "s32n", "r3n", "s4n", "r4n") 
+RETURNS ("q4", "q3", "q2", "q1")
+END
+
+% 74280 %
+BEGIN
+FUNCTION 74280 (a, b, c, d, e, f, g, h, i) 
+RETURNS (even, odd)
+FUNCTION "74280" ("a", "b", "c", "d", "e", "f", "g", "h", "i") 
+RETURNS ("even", "odd")
+END
+
+% 74283 %
+BEGIN
+FUNCTION 74283 (a4, a3, a2, a1, b4, b3, b2, b1, cin) 
+RETURNS (cout, sum4, sum3, sum2, sum1)
+FUNCTION "74283" ("a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1", "cin") 
+RETURNS ("cout", "sum4", "sum3", "sum2", "sum1")
+END
+
+% 74284 %
+BEGIN
+FUNCTION 74284 (gan, gbn, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y8, y7, y6, y5)
+FUNCTION "74284" ("gan", "gbn", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y8", "y7", "y6", "y5")
+END
+
+% 74285 %
+BEGIN
+FUNCTION 74285 (gan, gbn, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "74285" ("gan", "gbn", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 74290 %
+BEGIN
+FUNCTION 74290 (clka, clkb, clra, clrb, set9a, set9b) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74290" ("clka", "clkb", "clra", "clrb", "set9a", "set9b") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74292 %
+BEGIN
+FUNCTION 74292 (clk1, clk2, clrn, e, d, c, b, a) 
+RETURNS (q, tp1, tp2, tp3)
+FUNCTION "74292" ("clk1", "clk2", "clrn", "e", "d", "c", "b", "a") 
+RETURNS ("q", "tp1", "tp2", "tp3")
+END
+
+% 74293 %
+BEGIN
+FUNCTION 74293 (clka, clkb, clra, clrb) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "74293" ("clka", "clkb", "clra", "clrb") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74294 %
+BEGIN
+FUNCTION 74294 (clk1, clk2, clrn, d, c, b, a) 
+RETURNS (q, tp)
+FUNCTION "74294" ("clk1", "clk2", "clrn", "d", "c", "b", "a") 
+RETURNS ("q", "tp")
+END
+
+% 74295 %
+BEGIN
+FUNCTION 74295 (oe, ld/shn, clk, ser, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0)
+FUNCTION "74295" ("oe", "ldshn", "clk", "ser", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0")
+END
+
+% 74297 %
+BEGIN
+FUNCTION 74297 (kclk, d/upn, enctr, d, c, b, a, idclk, phase_a1, phase_b, phase_a2) 
+RETURNS (idout, ecpd, xorpd)
+FUNCTION "74297" ("kclk", "dnup", "enctr", "d", "c", "b", "a", "idclk", "phase_a1", "phase_b", "phase_a2") 
+RETURNS ("idout", "ecpd", "xorpd")
+END
+
+% 74298 %
+BEGIN
+FUNCTION 74298 (wrsl, clkn, a1, b1, c1, d1, a2, b2, c2, d2) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "74298" ("wrsl", "clkn", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 74299 %
+BEGIN
+FUNCTION 74299 (clrn, s1, s0, g1n, g2n, clk, sr, sl) 
+RETURNS (a/qa, b/qb, c/qc, d/qd, e/qe, f/qf, g/qg, h/qh, qa2, qh2)
+FUNCTION "74299" ("clrn", "s1", "s0", "g1n", "g2n", "clk", "sr", "sl") 
+RETURNS ("aqa", "bqb", "cqc", "dqd", "eqe", "fqf", "gqg", "hqh", "qa2", "qh2")
+END
+
+% 74348 %
+BEGIN
+FUNCTION 74348 (ei, d0, d1, d2, d3, d4, d5, d6, d7) 
+RETURNS (eo, gs, a2, a1, a0)
+FUNCTION "74348" ("ei", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7") 
+RETURNS ("eo", "gs", "a2", "a1", "a0")
+END
+
+% 74350 %
+BEGIN
+FUNCTION 74350 (oen, s0, s1, d-3, d-2, d-1, d0, d1, d2, d3) 
+RETURNS (y0, y1, y2, y3)
+FUNCTION "74350" ("oen", "s0", "s1", "d_3", "d_2", "d_1", "d0", "d1", "d2", "d3") 
+RETURNS ("y0", "y1", "y2", "y3")
+END
+
+% 74352 %
+BEGIN
+FUNCTION 74352 (b, a, 1gn, 1c0, 1c1, 1c2, 1c3, 2gn, 2c0, 2c1, 2c2, 2c3) 
+RETURNS (1yn, 2yn)
+FUNCTION "74352" ("b", "a", "gan", "ca0", "ca1", "ca2", "ca3", "gbn", "cb0", "cb1", "cb2", "cb3") 
+RETURNS ("yan", "ybn")
+END
+
+% 74353 %
+BEGIN
+FUNCTION 74353 (b, a, 1gn, 1c0, 1c1, 1c2, 1c3, 2gn, 2c0, 2c1, 2c2, 2c3) 
+RETURNS (1yn, 2yn)
+FUNCTION "74353" ("b", "a", "gan", "ca0", "ca1", "ca2", "ca3", "gbn", "cb0", "cb1", "cb2", "cb3") 
+RETURNS ("yan", "ybn")
+END
+
+% 74354 %
+BEGIN
+FUNCTION 74354 (gn1, gn2, g3, s2, s1, s0, scn, dcn, d7, d6, d5, d4, d3, d2, d1, d0) 
+RETURNS (y, wn)
+FUNCTION "74354" ("gn1", "gn2", "g3", "s2", "s1", "s0", "scn", "dcn", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0") 
+RETURNS ("y", "wn")
+END
+
+% 74356 %
+BEGIN
+FUNCTION 74356 (gn1, gn2, g3, s2, s1, s0, scn, clk, d7, d6, d5, d4, d3, d2, d1, d0) 
+RETURNS (y, wn)
+FUNCTION "74356" ("gn1", "gn2", "g3", "s2", "s1", "s0", "scn", "clk", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0") 
+RETURNS ("y", "wn")
+END
+
+% 74365 %
+BEGIN
+FUNCTION 74365 (gn1, gn2, a1, a2, a3, a4, a5, a6) 
+RETURNS (y1, y2, y3, y4, y5, y6)
+FUNCTION "74365" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6")
+END
+
+% 74366 %
+BEGIN
+FUNCTION 74366 (gn1, gn2, a1, a2, a3, a4, a5, a6)
+RETURNS (yn1, yn2, yn3, yn4, yn5, yn6)
+FUNCTION "74366" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6") 
+RETURNS ("yn1", "yn2", "yn3", "yn4", "yn5", "yn6")
+END
+
+% 74367 %
+BEGIN
+FUNCTION 74367 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2)
+FUNCTION "74367" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22")
+END
+
+% 74368 %
+BEGIN
+FUNCTION 74368 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2) 
+RETURNS (1yn1, 1yn2, 1yn3, 1yn4, 2yn1, 2yn2)
+FUNCTION "74368" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22") 
+RETURNS ("y1n1", "y1n2", "y1n3", "y1n4", "y2n1", "y2n2")
+END
+
+% 74373 %
+BEGIN
+FUNCTION 74373 (oen, g, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "74373" ("oen", "g", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74374 %
+BEGIN
+FUNCTION 74374 (clk, oen, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "74374" ("clk", "oen", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74375 %
+BEGIN
+FUNCTION 74375 (1d, 2d, 3d, 4d, e12, e34) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "74375" ("d1", "d2", "d3", "d4", "e12", "e34") 
+RETURNS ("q1", "q1n", "q2", "q2n", "q3", "q3n", "q4", "q4n")
+END
+
+% 74376 %
+BEGIN
+FUNCTION 74376 (clk, clrn, 1j, 1kn, 2j, 2kn, 3j, 3kn, 4j, 4kn) 
+RETURNS (1q, 2q, 3q, 4q)
+FUNCTION "74376" ("clk", "clrn", "j1", "k1n", "j2", "k2n", "j3", "k3n", "j4", "k4n") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 74377 %
+BEGIN
+FUNCTION 74377 (en, clk, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "74377" ("enn", "clk", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74378 %
+BEGIN
+FUNCTION 74378 (en, clk, d6, d5, d4, d3, d2, d1) 
+RETURNS (q6, q5, q4, q3, q2, q1)
+FUNCTION "74378" ("enn", "clk", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74379 %
+BEGIN
+FUNCTION 74379 (en, clk, d4, d3, d2, d1) 
+RETURNS (q4, q3, q2, q1, qn4, qn3, qn2, qn1)
+FUNCTION "74379" ("en", "clk", "d4", "d3", "d2", "d1") 
+RETURNS ("q4", "q3", "q2", "q1", "qn4", "qn3", "qn2", "qn1")
+END
+
+% 74381 %
+BEGIN
+FUNCTION 74381 (s2, s1, s0, a3, a2, a1, a0, b3, b2, b1, b0, cin) 
+RETURNS (pn, gn, f3, f2, f1, f0)
+FUNCTION "74381" ("s2", "s1", "s0", "a3", "a2", "a1", "a0", "b3", "b2", "b1", "b0", "cin") 
+RETURNS ("pn", "gn", "f3", "f2", "f1", "f0")
+END
+
+% 74382 %
+BEGIN
+FUNCTION 74382 (s2, s1, s0, a3, a2, a1, a0, b3, b2, b1, b0, cin) 
+RETURNS (ovr, cn4, f3, f2, f1, f0)
+FUNCTION "74382" ("s2", "s1", "s0", "a3", "a2", "a1", "a0", "b3", "b2", "b1", "b0", "cin") 
+RETURNS ("ovr", "cn4", "f3", "f2", "f1", "f0")
+END
+
+% 74385 %
+BEGIN
+FUNCTION 74385 (clrn, 1s/an, 1a, 1b, 2s/an, 2a, 2b, 3s/an, 3a, 3b, 4s/an, 4a, 4b, clk) 
+RETURNS (1s, 2s, 3s, 4s)
+FUNCTION "74385" ("clrn", "s1an", "a1", "b1", "s2an", "a2", "b2", "s3an", "a3", "b3", "s4an", "a4", "b4", "clk") 
+RETURNS ("s1", "s2", "s3", "s4")
+END
+
+% 74386 %
+BEGIN
+FUNCTION 74386 (a1, a2, a3, a4, b1, b2, b3, b4) 
+RETURNS (y1, y2, y3, y4)
+FUNCTION "74386" ("a1", "a2", "a3", "a4", "b1", "b2", "b3", "b4") 
+RETURNS ("y1", "y2", "y3", "y4")
+END
+
+% 74390 %
+BEGIN
+FUNCTION 74390 (1clr, 1clka, 1clkb, 2clr, 2clka, 2clkb) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "74390" ("clr1", "clka1", "clkb1", "clr2", "clka2", "clkb2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 74393 %
+BEGIN
+FUNCTION 74393 (a1, clr1, a2, clr2) 
+RETURNS (q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d)
+FUNCTION "74393" ("a1", "clr1", "a2", "clr2") 
+RETURNS ("q1a", "q1b", "q1c", "q1d", "q2a", "q2b", "q2c", "q2d")
+END
+
+% 74395 %
+BEGIN
+FUNCTION 74395 (clrn, ld/shn, clk, ser, d1, d2, d3, d4, oen) 
+RETURNS (q1, q2, q3, q4, q4b)
+FUNCTION "74395" ("clrn", "ldshn", "clk", "ser", "d1", "d2", "d3", "d4", "oen") 
+RETURNS ("q1", "q2", "q3", "q4", "q4b")
+END
+
+% 74396 %
+BEGIN
+FUNCTION 74396 (strbn, clk, d1, d2, d3, d4) 
+RETURNS (1q1, 1q2, 1q3, 1q4, 2q1, 2q2, 2q3, 2q4)
+FUNCTION "74396" ("strbn", "clk", "d1", "d2", "d3", "d4") 
+RETURNS ("q11", "q12", "q13", "q14", "q21", "q22", "q23", "q24")
+END
+
+% 74398 %
+BEGIN
+FUNCTION 74398 (sel, a1, b1, c1, d1, a2, b2, c2, d2, clk) 
+RETURNS (qa, qan, qb, qbn, qc, qcn, qd, qdn)
+FUNCTION "74398" ("sel", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2", "clk") 
+RETURNS ("qa", "qan", "qb", "qbn", "qc", "qcn", "qd", "qdn")
+END
+
+% 74399 %
+BEGIN
+FUNCTION 74399 (sel, a1, b1, c1, d1, a2, b2, c2, d2, clk) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "74399" ("sel", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2", "clk") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 74445 %
+BEGIN
+FUNCTION 74445 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "74445" ("d", "c", "b", "a") 
+RETURNS ("o0n", "o1n", "o2n", "o3n", "o4n", "o5n", "o6n", "o7n", "o8n", "o9n")
+END
+
+% 74465 %
+BEGIN
+FUNCTION 74465 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (y1, y2, y3, y4, y5, y6, y7, y8)
+FUNCTION "74465" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8")
+END
+
+% 74466 %
+BEGIN
+FUNCTION 74466 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (yn1, yn2, yn3, yn4, yn5, yn6, yn7, yn8)
+FUNCTION "74466" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("yn1", "yn2", "yn3", "yn4", "yn5", "yn6", "yn7", "yn8")
+END
+
+% 74467 %
+BEGIN
+FUNCTION 74467 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "74467" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74468 %
+BEGIN
+FUNCTION 74468 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1yn1, 1yn2, 1yn3, 1yn4, 2yn1, 2yn2, 2yn3, 2yn4)
+FUNCTION "74468" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22", "a23", "a24") 
+RETURNS ("y1n1", "y1n2", "y1n3", "y1n4", "y2n1", "y2n2", "y2n3", "y2n4")
+END
+
+% 74490 %
+BEGIN
+FUNCTION 74490 (1set9, 1clr, 1clk, 2set9, 2clr, 2clk) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "74490" ("set91", "clr1", "clk1", "set92", "clr2", "clk2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 74518 %
+BEGIN
+FUNCTION 74518 (p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0, gn) 
+RETURNS (pq)
+FUNCTION "74518" ("p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0", "gn") 
+RETURNS ("pq")
+END
+
+% 74540 %
+BEGIN
+FUNCTION 74540 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (yn1, yn2, yn3, yn4, yn5, yn6, yn7, yn8)
+FUNCTION "74540" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("yn1", "yn2", "yn3", "yn4", "yn5", "yn6", "yn7", "yn8")
+END
+
+% 74541 %
+BEGIN
+FUNCTION 74541 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (y1, y2, y3, y4, y5, y6, y7, y8)
+FUNCTION "74541" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8")
+END
+
+% 74548 %
+BEGIN
+FUNCTION 74548 (clk, clkenn1, clkenn2, insel, d7, d6, d5, d4, d3, d2, d1, d0, outsel, oen) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1, y0)
+FUNCTION "74548" ("clk", "clkenn1", "clkenn2", "insel", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "outsel", "oen") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1", "y0")
+END
+
+% 74549 %
+BEGIN
+FUNCTION 74549 (g, g1n, g2n, insel, d7, d6, d5, d4, d3, d2, d1, d0, outsel, oen) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1, y0)
+FUNCTION "74549" ("g", "g1n", "g2n", "insel", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "outsel", "oen") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1", "y0")
+END
+
+% 74568 %
+BEGIN
+FUNCTION 74568 (clk, entn, enpn, aclrn, sclrn, u/dn, ldn, d3, d2, d1, d0, oen) 
+RETURNS (q3, q2, q1, q0, rcon, ccon)
+FUNCTION "74568" ("clk", "entn", "enpn", "aclrn", "sclrn", "udn", "ldn", "d3", "d2", "d1", "d0", "oen") 
+RETURNS ("q3", "q2", "q1", "q0", "rcon", "ccon")
+END
+
+% 74569 %
+BEGIN
+FUNCTION 74569 (clk, entn, enpn, aclrn, sclrn, u/dn, ldn, d3, d2, d1, d0, oen) 
+RETURNS (q3, q2, q1, q0, rcon, ccon)
+FUNCTION "74569" ("clk", "entn", "enpn", "aclrn", "sclrn", "udn", "ldn", "d3", "d2", "d1", "d0", "oen") 
+RETURNS ("q3", "q2", "q1", "q0", "rcon", "ccon")
+END
+
+% 74589 %
+BEGIN
+FUNCTION 74589 (oen, srclk, ser, srldn, rclk, d0, d1, d2, d3, d4, d5, d6, d7) 
+RETURNS (qhn)
+FUNCTION "74589" ("oen", "srclk", "ser", "srldn", "rclk", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7") 
+RETURNS ("qhn")
+END
+
+% 74590 %
+BEGIN
+FUNCTION 74590 (gn, cclrn, ccken, cclk, rclk) 
+RETURNS (qh, qg, qf, qe, qd, qc, qb, qa, rcon)
+FUNCTION "74590" ("gn", "cclrn", "ccken", "cclk", "rclk") 
+RETURNS ("qh", "qg", "qf", "qe", "qd", "qc", "qb", "qa", "rcon")
+END
+
+% 74592 %
+BEGIN
+FUNCTION 74592 (cclrn, cloadn, rclk, ccken, cclk, h, g, f, e, d, c, b, a) 
+RETURNS (rcon)
+FUNCTION "74592" ("cclrn", "cloadn", "rclk", "ccken", "cclk", "h", "g", "f", "e", "d", "c", "b", "a") 
+RETURNS ("rcon")
+END
+
+% 74594 %
+BEGIN
+FUNCTION 74594 (srclrn, rclrn, srclk, rclk, ser) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh, qhn)
+FUNCTION "74594" ("srclrn", "rclrn", "srclk", "rclk", "ser") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh", "qhn")
+END
+
+% 74595 %
+BEGIN
+FUNCTION 74595 (gn, srclrn, srclk, rclk, ser) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh, qhn)
+FUNCTION "74595" ("gn", "srclrn", "srclk", "rclk", "ser") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh", "qhn")
+END
+
+% 74597 %
+BEGIN
+FUNCTION 74597 (srclrn, srldn, rclk, d7, d6, d5, d4, d3, d2, d1, d0, srclk, ser) 
+RETURNS (qhn)
+FUNCTION "74597" ("srclrn", "srldn", "rclk", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "srclk", "ser") 
+RETURNS ("qhn")
+END
+
+% 74604 %
+BEGIN
+FUNCTION 74604 (clk, sel, a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8) 
+RETURNS (y1, y2, y3, y4, y5, y6, y7, y8)
+FUNCTION "74604" ("clk", "sel", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8")
+END
+
+% 74630 %
+BEGIN
+FUNCTION 74630 (s1, s0, db15, db14, db13, db12, db11, db10, db9, db8, db7, db6, db5, db4, db3, db2, db1, db0, cb5, cb4, cb3, cb2, cb1, cb0) 
+RETURNS (dbo15, dbo14, dbo13, dbo12, dbo11, dbo10, dbo9, dbo8, dbo7, dbo6, dbo5, dbo4, dbo3, dbo2, dbo1, dbo0,  cbo5, cbo4, cbo3, cbo2, cbo1, cbo0, sef, def)
+FUNCTION "74630" ("s1", "s0", "db15", "db14", "db13", "db12", "db11", "db10", "db9", "db8", "db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0", "cb5", "cb4", "cb3", "cb2", "cb1", "cb0") 
+RETURNS ("db15", "db14", "db13", "db12", "db11", "db10", "db9", "db8", "db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0",  "cb5", "cb4", "cb3", "cb2", "cb1", "cb0", "sef", "def")
+END
+
+% 74636 %
+BEGIN
+FUNCTION 74636 (s1, s0, db7, db6, db5, db4, db3, db2, db1, db0, cb4, cb3, cb2, cb1, cb0) 
+RETURNS (dbo7, dbo6, dbo5, dbo4, dbo3, dbo2, dbo1, dbo0, cbo4, cbo3, cbo2, cbo1, cbo0, sef, def)
+FUNCTION "74636" ("s1", "s0", "db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0", "cb4", "cb3", "cb2", "cb1", "cb0") 
+RETURNS ("db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0", "cb4", "cb3", "cb2", "cb1", "cb0", "sef", "def")
+END
+
+% 74668 %
+BEGIN
+FUNCTION 74668 (clk, entn, enpn, u/dn, ldn, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "74668" ("clk", "entn", "enpn", "udn", "ldn", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74669 %
+BEGIN
+FUNCTION 74669 (clk, entn, enpn, u/dn, ldn, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "74669" ("clk", "entn", "enpn", "udn", "ldn", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74670 %
+BEGIN
+FUNCTION 74670 (wb, wa, gwn, rb, ra, grn, d1, d2, d3, d4) 
+RETURNS (q1, q2, q3, q4)
+FUNCTION "74670" ("wb", "wa", "gwn", "rb", "ra", "grn", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 74671 %
+BEGIN
+FUNCTION 74671 (gn, r/sn, srclrn, s1, s0, srclk, serl, serr, a, b, c, d, rclk) 
+RETURNS (qa, qb, qc, qd, casc)
+FUNCTION "74671" ("gn", "rsn", "srclrn", "s1", "s0", "srclk", "serl", "serr", "a", "b", "c", "d", "rclk") 
+RETURNS ("qa", "qb", "qc", "qd", "casc")
+END
+
+% 74672 %
+BEGIN
+FUNCTION 74672 (gn, r/sn, srclrn, s1, s0, srclk, serl, serr, a, b, c, d, rclk) 
+RETURNS (qa, qb, qc, qd, casc)
+FUNCTION "74672" ("gn", "rsn", "srclrn", "s1", "s0", "srclk", "serl", "serr", "a", "b", "c", "d", "rclk") 
+RETURNS ("qa", "qb", "qc", "qd", "casc")
+END
+
+% 74673 %
+BEGIN
+FUNCTION 74673 (csn, r/wn, srclk, stclrn, mode, ser) 
+RETURNS (y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, q15)
+FUNCTION "74673" ("csn", "rwn", "srclk", "stclrn", "mode", "ser") 
+RETURNS ("y0", "y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8", "y9", "y10", "y11", "y12", "y13", "y14", "y15", "q15")
+END
+
+% 74674 %
+BEGIN
+FUNCTION 74674 (csn, r/wn, clk, mode, ser, p15, p14, p13, p12, p11, p10, p9, p8, p7, p6, p5, p4, p3, p2, p1, p0) 
+RETURNS (q15)
+FUNCTION "74674" ("csn", "rwn", "clk", "mode", "ser", "p15", "p14", "p13", "p12", "p11", "p10", "p9", "p8", "p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0") 
+RETURNS ("q15")
+END
+
+% 74684 %
+BEGIN
+FUNCTION 74684 (p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0) 
+RETURNS (equaln, p_gr_qn)
+FUNCTION "74684" ("p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0") 
+RETURNS ("equaln", "p_gr_qn")
+END
+
+% 74686 %
+BEGIN
+FUNCTION 74686 (g1n, g2n, p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0) 
+RETURNS (equaln, p_gr_qn)
+FUNCTION "74686" ("g1n", "g2n", "p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0") 
+RETURNS ("equaln", "p_gr_qn")
+END
+
+% 74688 %
+BEGIN
+FUNCTION 74688 (gn, p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0) 
+RETURNS (equaln)
+FUNCTION "74688" ("gn", "p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0") 
+RETURNS ("equaln")
+END
+
+% 74690 %
+BEGIN
+FUNCTION 74690 (gn, cclrn, ldn, enp, ent, rclrn, rclk, r/cn, cclk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, rco)
+FUNCTION "74690" ("gn", "cclrn", "ldn", "enp", "ent", "rclrn", "rclk", "rcn", "cclk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "rco")
+END
+
+% 74691 %
+BEGIN
+FUNCTION 74691 (gn, cclrn, ldn, enp, ent, rclrn, rclk, r/cn, cclk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, rco)
+FUNCTION "74691" ("gn", "cclrn", "ldn", "enp", "ent", "rclrn", "rclk", "rcn", "cclk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "rco")
+END
+
+% 74693 %
+BEGIN
+FUNCTION 74693 (gn, cclrn, ldn, enp, ent, rclrn, rclk, r/cn, cclk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, rco)
+FUNCTION "74693" ("gn", "cclrn", "ldn", "enp", "ent", "rclrn", "rclk", "rcn", "cclk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "rco")
+END
+
+% 74696 %
+BEGIN
+FUNCTION 74696 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "74696" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74697 %
+BEGIN
+FUNCTION 74697 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "74697" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74698 %
+BEGIN
+FUNCTION 74698 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "74698" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74699 %
+BEGIN
+FUNCTION 74699 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "74699" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74821 %
+BEGIN
+FUNCTION 74821 (oen, clk, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "74821" ("oen", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10")
+END
+
+% 74822 %
+BEGIN
+FUNCTION 74822 (oen, clk, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9, dn10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "74822" ("oen", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9", "qn10")
+END
+
+% 74823 %
+BEGIN
+FUNCTION 74823 (oen, clrn, clkenn, clk, d1, d2, d3, d4, d5, d6, d7, d8, d9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "74823" ("oen", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9")
+END
+
+% 74824 %
+BEGIN
+FUNCTION 74824 (oen, clrn, clkenn, clk, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "74824" ("oen", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9")
+END
+
+% 74825 %
+BEGIN
+FUNCTION 74825 (oe1n, oe2n, oe3n, clrn, clkenn, clk, d1, d2, d3, d4, d5, d6, d7, d8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "74825" ("oe1n", "oe2n", "oe3n", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8")
+END
+
+% 74826 %
+BEGIN
+FUNCTION 74826 (oe1n, oe2n, oe3n, clrn, clkenn, clk, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "74826" ("oe1n", "oe2n", "oe3n", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8")
+END
+
+% 74841 %
+BEGIN
+FUNCTION 74841 (oen, c, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "74841" ("oen", "c", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10")
+END
+
+% 74842 %
+BEGIN
+FUNCTION 74842 (oen, c, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9, dn10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "74842" ("oen", "c", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9", "qn10")
+END
+
+% 74843 %
+BEGIN
+FUNCTION 74843 (oen, clrn, pren, ena, d1, d2, d3, d4, d5, d6, d7, d8, d9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "74843" ("oen", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9")
+END
+
+% 74844 %
+BEGIN
+FUNCTION 74844 (oen, clrn, pren, ena, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "74844" ("oen", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9")
+END
+
+% 74845 %
+BEGIN
+FUNCTION 74845 (oen1, oen2, oen3, clrn, pren, ena, d1, d2, d3, d4, d5, d6, d7, d8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "74845" ("oen1", "oen2", "oen3", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8")
+END
+
+% 74846 %
+BEGIN
+FUNCTION 74846 (oen1, oen2, oen3, clrn, pren, ena, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "74846" ("oen1", "oen2", "oen3", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8")
+END
+
+% 74990 %
+BEGIN
+FUNCTION 74990 (oerb, c) 
+RETURNS (d8, d7, d6, d5, d4, d3, d2, d1, q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "74990" ("oerb", "c") 
+RETURNS ("d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+
+
+% Mapping for Altera_P Library (Altera primitives) %
+
+% CARRY %
+BEGIN
+FUNCTION carry (in)
+RETURNS (out)
+FUNCTION "carry" ("in")
+RETURNS ("out")
+END
+
+% CASCADE %
+BEGIN
+FUNCTION cascade (in)
+RETURNS (out)
+FUNCTION "cascade" ("i")
+RETURNS ("o")
+END
+
+% EXP %
+BEGIN
+FUNCTION exp (in)
+RETURNS (out)
+FUNCTION "exp" ("in")
+RETURNS ("out")
+END
+
+% GLOBAL %
+BEGIN
+FUNCTION global (in)
+RETURNS (out)
+FUNCTION "global" ("i")
+RETURNS ("o")
+END
+
+% LCELL %
+BEGIN
+FUNCTION lcell (in)
+RETURNS (out)
+FUNCTION "lcell" ("i")
+RETURNS ("o")
+END
+
+% OPNDRN %
+BEGIN
+FUNCTION opndrn (in)
+RETURNS (out)
+FUNCTION "opndrn" ("i")
+RETURNS ("o")
+END
+
+% SOFT %
+BEGIN
+FUNCTION soft (in)
+RETURNS (out)
+FUNCTION "soft" ("i")
+RETURNS ("o")
+END
+
+% TRI %
+BEGIN
+FUNCTION tri (in, oe)
+RETURNS (out)
+FUNCTION "tri" ("i", "oe")
+RETURNS ("o")
+END
+
+% DFFE %
+BEGIN
+FUNCTION dffe (d, clk, clrn, prn, ena)
+RETURNS (q)
+FUNCTION "dffe" ("d", "clk", "clrn", "prn", "ena")
+RETURNS ("q")
+END
+
+% DFF %
+BEGIN
+FUNCTION dff (d, clk, clrn, prn)
+RETURNS (q)
+FUNCTION "dff" ("d", "clk", "clrn", "prn")
+RETURNS ("q")
+END
+
+% JKFF %
+BEGIN
+FUNCTION jkff (j, k, clk, clrn, prn)
+RETURNS (q)
+FUNCTION "jkff" ("j", "k", "clk", "clrn", "prn")
+RETURNS ("q")
+END
+
+% JKFFE %
+BEGIN
+FUNCTION jkffe (j, k, clk, clrn, prn, ena)
+RETURNS (q)
+FUNCTION "jkffe" ("j", "k", "clk", "clrn", "prn", "ena")
+RETURNS ("q")
+END
+
+% LATCH %
+BEGIN
+FUNCTION latch (d, ena)
+RETURNS (q)
+FUNCTION "latch" ("d", "ena")
+RETURNS ("q")
+END
+
+% SRFF %
+BEGIN
+FUNCTION srff (s, r, clk, clrn, prn)
+RETURNS (q)
+FUNCTION "srff" ("s", "r", "clk", "clrn", "prn")
+RETURNS ("q")
+END
+
+% SRFFE %
+BEGIN
+FUNCTION srffe (s, r, clk, clrn, prn, ena)
+RETURNS (q)
+FUNCTION "srffe" ("s", "r", "clk", "clrn", "prn", "ena")
+RETURNS ("q")
+END
+
+% TFF %
+BEGIN
+FUNCTION tff (t, clk, clrn, prn)
+RETURNS (q)
+FUNCTION "tff" ("t", "clk", "clrn", "prn")
+RETURNS ("q")
+END
+
+% TFFE %
+BEGIN
+FUNCTION tffe (t, clk, clrn, prn, ena)
+RETURNS (q)
+FUNCTION "tffe" ("t", "clk", "clrn", "prn", "ena")
+RETURNS ("q")
+END
+
+% AND2 %
+BEGIN
+FUNCTION and2 (in1, in2)
+RETURNS (out)
+FUNCTION "and2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% AND3 %
+BEGIN
+FUNCTION and3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "and3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% AND4 %
+BEGIN
+FUNCTION and4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "and4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% AND6 %
+BEGIN
+FUNCTION and6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "and6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% AND8 %
+BEGIN
+FUNCTION and8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "and8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% AND12 %
+BEGIN
+FUNCTION and12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "and12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% BAND2 %
+BEGIN
+FUNCTION band2 (in1, in2)
+RETURNS (out)
+FUNCTION "band2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% BAND3 %
+BEGIN
+FUNCTION band3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "band3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% BAND4 %
+BEGIN
+FUNCTION band4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "band4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% BAND6 %
+BEGIN
+FUNCTION band6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "band6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% BAND8 %
+BEGIN
+FUNCTION band8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "band8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% BAND12 %
+BEGIN
+FUNCTION band12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "band12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% BNAND2 %
+BEGIN
+FUNCTION bnand2 (in1, in2)
+RETURNS (out)
+FUNCTION "bnand2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% BNAND3 %
+BEGIN
+FUNCTION bnand3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "bnand3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% BNAND4 %
+BEGIN
+FUNCTION bnand4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "bnand4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% BNAND6 %
+BEGIN
+FUNCTION bnand6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "bnand6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% BNAND8 %
+BEGIN
+FUNCTION bnand8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "bnand8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% BNAND12 %
+BEGIN
+FUNCTION bnand12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "bnand12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% BNOR2 %
+BEGIN
+FUNCTION bnor2 (in1, in2)
+RETURNS (out)
+FUNCTION "bnor2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% BNOR3 %
+BEGIN
+FUNCTION bnor3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "bnor3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% BNOR4 %
+BEGIN
+FUNCTION bnor4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "bnor4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% BNOR6 %
+BEGIN
+FUNCTION bnor6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "bnor6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% BNOR8 %
+BEGIN
+FUNCTION bnor8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "bnor8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% BNOR12 %
+BEGIN
+FUNCTION bnor12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "bnor12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% BOR2 %
+BEGIN
+FUNCTION bor2 (in1, in2)
+RETURNS (out)
+FUNCTION "bor2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% BOR3 %
+BEGIN
+FUNCTION bor3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "bor3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% BOR4 %
+BEGIN
+FUNCTION bor4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "bor4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% BOR6 %
+BEGIN
+FUNCTION bor6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "bor6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% BOR8 %
+BEGIN
+FUNCTION bor8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "bor8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% BOR12 %
+BEGIN
+FUNCTION bor12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "bor12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% NAND2 %
+BEGIN
+FUNCTION nand2 (in1, in2)
+RETURNS (out)
+FUNCTION "nand2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% NAND3 %
+BEGIN
+FUNCTION nand3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "nand3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% NAND4 %
+BEGIN
+FUNCTION nand4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "nand4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% NAND6 %
+BEGIN
+FUNCTION nand6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "nand6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% NAND8 %
+BEGIN
+FUNCTION nand8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "nand8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% NAND12 %
+BEGIN
+FUNCTION nand12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "nand12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% NOR2 %
+BEGIN
+FUNCTION nor2 (in1, in2)
+RETURNS (out)
+FUNCTION "nor2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% NOR3 %
+BEGIN
+FUNCTION nor3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "nor3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% NOR4 %
+BEGIN
+FUNCTION nor4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "nor4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% NOR6 %
+BEGIN
+FUNCTION nor6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "nor6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% NOR8 %
+BEGIN
+FUNCTION nor8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "nor8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% NOR12 %
+BEGIN
+FUNCTION nor12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "nor12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% OR2 %
+BEGIN
+FUNCTION or2 (in1, in2)
+RETURNS (out)
+FUNCTION "or2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% OR3 %
+BEGIN
+FUNCTION or3 (in1, in2, in3)
+RETURNS (out)
+FUNCTION "or3" ("in1", "in2", "in3")
+RETURNS ("o")
+END
+
+% OR4 %
+BEGIN
+FUNCTION or4 (in1, in2, in3, in4)
+RETURNS (out)
+FUNCTION "or4" ("in1", "in2", "in3", "in4")
+RETURNS ("o")
+END
+
+% OR6 %
+BEGIN
+FUNCTION or6 (in1, in2, in3, in4, in5, in6)
+RETURNS (out)
+FUNCTION "or6" ("in1", "in2", "in3", "in4", "in5", "in6")
+RETURNS ("o")
+END
+
+% OR8 %
+BEGIN
+FUNCTION or8 (in1, in2, in3, in4, in5, in6, in7, in8)
+RETURNS (out)
+FUNCTION "or8" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8")
+RETURNS ("o")
+END
+
+% OR12 %
+BEGIN
+FUNCTION or12 (in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)
+RETURNS (out)
+FUNCTION "or12" ("in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12")
+RETURNS ("o")
+END
+
+% XOR2 %
+BEGIN
+FUNCTION xor (in1, in2)
+RETURNS (out)
+FUNCTION "xor2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% XNOR2 %
+BEGIN
+FUNCTION xnor (in1, in2)
+RETURNS (out)
+FUNCTION "xnor2" ("in1", "in2")
+RETURNS ("o")
+END
+
+% INV %
+BEGIN
+FUNCTION not (in)
+RETURNS (out)
+FUNCTION "inv" ("in1")
+RETURNS ("y")
+END
+
+% GND %
+BEGIN
+FUNCTION soft (in) 
+RETURNS (out)
+FUNCTION "gnd" ("GND") 
+RETURNS ("y")
+END
+
+% VCC %
+BEGIN
+FUNCTION soft (in) 
+RETURNS (out)
+FUNCTION "vcc" ("VCC") 
+RETURNS ("y")
+END
+
+% SCLK %
+BEGIN
+FUNCTION sclk( in )
+RETURNS ( out )
+FUNCTION "SCLK"( "IN")
+RETURNS ( "OUT")
+END
+
+% WIRE %
+BEGIN
+FUNCTION wire( in )
+RETURNS ( out )
+FUNCTION "WIRE"( "In1")
+RETURNS ( "Y")
+END
+
+
+% Alternate mappings for cells whose names begin with numbers                 %
+% Exemplar inserts a "U" at the beginning of these cells                      %
+
+% 4COUNT %
+BEGIN
+FUNCTION 4count (clk, clrn, setn, ldn, cin, dnup, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, cout)
+FUNCTION "U4count" ("clk", "clrn", "setn", "ldn", "cin", "dnup", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "cout")
+END
+
+% 81MUX %
+BEGIN
+FUNCTION 81mux (d0, d1, d2, d3, d4, d5, d6, d7, a, b, c, gn) 
+RETURNS (wn, y)
+FUNCTION "U81mux" ("d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "a", "b", "c", "gn") 
+RETURNS ("wn", "y")
+END
+
+% 8COUNT %
+BEGIN
+FUNCTION 8count (clk, clrn, setn, ldn, dnup, gn, h, g, f, e, d, c, b, a) 
+RETURNS (qh, qg, qf, qe, qd, qc, qb, qa, cout)
+FUNCTION "U8count" ("clk", "clrn", "setn", "ldn", "dnup", "gn", "h", "g", "f", "e", "d", "c", "b", "a") 
+RETURNS ("qh", "qg", "qf", "qe", "qd", "qc", "qb", "qa", "cout")
+END
+
+% 8FADD %
+BEGIN
+FUNCTION 8fadd (cin, a8, a7, a6, a5, a4, a3, a2, a1, b8, b7, b6, b5, b4, b3, b2, b1) 
+RETURNS (cout, sum8, sum7, sum6, sum5, sum4, sum3, sum2, sum1)
+FUNCTION "U8fadd" ("cin", "a8", "a7", "a6", "a5", "a4", "a3", "a2", "a1", "b8", "b7", "b6", "b5", "b4", "b3", "b2", "b1")
+RETURNS ("cout", "sum8", "sum7", "sum6", "sum5", "sum4", "sum3", "sum2", "sum1")
+END
+
+% 8MCOMP %
+BEGIN
+FUNCTION 8mcomp (a7, a6, a5, a4, a3, a2, a1, a0, b7, b6, b5, b4, b3, b2, b1, b0) 
+RETURNS (altb, aeqb, agtb, aeb7, aeb6, aeb5, aeb4, aeb3, aeb2, aeb1, aeb0)
+FUNCTION "U8mcomp" ("a7", "a6", "a5", "a4", "a3", "a2", "a1", "a0", "b7", "b6", "b5", "b4", "b3", "b2", "b1", "b0") 
+RETURNS ("altb", "aeqb", "agtb", "aeb7", "aeb6", "aeb5", "aeb4", "aeb3", "aeb2", "aeb1", "aeb0")
+END
+
+% 2X8MUX %
+BEGIN
+FUNCTION 2x8mux (sel, a7, a6, a5, a4, a3, a2, a1, a0, b7, b6, b5, b4, b3, b2, b1, b0) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1, y0)
+FUNCTION "U2x8mux" ("sel", "a7", "a6", "a5", "a4", "a3", "a2", "a1", "a0", "b7", "b6", "b5", "b4", "b3", "b2", "b1", "b0") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1", "y0")
+END
+
+% 16CUDSLR %
+BEGIN
+FUNCTION 16cudslr (clk, clrn, setn, data, stct, dnup, ltrt) 
+RETURNS (q16, q15, q14, q13, q12, q11, q10, q9, q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "U16cudslr" ("clk", "clrn", "setn", "data", "stct", "dnup", "ltrt") 
+RETURNS ("q16", "q15", "q14", "q13", "q12", "q11", "q10", "q9", "q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 16DMUX %
+BEGIN
+FUNCTION 16dmux (d, c, b, a) 
+RETURNS (q15, q14, q13, q12, q11, q10, q9, q8, q7, q6, q5, q4, q3, q2, q1, q0)
+FUNCTION "U16dmux" ("d", "c", "b", "a") 
+RETURNS ("q15", "q14", "q13", "q12", "q11", "q10", "q9", "q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0")
+END
+
+% 16NDMUX %
+BEGIN
+FUNCTION 16ndmux (d, c, b, a) 
+RETURNS (qn15, qn14, qn13, qn12, qn11, qn10, qn9, qn8, qn7, qn6, qn5, qn4, qn3, qn2, qn1, qn0)
+FUNCTION "U16ndmux" ("d", "c", "b", "a") 
+RETURNS ("qn15", "qn14", "qn13", "qn12", "qn11", "qn10", "qn9", "qn8", "qn7", "qn6", "qn5", "qn4", "qn3", "qn2", "qn1", "qn0")
+END
+
+% 21MUX %
+BEGIN
+FUNCTION 21mux (s, a, b) 
+RETURNS (y)
+FUNCTION "U21mux" ("s", "a", "b") 
+RETURNS ("y")
+END
+
+% 161MUX %
+BEGIN
+FUNCTION 161mux (gn, sel3, sel2, sel1, sel0, in15, in14, in13, in12, in11, in10, in9, in8, in7, in6, in5, in4, in3, in2, in1, in0) 
+RETURNS (out)
+FUNCTION "U161mux" ("gn", "sel3", "sel2", "sel1", "sel0", "in15", "in14", "in13", "in12", "in11", "in10", "in9", "in8", "in7", "in6", "in5", "in4", "in3", "in2", "in1", "in0") 
+RETURNS ("o")
+END
+
+% 7400 %
+BEGIN
+FUNCTION 7400 (2, 3) 
+RETURNS (1)
+FUNCTION "U7400" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7402 %
+BEGIN
+FUNCTION 7402 (2, 3) 
+RETURNS (1)
+FUNCTION "U7402" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7404 %
+BEGIN
+FUNCTION 7404 (2) 
+RETURNS (1)
+FUNCTION "U7404" ("i") 
+RETURNS ("o")
+END
+
+% 7408 %
+BEGIN
+FUNCTION 7408 (2, 3) 
+RETURNS (1)
+FUNCTION "U7408" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7410 %
+BEGIN
+FUNCTION 7410 (2, 3, 4) 
+RETURNS (1)
+FUNCTION "U7410" ("i0", "i1", "i2") 
+RETURNS ("o")
+END
+
+% 7411 %
+BEGIN
+FUNCTION 7411 (2, 3, 4) 
+RETURNS (1)
+FUNCTION "U7411" ("i0", "i1", "i2") 
+RETURNS ("o")
+END
+
+% 7420 %
+BEGIN
+FUNCTION 7420 (2, 3, 4, 5) 
+RETURNS (1)
+FUNCTION "U7420" ("i0", "i1", "i2", "i3") 
+RETURNS ("o")
+END
+
+% 7421 %
+BEGIN
+FUNCTION 7421 (2, 3, 4, 5) 
+RETURNS (1)
+FUNCTION "U7421" ("i0", "i1", "i2", "i3") 
+RETURNS ("o")
+END
+
+% 7423 %
+BEGIN
+FUNCTION 7423 (1a, 1b, 1c, 1d, 1g, 2a, 2b, 2c, 2d, 2g) 
+RETURNS (1y, 2y)
+FUNCTION "U7423" ("a1", "b1", "c1", "d1", "g1", "a2", "b2", "c2", "d2", "g2") 
+RETURNS ("y1", "y2")
+END
+
+% 7425 %
+BEGIN
+FUNCTION 7425 (1a, 1b, 1c, 1d, 1g, 2a, 2b, 2c, 2d, 2g) 
+RETURNS (1y, 2y)
+FUNCTION "U7425" ("a1", "b1", "c1", "d1", "g1", "a2", "b2", "c2", "d2", "g2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7427 %
+BEGIN
+FUNCTION 7427 (2, 3, 4) 
+RETURNS (1)
+FUNCTION "U7427" ("i0", "i1", "i2") 
+RETURNS ("o")
+END
+
+% 7428 %
+BEGIN
+FUNCTION 7428 (a1, b1, a2, b2, a3, b3, a4, b4) 
+RETURNS (y1, y2, y3, y4)
+FUNCTION "U7428" ("a1", "b1", "a2", "b2", "a3", "b3", "a4", "b4") 
+RETURNS ("y1n", "y2n", "y3n", "y4n")
+END
+
+% 7430 %
+BEGIN
+FUNCTION 7430 (2, 3, 4, 5, 6, 7, 8, 9) 
+RETURNS (1)
+FUNCTION "U7430" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7") 
+RETURNS ("o")
+END
+
+% 7432 %
+BEGIN
+FUNCTION 7432 (2, 3) 
+RETURNS (1)
+FUNCTION "U7432" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7437 %
+BEGIN
+FUNCTION 7437 (1a, 1b, 2a, 2b, 3a, 3b, 4a, 4b) 
+RETURNS (1y, 2y, 3y, 4y)
+FUNCTION "U7437" ("a1", "b1", "a2", "b2", "a3", "b3", "a4", "b4") 
+RETURNS ("y1n", "y2n", "y3n", "y4n")
+END
+
+% 7440 %
+BEGIN
+FUNCTION 7440 (1a, 1b, 1c, 1d, 2a, 2b, 2c, 2d) 
+RETURNS (1y, 2y)
+FUNCTION "U7440" ("a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7442 %
+BEGIN
+FUNCTION 7442 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "U7442" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7443 %
+BEGIN
+FUNCTION 7443 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "U7443" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7444 %
+BEGIN
+FUNCTION 7444 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "U7444" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7445 %
+BEGIN
+FUNCTION 7445 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "U7445" ("d", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n", "y8n", "y9n")
+END
+
+% 7446 %
+BEGIN
+FUNCTION 7446 (ltn, rbin, d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "U7446" ("ltn", "rbin", "d", "c", "b", "a", "binrbon") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 7447 %
+BEGIN
+FUNCTION 7447 (ltn, rbin, d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "U7447" ("ltn", "rbin", "d", "c", "b", "a", "binrbon") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 7448 %
+BEGIN
+FUNCTION 7448 (ltn, rbin, d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "U7448" ("ltn", "rbin", "di", "ci", "bi", "ai", "binrbon") 
+RETURNS ("a", "b", "c", "d", "e", "f", "g", "binrbon")
+END
+
+% 7449 %
+BEGIN
+FUNCTION 7449 (d, c, b, a, bin) 
+RETURNS (oa, ob, oc, od, oe, of, og)
+FUNCTION "U7449" ("di", "ci", "bi", "ai", "bin") 
+RETURNS ("a", "b", "c", "d", "e", "f", "g")
+END
+
+% 7450 %
+BEGIN
+FUNCTION 7450 (1x, 1xn, 1a, 1b, 1c, 1d, 2a, 2b, 2c, 2d) 
+RETURNS (1yn, 2yn)
+FUNCTION "U7450" ("x1", "x1n", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7451 %
+BEGIN
+FUNCTION 7451 (1a, 1b, 1c, 1d, 1e, 1f, 2a, 2b, 2c, 2d) 
+RETURNS (1yn, 2yn)
+FUNCTION "U7451" ("a1", "b1", "c1", "d1", "e1", "f1", "a2", "b2", "c2", "d2") 
+RETURNS ("y1n", "y2n")
+END
+
+% 7452 %
+BEGIN
+FUNCTION 7452 (x, a, b, c, d, e, f, g, h, i) 
+RETURNS (y)
+FUNCTION "U7452" ("x", "a", "b", "c", "d", "e", "f", "g", "h", "i") 
+RETURNS ("y")
+END
+
+% 7453 %
+BEGIN
+FUNCTION 7453 (xn, x, a, b, c, d, e, f, g, h) 
+RETURNS (yn)
+FUNCTION "U7453" ("xn", "x", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("yn")
+END
+
+% 7454 %
+BEGIN
+FUNCTION 7454 (a, b, c, d, e, f, g, h, i, j) 
+RETURNS (yn)
+FUNCTION "U7454" ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j") 
+RETURNS ("yn")
+END
+
+% 7455 %
+BEGIN
+FUNCTION 7455 (a, b, c, d, e, f, g, h) 
+RETURNS (yn)
+FUNCTION "U7455" ("a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("yn")
+END
+
+% 7456 %
+BEGIN
+FUNCTION 7456 (clr, clkb, clka) 
+RETURNS (qc, qb, qa)
+FUNCTION "U7456" ("clrn", "clkb", "clka") 
+RETURNS ("qc", "qb", "qa")
+END
+
+% 7457 %
+BEGIN
+FUNCTION 7457 (clrn, clkb, clka) 
+RETURNS (qc, qb, qa)
+FUNCTION "U7457" ("clr", "clkb", "clka") 
+RETURNS ("qc", "qb", "qa")
+END
+
+% 7464 %
+BEGIN
+FUNCTION 7464 (a, b, c, d, e, f, g, h, i, j, k) 
+RETURNS (y)
+FUNCTION "U7464" ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k") 
+RETURNS ("y")
+END
+
+% 7468 %
+BEGIN
+FUNCTION 7468 (1clk1, 1clk2, 1clrn, 2clk, 2clrn) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "U7468" ("clka1", "clkb1", "clrn1", "clk2", "clrn2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 7469 %
+BEGIN
+FUNCTION 7469 (1clk1, 1clk2, 1clrn, 2clk, 2clrn) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "U7469" ("clka1", "clkb1", "clrn1", "clk2", "clrn2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 7470 %
+BEGIN
+FUNCTION 7470 (prn, clrn, clk, j1, j2, jn, k1, k2, kn) 
+RETURNS (q, qn)
+FUNCTION "U7470" ("prn", "clrn", "clk", "j1", "j2", "jn", "k1", "k2", "kn") 
+RETURNS ("q", "qn")
+END
+
+% 7471 %
+BEGIN
+FUNCTION 7471 (prn, clk, j1a, j1b, j2a, j2b, k1a, k1b, k2a, k2b) 
+RETURNS (q, qn)
+FUNCTION "U7471" ("prn", "clk", "j1a", "j1b", "j2a", "j2b", "k1a", "k1b", "k2a", "k2b") 
+RETURNS ("q", "qn")
+END
+
+% 7472 %
+BEGIN
+FUNCTION 7472 (prn, clrn, clk, j1, j2, j3, k1, k2, k3) 
+RETURNS (q, qn)
+FUNCTION "U7472" ("prn", "clrn", "clk", "j1", "j2", "j3", "k1", "k2", "k3") 
+RETURNS ("q", "qn")
+END
+
+% 7473 %
+BEGIN
+FUNCTION 7473 (1clrn, 1clk, 1j, 1k, 2clrn, 2clk, 2j, 2k) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U7473" ("clrn1", "clk1", "j1", "k1", "clrn2", "clk2", "j2", "k2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7474 %
+BEGIN
+FUNCTION 7474 (1prn, 1clrn, 1clk, 1d, 2prn, 2clrn, 2clk, 2d) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U7474" ("prn1", "clrn1", "clk1", "d1", "prn2", "clrn2", "clk2", "d2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7475 %
+BEGIN
+FUNCTION 7475 (1d, 2d, 3d, 4d, e12, e34) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "U7475" ("d1", "d2", "d3", "d4", "e12", "e34") 
+RETURNS ("q1", "qn1", "q2", "qn2", "q3", "qn3", "q4", "qn4")
+END
+
+% 7476 %
+BEGIN
+FUNCTION 7476 (1prn, 1clrn, 1clk, 1j, 1k, 2prn, 2clrn, 2clk, 2j, 2k) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U7476" ("prn1", "clrn1", "clk1", "j1", "k1", "prn2", "clrn2", "clk2", "j2", "k2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7477 %
+BEGIN
+FUNCTION 7477 (1d, 2d, 3d, 4d, e12, e34) 
+RETURNS (1q, 2q, 3q, 4q)
+FUNCTION "U7477" ("d1", "d2", "d3", "d4", "e12", "e34") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 7478 %
+BEGIN
+FUNCTION 7478 (clrn, 1prn, 1j, 1k, 2prn, 2j, 2k, clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U7478" ("clrn", "prn1", "j1", "k1", "prn2", "j2", "k2", "clk") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 7480 %
+BEGIN
+FUNCTION 7480 (cn0, a1, a2, as, ac, b1, b2, bs, bc) 
+RETURNS (cn1n, sum, sumn)
+FUNCTION "U7480" ("cn0", "a1", "a2", "as", "ac", "b1", "b2", "bs", "bc") 
+RETURNS ("cn1n", "sum", "sumn")
+END
+
+% 7482 %
+BEGIN
+FUNCTION 7482 (a2, a1, b2, b1, c0) 
+RETURNS (sum2, sum1, c2)
+FUNCTION "U7482" ("a2", "a1", "b2", "b1", "c0") 
+RETURNS ("s2", "s1", "c2")
+END
+
+% 7483 %
+BEGIN
+FUNCTION 7483 (a4, a3, a2, a1, b4, b3, b2, b1, c0) 
+RETURNS (s4, s3, s2, s1, c4)
+FUNCTION "U7483" ("a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1", "c0") 
+RETURNS ("s4", "s3", "s2", "s1", "c4")
+END
+
+% 7485 %
+BEGIN
+FUNCTION 7485 (a3, a2, a1, a0, b3, b2, b1, b0, agbi, albi, aebi) 
+RETURNS (agbo, albo, aebo)
+FUNCTION "U7485" ("a3", "a2", "a1", "a0", "b3", "b2", "b1", "b0", "agbi", "albi", "aebi") 
+RETURNS ("agbo", "albo", "aebo")
+END
+
+% 7486 %
+BEGIN
+FUNCTION 7486 (2, 3) 
+RETURNS (1)
+FUNCTION "U7486" ("i0", "i1") 
+RETURNS ("o")
+END
+
+% 7487 %
+BEGIN
+FUNCTION 7487 (a4, a3, a2, a1, b, c) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "U7487" ("a4", "a3", "a2", "a1", "b", "c") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 7490 %
+BEGIN
+FUNCTION 7490 (set9a, set9b, clra, clrb, clka, clkb) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U7490" ("set9a", "set9b", "clra", "clrb", "clka", "clkb") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 7491 %
+BEGIN
+FUNCTION 7491 (clk, a, b) 
+RETURNS (qh, qhn)
+FUNCTION "U7491" ("clk", "a", "b") 
+RETURNS ("qh", "qhn")
+END
+
+% 7492 %
+BEGIN
+FUNCTION 7492 (clra, clrb, clka, clkb) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U7492" ("clra", "clrb", "clka", "clkb") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 7493 %
+BEGIN
+FUNCTION 7493 (clka, clkb, ro1, ro2) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U7493" ("clka", "clkb", "ro1", "ro2") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 7494 %
+BEGIN
+FUNCTION 7494 (p1a, p2a, p1b, p2b, p1c, p2c, p1d, p2d, pe1, pe2, clr, clk, ser) 
+RETURNS (out)
+FUNCTION "U7494" ("p1a", "p2a", "p1b", "p2b", "p1c", "p2c", "p1d", "p2d", "pe1", "pe2", "clr", "clk", "ser") 
+RETURNS ("o")
+END
+
+% 7495 %
+BEGIN
+FUNCTION 7495 (mode, clkl, clkr, ser, d0, d1, d2, d3) 
+RETURNS (q0, q1, q2, q3)
+FUNCTION "U7495" ("mode", "clkl", "clkr", "ser", "d0", "d1", "d2", "d3") 
+RETURNS ("q0", "q1", "q2", "q3")
+END
+
+% 7496 %
+BEGIN
+FUNCTION 7496 (clrn, pe, a, b, c, d, e, clk, ser) 
+RETURNS (qa, qb, qc, qd, qe)
+FUNCTION "U7496" ("clrn", "pe", "a", "b", "c", "d", "e", "clk", "ser") 
+RETURNS ("qa", "qb", "qc", "qd", "qe")
+END
+
+% 7497 %
+BEGIN
+FUNCTION 7497 (clk, clr, enn, strbn, b5, b4, b3, b2, b1, b0, uni/cas) 
+RETURNS (y, zn, tcn)
+FUNCTION "U7497" ("clk", "clr", "enn", "strbn", "b5", "b4", "b3", "b2", "b1", "b0", "unicas") 
+RETURNS ("y", "zn", "tcn")
+END
+
+% 7498 %
+BEGIN
+FUNCTION 7498 (clkn, wrdsl, a1, b1, c1, d1, a2, b2, c2, d2) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "U7498" ("clkn", "wrdsl", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 7499 %
+BEGIN
+FUNCTION 7499 (mode, clk2, clk1, j, kn, a, b, c, d) 
+RETURNS (qa, qb, qc, qd, qdn)
+FUNCTION "U7499" ("mode", "clk2", "clk1", "j", "kn", "a", "b", "c", "d") 
+RETURNS ("qa", "qb", "qc", "qd", "qdn")
+END
+
+% 74107 %
+BEGIN
+FUNCTION 74107 (1j, 1k, 1clrn, 1clk, 2j, 2k, 2clrn, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U74107" ("j1", "k1", "clrn1", "clk1", "j2", "k2", "clrn2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74109 %
+BEGIN
+FUNCTION 74109 (1prn, 1j, 1kn, 1clrn, 1clk, 2prn, 2j, 2kn, 2clrn, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U74109" ("prn1", "j1", "kn1", "clrn1", "clk1", "prn2", "j2", "kn2", "clrn2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74112 %
+BEGIN
+FUNCTION 74112 (1prn, 1j, 1k, 1clrn, 1clk, 2prn, 2j, 2k, 2clrn, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U74112" ("prn1", "j1", "k1", "clrn1", "clk1", "prn2", "j2", "k2", "clrn2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74113 %
+BEGIN
+FUNCTION 74113 (1prn, 1j, 1k, 1clk, 2prn, 2j, 2k, 2clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U74113" ("prn1", "j1", "k1", "clk1", "prn2", "j2", "k2", "clk2") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74114 %
+BEGIN
+FUNCTION 74114 (1prn, 1j, 1k, 2prn, 2j, 2k, clrn, clk) 
+RETURNS (1q, 1qn, 2q, 2qn)
+FUNCTION "U74114" ("prn1", "j1", "k1", "prn2", "j2", "k2", "clrn", "clk") 
+RETURNS ("q1", "qn1", "q2", "qn2")
+END
+
+% 74116 %
+BEGIN
+FUNCTION 74116 (1clrn, 2clrn, 1g1n, 1g2n, 2g1n, 2g2n, 1d4, 1d3, 1d2, 1d1, 2d4, 2d3, 2d2, 2d1) 
+RETURNS (1q4, 1q3, 1q2, 1q1, 2q4, 2q3, 2q2, 2q1)
+FUNCTION "U74116" ("clrna", "clrnb", "g1na", "g2na", "g1nb", "g2nb", "da4", "da3", "da2", "da1", "db4", "db3", "db2", "db1") 
+RETURNS ("qa4", "qa3", "qa2", "qa1", "qb4", "qb3", "qb2", "qb1")
+END
+
+% 74133 %
+BEGIN
+FUNCTION 74133 (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) 
+RETURNS (1)
+FUNCTION "U74133" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "i12") 
+RETURNS ("o")
+END
+
+% 74134 %
+BEGIN
+FUNCTION 74134 (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, oen) 
+RETURNS (1)
+FUNCTION "U74134" ("i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "oen") 
+RETURNS ("o")
+END
+
+% 74135 %
+BEGIN
+FUNCTION 74135 (1a, 1b, 12c, 2a, 2b, 3a, 3b, 34c, 4a, 4b) 
+RETURNS (1y, 2y, 3y, 4y)
+FUNCTION "U74135" ("a1", "b1", "c12", "a2", "b2", "a3", "b3", "c34", "a4", "b4") 
+RETURNS ("y1", "y2", "y3", "y4")
+END
+
+% 74137 %
+BEGIN
+FUNCTION 74137 (gln, g1, g2n, c, b, a) 
+RETURNS (y0, y1, y2, y3, y4, y5, y6, y7)
+FUNCTION "U74137" ("gln", "g1", "g2n", "c", "b", "a") 
+RETURNS ("y0", "y1", "y2", "y3", "y4", "y5", "y6", "y7")
+END
+
+% 74138 %
+BEGIN
+FUNCTION 74138 (g1, g2an, g2bn, c, b, a) 
+RETURNS (y0n, y1n, y2n, y3n, y4n, y5n, y6n, y7n)
+FUNCTION "U74138" ("g1", "g2an", "g2bn", "c", "b", "a") 
+RETURNS ("y0n", "y1n", "y2n", "y3n", "y4n", "y5n", "y6n", "y7n")
+END
+
+% 74139 %
+BEGIN
+FUNCTION 74139 (g1n, b1, a1, g2n, b2, a2) 
+RETURNS (y10n, y11n, y12n, y13n, y20n, y21n, y22n, y23n)
+FUNCTION "U74139" ("g1n", "b1", "a1", "g2n", "b2", "a2") 
+RETURNS ("y10n", "y11n", "y12n", "y13n", "y20n", "y21n", "y22n", "y23n")
+END
+
+% 74143 %
+BEGIN
+FUNCTION 74143 (clk, clrn, strbn, pcein, scein, bin, rbin, dpi) 
+RETURNS (qd, qc, qb, qa, max, a, b, c, d, e, f, g, dpo, rbon)
+FUNCTION "U74143" ("clk", "clrn", "strbn", "pcein", "scein", "bin", "rbin", "dpi") 
+RETURNS ("qd", "qc", "qb", "qa", "max", "a", "b", "c", "d", "e", "f", "g", "dpo", "rbon")
+END
+
+% 74145 %
+BEGIN
+FUNCTION 74145 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "U74145" ("d", "c", "b", "a") 
+RETURNS ("o0n", "o1n", "o2n", "o3n", "o4n", "o5n", "o6n", "o7n", "o8n", "o9n")
+END
+
+% 74147 %
+BEGIN
+FUNCTION 74147 (1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n) 
+RETURNS (dn, cn, bn, an)
+FUNCTION "U74147" ("i1n", "i2n", "i3n", "i4n", "i5n", "i6n", "i7n", "i8n", "i9n") 
+RETURNS ("dn", "cn", "bn", "an")
+END
+
+% 74148 %
+BEGIN
+FUNCTION 74148 (ein, 0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n) 
+RETURNS (a2n, a1n, a0n, gsn, eon)
+FUNCTION "U74148" ("ein", "i0n", "i1n", "i2n", "i3n", "i4n", "i5n", "i6n", "i7n") 
+RETURNS ("a2n", "a1n", "a0n", "gsn", "eon")
+END
+
+% 74151 %
+BEGIN
+FUNCTION 74151 (c, b, a, d7, d6, d5, d4, d3, d2, d1, d0, gn) 
+RETURNS (y, wn)
+FUNCTION "U74151" ("c", "b", "a", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "gn") 
+RETURNS ("y", "wn")
+END
+
+% 74153 %
+BEGIN
+FUNCTION 74153 (b, a, 1gn, 1c3, 1c2, 1c1, 1c0, 2gn, 2c3, 2c2, 2c1, 2c0) 
+RETURNS (1y, 2y)
+FUNCTION "U74153" ("b", "a", "gna", "ca3", "ca2", "ca1", "ca0", "gnb", "cb3", "cb2", "cb1", "cb0")
+RETURNS ("ya", "yb")
+END
+
+% 74154 %
+BEGIN
+FUNCTION 74154 (g1n, g2n, d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n, o10n, o11n, o12n, o13n, o14n, o15n)
+FUNCTION "U74154" ("g1n", "g2n", "d", "c", "b", "a") 
+RETURNS ("o0n", "o1n", "o2n", "o3n", "o4n", "o5n", "o6n", "o7n", "o8n", "o9n", "o10n", "o11n", "o12n", "o13n", "o14n", "o15n")
+END
+
+% 74155 %
+BEGIN
+FUNCTION 74155 (2cn, 1c, selb, sela, 2gn, 1gn) 
+RETURNS (2y0n, 2y1n, 2y2n, 2y3n, 1y0n, 1y1n, 1y2n, 1y3n)
+FUNCTION "U74155" ("cbn", "ca", "selb", "sela", "gbn", "gan") 
+RETURNS ("yb0n", "yb1n", "yb2n", "yb3n", "ya0n", "ya1n", "ya2n", "ya3n")
+END
+
+% 74156 %
+BEGIN
+FUNCTION 74156 (2cn, 1c, selb, sela, 2gn, 1gn) 
+RETURNS (2y0n, 2y1n, 2y2n, 2y3n, 1y0n, 1y1n, 1y2n, 1y3n)
+FUNCTION "U74156" ("cbn", "ca", "selb", "sela", "gbn", "gan") 
+RETURNS ("yb0n", "yb1n", "yb2n", "yb3n", "ya0n", "ya1n", "ya2n", "ya3n")
+END
+
+% 74157 %
+BEGIN
+FUNCTION 74157 (gn, sel, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "U74157" ("gn", "sel", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 74158 %
+BEGIN
+FUNCTION 74158 (gn, sel, 1a, 2a, 3a, 4a, 1b, 2b, 3b, 4b) 
+RETURNS (1yn, 2yn, 3yn, 4yn)
+FUNCTION "U74158" ("gn", "sel", "a1", "a2", "a3", "a4", "b1", "b2", "b3", "b4") 
+RETURNS ("y1n", "y2n", "y3n", "y4n")
+END
+
+% 74160 %
+BEGIN
+FUNCTION 74160 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "U74160" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74161 %
+BEGIN
+FUNCTION 74161 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "U74161" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74162 %
+BEGIN
+FUNCTION 74162 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "U74162" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74163 %
+BEGIN
+FUNCTION 74163 (clk, ldn, clrn, enp, ent, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, rco)
+FUNCTION "U74163" ("clk", "ldn", "clrn", "enp", "ent", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "rco")
+END
+
+% 74164 %
+BEGIN
+FUNCTION 74164 (clk, clrn, a, b) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh)
+FUNCTION "U74164" ("clk", "clrn", "a", "b") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh")
+END
+
+% 74165 %
+BEGIN
+FUNCTION 74165 (clk, clkih, stld, ser, a, b, c, d, e, f, g, h) 
+RETURNS (qh, qhn)
+FUNCTION "U74165" ("clk", "clkih", "stld", "ser", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("qh", "qhn")
+END
+
+% 74166 %
+BEGIN
+FUNCTION 74166 (clrn, stld, clkih, clk, ser, a, b, c, d, e, f, g, h) 
+RETURNS (qh)
+FUNCTION "U74166" ("clrn", "stld", "clkih", "clk", "ser", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("qh")
+END
+
+% 74167 %
+BEGIN
+FUNCTION 74167 (clk, clr, enn, strbn, b3, b2, b1, b0, uni/cas, set9) 
+RETURNS (y, zn, eno)
+FUNCTION "U74167" ("clk", "clr", "enn", "strbn", "b3", "b2", "b1", "b0", "unicas", "set9") 
+RETURNS ("y", "zn", "eno")
+END
+
+% 74168 %
+BEGIN
+FUNCTION 74168 (ldn, entn, enpn, u/dn, clk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "U74168" ("ldn", "entn", "enpn", "udn", "clk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74169 %
+BEGIN
+FUNCTION 74169 (ldn, entn, enpn, u/dn, clk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "U74169" ("ldn", "entn", "enpn", "udn", "clk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74171 %
+BEGIN
+FUNCTION 74171 (clrn, clk, d1, d2, d3, d4) 
+RETURNS (q1, qn1, q2, qn2, q3, qn3, q4, qn4)
+FUNCTION "U74171" ("clrn", "clk", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "qn1", "q2", "qn2", "q3", "qn3", "q4", "qn4")
+END
+
+% 74172 %
+BEGIN
+FUNCTION 74172 (1grn, 2grn, 1r0, 1r1, 1r2, 2w/r0, 2w/r1, 2w/r2, 1w0, 1w1, 1w2, 1da, 1db, 2da, 2db, 1gwn, 2gwn, clk) 
+RETURNS (1qa, 1qb, 2qa, 2qb)
+FUNCTION "U74172" ("grn_1", "grn_2", "r0_1", "r1_1", "r2_1", "wr0_2", "wr1_2", "wr2_2", "w0_1", "w1_1", "w2_1", "da_1", "db_1", "da_2", "db_2", "gwn_1", "gwn_2", "clk") 
+RETURNS ("qa_1", "qb_1", "qa_2", "qb_2")
+END
+
+% 74173 %
+BEGIN
+FUNCTION 74173 (clr, clk, mn, nn, g1n, g2n, 1d, 2d, 3d, 4d) 
+RETURNS ( 1q, 2q, 3q, 4q)
+FUNCTION "U74173" ("clr", "clk", "mn", "nn", "g1n", "g2n", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 74174 %
+BEGIN
+FUNCTION 74174 (clrn, clk, 1d, 2d, 3d, 4d, 5d, 6d) 
+RETURNS (1q, 2q, 3q, 4q, 5q, 6q)
+FUNCTION "U74174" ("clrn", "clk", "d1", "d2", "d3", "d4", "d5", "d6") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6")
+END
+
+% 74175 %
+BEGIN
+FUNCTION 74175 (clrn, clk, 1d, 2d, 3d, 4d) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "U74175" ("clrn", "clk", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "qn1", "q2", "qn2", "q3", "qn3", "q4", "qn4")
+END
+
+% 74176 %
+BEGIN
+FUNCTION 74176 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74176" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74177 %
+BEGIN
+FUNCTION 74177 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74177" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74178 %
+BEGIN
+FUNCTION 74178 (st, ld, ser, clk, a, b, c, d) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "U74178" ("st", "ld", "ser", "clk", "a", "b", "c", "d") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 74179 %
+BEGIN
+FUNCTION 74179 (clrn, st, ld, clk, ser, a, b, c, d) 
+RETURNS (qa, qb, qc, qd, qdn)
+FUNCTION "U74179" ("clrn", "st", "ld", "clk", "ser", "a", "b", "c", "d") 
+RETURNS ("qa", "qb", "qc", "qd", "qdn")
+END
+
+% 74180 %
+BEGIN
+FUNCTION 74180 (a, b, c, d, e, f, g, h, evni, oddi) 
+RETURNS (evns, odds)
+FUNCTION "U74180" ("a", "b", "c", "d", "e", "f", "g", "h", "evni", "oddi") 
+RETURNS ("evns", "odds")
+END
+
+% 74181 %
+BEGIN
+FUNCTION 74181 (s3, s2, s1, s0, m, cn, a3n, a2n, a1n, a0n, b3n, b2n, b1n, b0n) 
+RETURNS (gn, pn, f3n, f2n, f1n, f0n, aeqb, cn4)
+FUNCTION "U74181" ("s3", "s2", "s1", "s0", "m", "cn", "a3n", "a2n", "a1n", "a0n", "b3n", "b2n", "b1n", "b0n") 
+RETURNS ("gn", "pn", "f3n", "f2n", "f1n", "f0n", "aeqb", "cn4")
+END
+
+% 74182 %
+BEGIN
+FUNCTION 74182 (pn3, pn2, pn1, pn0, gn3, gn2, gn1, gn0, ci) 
+RETURNS (pn, gn, cz, cy, cx)
+FUNCTION "U74182" ("pn3", "pn2", "pn1", "pn0", "gn3", "gn2", "gn1", "gn0", "ci") 
+RETURNS ("pn", "gn", "cz", "cy", "cx")
+END
+
+% 74183 %
+BEGIN
+FUNCTION 74183 (1cn0, 1b, 1a, 2cn0, 2b, 2a) 
+RETURNS (1sum, 1cn1, 2sum, 2cn1)
+FUNCTION "U74183" ("cn0_1", "b1", "a1", "cn0_2", "b2", "a2") 
+RETURNS ("sum1", "cn1_1", "sum2", "cn1_2")
+END
+
+% 74184 %
+BEGIN
+FUNCTION 74184 (e, d, c, b, a, gn) 
+RETURNS (y8, y7, y6, y5, y4, y3, y2, y1)
+FUNCTION "U74184" ("e", "d", "c", "b", "a", "gn") 
+RETURNS ("y8", "y7", "y6", "y5", "y4", "y3", "y2", "y1")
+END
+
+% 74185 %
+BEGIN
+FUNCTION 74185 (e, d, c, b, a, gn) 
+RETURNS (y8, y7, y6, y5, y4, y3, y2, y1)
+FUNCTION "U74185" ("e", "d", "c", "b", "a", "gn") 
+RETURNS ("y8", "y7", "y6", "y5", "y4", "y3", "y2", "y1")
+END
+
+% 74190 %
+BEGIN
+FUNCTION 74190 (clk, gn, ldn, dnup, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, mxmn, rcon)
+FUNCTION "U74190" ("clk", "gn", "ldn", "dnup", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "mxmn", "rcon")
+END
+
+% 74191 %
+BEGIN
+FUNCTION 74191 (clk, gn, ldn, dnup, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, mxmn, rcon)
+FUNCTION "U74191" ("clk", "gn", "ldn", "dnup", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "mxmn", "rcon")
+END
+
+% 74192 %
+BEGIN
+FUNCTION 74192 (clr, up, dn, ldn, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, con, bon)
+FUNCTION "U74192" ("clr", "up", "dn", "ldn", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "con", "bon")
+END
+
+% 74193 %
+BEGIN
+FUNCTION 74193 (clr, up, dn, ldn, d, c, b, a) 
+RETURNS (qd, qc, qb, qa, con, bon)
+FUNCTION "U74193" ("clr", "up", "dn", "ldn", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa", "con", "bon")
+END
+
+% 74194 %
+BEGIN
+FUNCTION 74194 (clrn, s1, s0, clk, slsi, srsi, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74194" ("clrn", "s1", "s0", "clk", "slsi", "srsi", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74195 %
+BEGIN
+FUNCTION 74195 (clrn, st/ldn, clk, j, kn, d0, d1, d2, d3) 
+RETURNS (q0, q1, q2, q3, q3n)
+FUNCTION "U74195" ("clrn", "stldn", "clk", "j", "kn", "d0", "d1", "d2", "d3") 
+RETURNS ("q0", "q1", "q2", "q3", "q3n")
+END
+
+% 74196 %
+BEGIN
+FUNCTION 74196 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74196" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74197 %
+BEGIN
+FUNCTION 74197 (clrn, ldn, clk1, clk2, d, c, b, a) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74197" ("clrn", "ldn", "clk1", "clk2", "d", "c", "b", "a") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74198 %
+BEGIN
+FUNCTION 74198 (clrn, s1, s0, clk, slsi, srsi, a, b, c, d, e, f, g, h) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh)
+FUNCTION "U74198" ("clrn", "s1", "s0", "clk", "slsi", "srsi", "a", "b", "c", "d", "e", "f", "g", "h") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh")
+END
+
+% 74199 %
+BEGIN
+FUNCTION 74199 (clrn, st/ldn, clkih, clk, j, kn, d0, d1, d2, d3, d4, d5, d6, d7) 
+RETURNS (q0, q1, q2, q3, q4, q5, q6, q7)
+FUNCTION "U74199" ("clrn", "stldn", "clkih", "clk", "j", "kn", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7") 
+RETURNS ("q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7")
+END
+
+% 74240 %
+BEGIN
+FUNCTION 74240 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "U74240" ("gn1", "a11", "a12", "a13", "a14", "gn2", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74241 %
+BEGIN
+FUNCTION 74241 (1gn, 1a1, 1a2, 1a3, 1a4, 2g, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "U74241" ("gn1", "a11", "a12", "a13", "a14", "g2", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74244 %
+BEGIN
+FUNCTION 74244 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "U74244" ("gn1", "a11", "a12", "a13", "a14", "gn2", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74246 %
+BEGIN
+FUNCTION 74246 (ltn, rbin, bin, d, c, b, a) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "U74246" ("ltn", "rbin", "binrbon", "d", "c", "b", "a") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 74247 %
+BEGIN
+FUNCTION 74247 (ltn, rbin, bin, d, c, b, a) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "U74247" ("ltn", "rbin", "binrbon", "d", "c", "b", "a") 
+RETURNS ("oan", "obn", "ocn", "odn", "oen", "ofn", "ogn", "binrbon")
+END
+
+% 74248 %
+BEGIN
+FUNCTION 74248 (ltn, rbin, bin, d, c, b, a) 
+RETURNS (oa, ob, oc, od, oe, of, og, rbon)
+FUNCTION "U74248" ("ltn", "rbin", "binrbon", "d", "ci", "bi", "ai") 
+RETURNS ("a", "b", "c", "d", "e", "f", "g", "binrbon")
+END
+
+% 74251 %
+BEGIN
+FUNCTION 74251 (c, b, a, d7, d6, d5, d4, d3, d2, d1, d0, gn) 
+RETURNS (y, wn)
+FUNCTION "U74251" ("c", "b", "a", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "gn") 
+RETURNS ("y", "wn")
+END
+
+% 74253 %
+BEGIN
+FUNCTION 74253 (b, a, 1gn, 1c0, 1c1, 1c2, 1c3, 2gn, 2c0, 2c1, 2c2, 2c3) 
+RETURNS (1y, 2y)
+FUNCTION "U74253" ("b", "a", "gan", "ca0", "ca1", "ca2", "ca3", "gbn", "cb0", "cb1", "cb2", "cb3") 
+RETURNS ("ya", "yb")
+END
+
+% 74257 %
+BEGIN
+FUNCTION 74257 (gn, sel, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "U74257" ("gn", "sel", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 74258 %
+BEGIN
+FUNCTION 74258 (gn, sel, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (yn4, yn3, yn2, yn1)
+FUNCTION "U74258" ("gn", "sel", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("yn4", "yn3", "yn2", "yn1")
+END
+
+% 74259 %
+BEGIN
+FUNCTION 74259 (clrn, gn, s2, s1, s0, data) 
+RETURNS (q7, q6, q5, q4, q3, q2, q1, q0)
+FUNCTION "U74259" ("clrn", "gn", "s2", "s1", "s0", "data") 
+RETURNS ("q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0")
+END
+
+% 74260 %
+BEGIN
+FUNCTION 74260 (a0, a1, a2, a3, a4, b0, b1, b2, b3, b4) 
+RETURNS (ayn, byn)
+FUNCTION "U74260" ("a0", "a1", "a2", "a3", "a4", "b0", "b1", "b2", "b3", "b4") 
+RETURNS ("ayn", "byn")
+END
+
+% 74261 %
+BEGIN
+FUNCTION 74261 (b4, b3, b2, b1, b0, m2, m1, m0, g) 
+RETURNS (q4n, q3, q2, q1, q0)
+FUNCTION "U74261" ("b4", "b3", "b2", "b1", "b0", "m2", "m1", "m0", "g") 
+RETURNS ("q4n", "q3", "q2", "q1", "q0")
+END
+
+% 74265 %
+BEGIN
+FUNCTION 74265 (1a, 2a, 2b, 3a, 3b, 4a) 
+RETURNS (1w, 1yn, 2w, 2yn, 3w, 3yn, 4w, 4yn)
+FUNCTION "U74265" ("a1", "a2", "b2", "a3", "b3", "a4") 
+RETURNS ("w1", "y1n", "w2", "y2n", "w3", "y3n", "w4", "y4n")
+END
+
+% 74273 %
+BEGIN
+FUNCTION 74273 (clrn, clk, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "U74273" ("clrn", "clk", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74276 %
+BEGIN
+FUNCTION 74276 (prn, clrn, 1j, 1kn, 1clk, 2j, 2kn, 2clk, 3j, 3kn, 3clk, 4j, 4kn, 4clk) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "U74276" ("prn", "clrn", "j1", "k1n", "clk1", "j2", "k2n", "clk2", "j3", "k3n", "clk3", "j4", "k4n", "clk4") 
+RETURNS ("q1", "q1n", "q2", "q2n", "q3", "q3n", "q4", "q4n")
+END
+
+% 74278 %
+BEGIN
+FUNCTION 74278 (p0, g, d4, d3, d2, d1) 
+RETURNS (y4, y3, y2, y1, p1)
+FUNCTION "U74278" ("p0", "g", "d4", "d3", "d2", "d1") 
+RETURNS ("y4", "y3", "y2", "y1", "p1")
+END
+
+% 74279 %
+BEGIN
+FUNCTION 74279 (s11n, s12n, r1n, s2n, r2n, s31n, s32n, r3n, s4n, r4n) 
+RETURNS (q4, q3, q2, q1)
+FUNCTION "U74279" ("s11n", "s12n", "r1n", "s2n", "r2n", "s31n", "s32n", "r3n", "s4n", "r4n") 
+RETURNS ("q4", "q3", "q2", "q1")
+END
+
+% 74280 %
+BEGIN
+FUNCTION 74280 (a, b, c, d, e, f, g, h, i) 
+RETURNS (even, odd)
+FUNCTION "U74280" ("a", "b", "c", "d", "e", "f", "g", "h", "i") 
+RETURNS ("even", "odd")
+END
+
+% 74283 %
+BEGIN
+FUNCTION 74283 (a4, a3, a2, a1, b4, b3, b2, b1, cin) 
+RETURNS (cout, sum4, sum3, sum2, sum1)
+FUNCTION "U74283" ("a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1", "cin") 
+RETURNS ("cout", "sum4", "sum3", "sum2", "sum1")
+END
+
+% 74284 %
+BEGIN
+FUNCTION 74284 (gan, gbn, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y8, y7, y6, y5)
+FUNCTION "U74284" ("gan", "gbn", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y8", "y7", "y6", "y5")
+END
+
+% 74285 %
+BEGIN
+FUNCTION 74285 (gan, gbn, a4, a3, a2, a1, b4, b3, b2, b1) 
+RETURNS (y4, y3, y2, y1)
+FUNCTION "U74285" ("gan", "gbn", "a4", "a3", "a2", "a1", "b4", "b3", "b2", "b1") 
+RETURNS ("y4", "y3", "y2", "y1")
+END
+
+% 74290 %
+BEGIN
+FUNCTION 74290 (clka, clkb, clra, clrb, set9a, set9b) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74290" ("clka", "clkb", "clra", "clrb", "set9a", "set9b") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74292 %
+BEGIN
+FUNCTION 74292 (clk1, clk2, clrn, e, d, c, b, a) 
+RETURNS (q, tp1, tp2, tp3)
+FUNCTION "U74292" ("clk1", "clk2", "clrn", "e", "d", "c", "b", "a") 
+RETURNS ("q", "tp1", "tp2", "tp3")
+END
+
+% 74293 %
+BEGIN
+FUNCTION 74293 (clka, clkb, clra, clrb) 
+RETURNS (qd, qc, qb, qa)
+FUNCTION "U74293" ("clka", "clkb", "clra", "clrb") 
+RETURNS ("qd", "qc", "qb", "qa")
+END
+
+% 74294 %
+BEGIN
+FUNCTION 74294 (clk1, clk2, clrn, d, c, b, a) 
+RETURNS (q, tp)
+FUNCTION "U74294" ("clk1", "clk2", "clrn", "d", "c", "b", "a") 
+RETURNS ("q", "tp")
+END
+
+% 74295 %
+BEGIN
+FUNCTION 74295 (oe, ld/shn, clk, ser, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0)
+FUNCTION "U74295" ("oe", "ldshn", "clk", "ser", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0")
+END
+
+% 74297 %
+BEGIN
+FUNCTION 74297 (kclk, d/upn, enctr, d, c, b, a, idclk, phase_a1, phase_b, phase_a2) 
+RETURNS (idout, ecpd, xorpd)
+FUNCTION "U74297" ("kclk", "dnup", "enctr", "d", "c", "b", "a", "idclk", "phase_a1", "phase_b", "phase_a2") 
+RETURNS ("idout", "ecpd", "xorpd")
+END
+
+% 74298 %
+BEGIN
+FUNCTION 74298 (wrsl, clkn, a1, b1, c1, d1, a2, b2, c2, d2) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "U74298" ("wrsl", "clkn", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 74299 %
+BEGIN
+FUNCTION 74299 (clrn, s1, s0, g1n, g2n, clk, sr, sl) 
+RETURNS (a/qa, b/qb, c/qc, d/qd, e/qe, f/qf, g/qg, h/qh, qa2, qh2)
+FUNCTION "U74299" ("clrn", "s1", "s0", "g1n", "g2n", "clk", "sr", "sl") 
+RETURNS ("aqa", "bqb", "cqc", "dqd", "eqe", "fqf", "gqg", "hqh", "qa2", "qh2")
+END
+
+% 74348 %
+BEGIN
+FUNCTION 74348 (ei, d0, d1, d2, d3, d4, d5, d6, d7) 
+RETURNS (eo, gs, a2, a1, a0)
+FUNCTION "U74348" ("ei", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7") 
+RETURNS ("eo", "gs", "a2", "a1", "a0")
+END
+
+% 74350 %
+BEGIN
+FUNCTION 74350 (oen, s0, s1, d-3, d-2, d-1, d0, d1, d2, d3) 
+RETURNS (y0, y1, y2, y3)
+FUNCTION "U74350" ("oen", "s0", "s1", "d_3", "d_2", "d_1", "d0", "d1", "d2", "d3") 
+RETURNS ("y0", "y1", "y2", "y3")
+END
+
+% 74352 %
+BEGIN
+FUNCTION 74352 (b, a, 1gn, 1c0, 1c1, 1c2, 1c3, 2gn, 2c0, 2c1, 2c2, 2c3) 
+RETURNS (1yn, 2yn)
+FUNCTION "U74352" ("b", "a", "gan", "ca0", "ca1", "ca2", "ca3", "gbn", "cb0", "cb1", "cb2", "cb3") 
+RETURNS ("yan", "ybn")
+END
+
+% 74353 %
+BEGIN
+FUNCTION 74353 (b, a, 1gn, 1c0, 1c1, 1c2, 1c3, 2gn, 2c0, 2c1, 2c2, 2c3) 
+RETURNS (1yn, 2yn)
+FUNCTION "U74353" ("b", "a", "gan", "ca0", "ca1", "ca2", "ca3", "gbn", "cb0", "cb1", "cb2", "cb3") 
+RETURNS ("yan", "ybn")
+END
+
+% 74354 %
+BEGIN
+FUNCTION 74354 (gn1, gn2, g3, s2, s1, s0, scn, dcn, d7, d6, d5, d4, d3, d2, d1, d0) 
+RETURNS (y, wn)
+FUNCTION "U74354" ("gn1", "gn2", "g3", "s2", "s1", "s0", "scn", "dcn", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0") 
+RETURNS ("y", "wn")
+END
+
+% 74356 %
+BEGIN
+FUNCTION 74356 (gn1, gn2, g3, s2, s1, s0, scn, clk, d7, d6, d5, d4, d3, d2, d1, d0) 
+RETURNS (y, wn)
+FUNCTION "U74356" ("gn1", "gn2", "g3", "s2", "s1", "s0", "scn", "clk", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0") 
+RETURNS ("y", "wn")
+END
+
+% 74365 %
+BEGIN
+FUNCTION 74365 (gn1, gn2, a1, a2, a3, a4, a5, a6) 
+RETURNS (y1, y2, y3, y4, y5, y6)
+FUNCTION "U74365" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6")
+END
+
+% 74366 %
+BEGIN
+FUNCTION 74366 (gn1, gn2, a1, a2, a3, a4, a5, a6)
+RETURNS (yn1, yn2, yn3, yn4, yn5, yn6)
+FUNCTION "U74366" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6") 
+RETURNS ("yn1", "yn2", "yn3", "yn4", "yn5", "yn6")
+END
+
+% 74367 %
+BEGIN
+FUNCTION 74367 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2)
+FUNCTION "U74367" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22")
+END
+
+% 74368 %
+BEGIN
+FUNCTION 74368 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2) 
+RETURNS (1yn1, 1yn2, 1yn3, 1yn4, 2yn1, 2yn2)
+FUNCTION "U74368" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22") 
+RETURNS ("y1n1", "y1n2", "y1n3", "y1n4", "y2n1", "y2n2")
+END
+
+% 74373 %
+BEGIN
+FUNCTION 74373 (oen, g, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "U74373" ("oen", "g", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74374 %
+BEGIN
+FUNCTION 74374 (clk, oen, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "U74374" ("clk", "oen", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74375 %
+BEGIN
+FUNCTION 74375 (1d, 2d, 3d, 4d, e12, e34) 
+RETURNS (1q, 1qn, 2q, 2qn, 3q, 3qn, 4q, 4qn)
+FUNCTION "U74375" ("d1", "d2", "d3", "d4", "e12", "e34") 
+RETURNS ("q1", "q1n", "q2", "q2n", "q3", "q3n", "q4", "q4n")
+END
+
+% 74376 %
+BEGIN
+FUNCTION 74376 (clk, clrn, 1j, 1kn, 2j, 2kn, 3j, 3kn, 4j, 4kn) 
+RETURNS (1q, 2q, 3q, 4q)
+FUNCTION "U74376" ("clk", "clrn", "j1", "k1n", "j2", "k2n", "j3", "k3n", "j4", "k4n") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 74377 %
+BEGIN
+FUNCTION 74377 (en, clk, d8, d7, d6, d5, d4, d3, d2, d1) 
+RETURNS (q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "U74377" ("enn", "clk", "d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74378 %
+BEGIN
+FUNCTION 74378 (en, clk, d6, d5, d4, d3, d2, d1) 
+RETURNS (q6, q5, q4, q3, q2, q1)
+FUNCTION "U74378" ("enn", "clk", "d6", "d5", "d4", "d3", "d2", "d1") 
+RETURNS ("q6", "q5", "q4", "q3", "q2", "q1")
+END
+
+% 74379 %
+BEGIN
+FUNCTION 74379 (en, clk, d4, d3, d2, d1) 
+RETURNS (q4, q3, q2, q1, qn4, qn3, qn2, qn1)
+FUNCTION "U74379" ("en", "clk", "d4", "d3", "d2", "d1") 
+RETURNS ("q4", "q3", "q2", "q1", "qn4", "qn3", "qn2", "qn1")
+END
+
+% 74381 %
+BEGIN
+FUNCTION 74381 (s2, s1, s0, a3, a2, a1, a0, b3, b2, b1, b0, cin) 
+RETURNS (pn, gn, f3, f2, f1, f0)
+FUNCTION "U74381" ("s2", "s1", "s0", "a3", "a2", "a1", "a0", "b3", "b2", "b1", "b0", "cin") 
+RETURNS ("pn", "gn", "f3", "f2", "f1", "f0")
+END
+
+% 74382 %
+BEGIN
+FUNCTION 74382 (s2, s1, s0, a3, a2, a1, a0, b3, b2, b1, b0, cin) 
+RETURNS (ovr, cn4, f3, f2, f1, f0)
+FUNCTION "U74382" ("s2", "s1", "s0", "a3", "a2", "a1", "a0", "b3", "b2", "b1", "b0", "cin") 
+RETURNS ("ovr", "cn4", "f3", "f2", "f1", "f0")
+END
+
+% 74385 %
+BEGIN
+FUNCTION 74385 (clrn, 1s/an, 1a, 1b, 2s/an, 2a, 2b, 3s/an, 3a, 3b, 4s/an, 4a, 4b, clk) 
+RETURNS (1s, 2s, 3s, 4s)
+FUNCTION "U74385" ("clrn", "s1an", "a1", "b1", "s2an", "a2", "b2", "s3an", "a3", "b3", "s4an", "a4", "b4", "clk") 
+RETURNS ("s1", "s2", "s3", "s4")
+END
+
+% 74386 %
+BEGIN
+FUNCTION 74386 (a1, a2, a3, a4, b1, b2, b3, b4) 
+RETURNS (y1, y2, y3, y4)
+FUNCTION "U74386" ("a1", "a2", "a3", "a4", "b1", "b2", "b3", "b4") 
+RETURNS ("y1", "y2", "y3", "y4")
+END
+
+% 74390 %
+BEGIN
+FUNCTION 74390 (1clr, 1clka, 1clkb, 2clr, 2clka, 2clkb) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "U74390" ("clr1", "clka1", "clkb1", "clr2", "clka2", "clkb2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 74393 %
+BEGIN
+FUNCTION 74393 (a1, clr1, a2, clr2) 
+RETURNS (q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d)
+FUNCTION "U74393" ("a1", "clr1", "a2", "clr2") 
+RETURNS ("q1a", "q1b", "q1c", "q1d", "q2a", "q2b", "q2c", "q2d")
+END
+
+% 74395 %
+BEGIN
+FUNCTION 74395 (clrn, ld/shn, clk, ser, d1, d2, d3, d4, oen) 
+RETURNS (q1, q2, q3, q4, q4b)
+FUNCTION "U74395" ("clrn", "ldshn", "clk", "ser", "d1", "d2", "d3", "d4", "oen") 
+RETURNS ("q1", "q2", "q3", "q4", "q4b")
+END
+
+% 74396 %
+BEGIN
+FUNCTION 74396 (strbn, clk, d1, d2, d3, d4) 
+RETURNS (1q1, 1q2, 1q3, 1q4, 2q1, 2q2, 2q3, 2q4)
+FUNCTION "U74396" ("strbn", "clk", "d1", "d2", "d3", "d4") 
+RETURNS ("q11", "q12", "q13", "q14", "q21", "q22", "q23", "q24")
+END
+
+% 74398 %
+BEGIN
+FUNCTION 74398 (sel, a1, b1, c1, d1, a2, b2, c2, d2, clk) 
+RETURNS (qa, qan, qb, qbn, qc, qcn, qd, qdn)
+FUNCTION "U74398" ("sel", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2", "clk") 
+RETURNS ("qa", "qan", "qb", "qbn", "qc", "qcn", "qd", "qdn")
+END
+
+% 74399 %
+BEGIN
+FUNCTION 74399 (sel, a1, b1, c1, d1, a2, b2, c2, d2, clk) 
+RETURNS (qa, qb, qc, qd)
+FUNCTION "U74399" ("sel", "a1", "b1", "c1", "d1", "a2", "b2", "c2", "d2", "clk") 
+RETURNS ("qa", "qb", "qc", "qd")
+END
+
+% 74445 %
+BEGIN
+FUNCTION 74445 (d, c, b, a) 
+RETURNS (o0n, o1n, o2n, o3n, o4n, o5n, o6n, o7n, o8n, o9n)
+FUNCTION "U74445" ("d", "c", "b", "a") 
+RETURNS ("o0n", "o1n", "o2n", "o3n", "o4n", "o5n", "o6n", "o7n", "o8n", "o9n")
+END
+
+% 74465 %
+BEGIN
+FUNCTION 74465 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (y1, y2, y3, y4, y5, y6, y7, y8)
+FUNCTION "U74465" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8")
+END
+
+% 74466 %
+BEGIN
+FUNCTION 74466 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (yn1, yn2, yn3, yn4, yn5, yn6, yn7, yn8)
+FUNCTION "U74466" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("yn1", "yn2", "yn3", "yn4", "yn5", "yn6", "yn7", "yn8")
+END
+
+% 74467 %
+BEGIN
+FUNCTION 74467 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1y1, 1y2, 1y3, 1y4, 2y1, 2y2, 2y3, 2y4)
+FUNCTION "U74467" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22", "a23", "a24") 
+RETURNS ("y11", "y12", "y13", "y14", "y21", "y22", "y23", "y24")
+END
+
+% 74468 %
+BEGIN
+FUNCTION 74468 (1gn, 1a1, 1a2, 1a3, 1a4, 2gn, 2a1, 2a2, 2a3, 2a4) 
+RETURNS (1yn1, 1yn2, 1yn3, 1yn4, 2yn1, 2yn2, 2yn3, 2yn4)
+FUNCTION "U74468" ("g1n", "a11", "a12", "a13", "a14", "g2n", "a21", "a22", "a23", "a24") 
+RETURNS ("y1n1", "y1n2", "y1n3", "y1n4", "y2n1", "y2n2", "y2n3", "y2n4")
+END
+
+% 74490 %
+BEGIN
+FUNCTION 74490 (1set9, 1clr, 1clk, 2set9, 2clr, 2clk) 
+RETURNS (1qd, 1qc, 1qb, 1qa, 2qd, 2qc, 2qb, 2qa)
+FUNCTION "U74490" ("set91", "clr1", "clk1", "set92", "clr2", "clk2") 
+RETURNS ("qd1", "qc1", "qb1", "qa1", "qd2", "qc2", "qb2", "qa2")
+END
+
+% 74518 %
+BEGIN
+FUNCTION 74518 (p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0, gn) 
+RETURNS (pq)
+FUNCTION "U74518" ("p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0", "gn") 
+RETURNS ("pq")
+END
+
+% 74540 %
+BEGIN
+FUNCTION 74540 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (yn1, yn2, yn3, yn4, yn5, yn6, yn7, yn8)
+FUNCTION "U74540" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("yn1", "yn2", "yn3", "yn4", "yn5", "yn6", "yn7", "yn8")
+END
+
+% 74541 %
+BEGIN
+FUNCTION 74541 (gn1, gn2, a1, a2, a3, a4, a5, a6, a7, a8) 
+RETURNS (y1, y2, y3, y4, y5, y6, y7, y8)
+FUNCTION "U74541" ("gn1", "gn2", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8")
+END
+
+% 74548 %
+BEGIN
+FUNCTION 74548 (clk, clkenn1, clkenn2, insel, d7, d6, d5, d4, d3, d2, d1, d0, outsel, oen) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1, y0)
+FUNCTION "U74548" ("clk", "clkenn1", "clkenn2", "insel", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "outsel", "oen") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1", "y0")
+END
+
+% 74549 %
+BEGIN
+FUNCTION 74549 (g, g1n, g2n, insel, d7, d6, d5, d4, d3, d2, d1, d0, outsel, oen) 
+RETURNS (y7, y6, y5, y4, y3, y2, y1, y0)
+FUNCTION "U74549" ("g", "g1n", "g2n", "insel", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "outsel", "oen") 
+RETURNS ("y7", "y6", "y5", "y4", "y3", "y2", "y1", "y0")
+END
+
+% 74568 %
+BEGIN
+FUNCTION 74568 (clk, entn, enpn, aclrn, sclrn, u/dn, ldn, d3, d2, d1, d0, oen) 
+RETURNS (q3, q2, q1, q0, rcon, ccon)
+FUNCTION "U74568" ("clk", "entn", "enpn", "aclrn", "sclrn", "udn", "ldn", "d3", "d2", "d1", "d0", "oen") 
+RETURNS ("q3", "q2", "q1", "q0", "rcon", "ccon")
+END
+
+% 74569 %
+BEGIN
+FUNCTION 74569 (clk, entn, enpn, aclrn, sclrn, u/dn, ldn, d3, d2, d1, d0, oen) 
+RETURNS (q3, q2, q1, q0, rcon, ccon)
+FUNCTION "U74569" ("clk", "entn", "enpn", "aclrn", "sclrn", "udn", "ldn", "d3", "d2", "d1", "d0", "oen") 
+RETURNS ("q3", "q2", "q1", "q0", "rcon", "ccon")
+END
+
+% 74589 %
+BEGIN
+FUNCTION 74589 (oen, srclk, ser, srldn, rclk, d0, d1, d2, d3, d4, d5, d6, d7) 
+RETURNS (qhn)
+FUNCTION "U74589" ("oen", "srclk", "ser", "srldn", "rclk", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7") 
+RETURNS ("qhn")
+END
+
+% 74590 %
+BEGIN
+FUNCTION 74590 (gn, cclrn, ccken, cclk, rclk) 
+RETURNS (qh, qg, qf, qe, qd, qc, qb, qa, rcon)
+FUNCTION "U74590" ("gn", "cclrn", "ccken", "cclk", "rclk") 
+RETURNS ("qh", "qg", "qf", "qe", "qd", "qc", "qb", "qa", "rcon")
+END
+
+% 74592 %
+BEGIN
+FUNCTION 74592 (cclrn, cloadn, rclk, ccken, cclk, h, g, f, e, d, c, b, a) 
+RETURNS (rcon)
+FUNCTION "U74592" ("cclrn", "cloadn", "rclk", "ccken", "cclk", "h", "g", "f", "e", "d", "c", "b", "a") 
+RETURNS ("rcon")
+END
+
+% 74594 %
+BEGIN
+FUNCTION 74594 (srclrn, rclrn, srclk, rclk, ser) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh, qhn)
+FUNCTION "U74594" ("srclrn", "rclrn", "srclk", "rclk", "ser") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh", "qhn")
+END
+
+% 74595 %
+BEGIN
+FUNCTION 74595 (gn, srclrn, srclk, rclk, ser) 
+RETURNS (qa, qb, qc, qd, qe, qf, qg, qh, qhn)
+FUNCTION "U74595" ("gn", "srclrn", "srclk", "rclk", "ser") 
+RETURNS ("qa", "qb", "qc", "qd", "qe", "qf", "qg", "qh", "qhn")
+END
+
+% 74597 %
+BEGIN
+FUNCTION 74597 (srclrn, srldn, rclk, d7, d6, d5, d4, d3, d2, d1, d0, srclk, ser) 
+RETURNS (qhn)
+FUNCTION "U74597" ("srclrn", "srldn", "rclk", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "d0", "srclk", "ser") 
+RETURNS ("qhn")
+END
+
+% 74604 %
+BEGIN
+FUNCTION 74604 (clk, sel, a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8) 
+RETURNS (y1, y2, y3, y4, y5, y6, y7, y8)
+FUNCTION "U74604" ("clk", "sel", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8") 
+RETURNS ("y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8")
+END
+
+% 74630 %
+BEGIN
+FUNCTION 74630 (s1, s0, db15, db14, db13, db12, db11, db10, db9, db8, db7, db6, db5, db4, db3, db2, db1, db0, cb5, cb4, cb3, cb2, cb1, cb0) 
+RETURNS (dbo15, dbo14, dbo13, dbo12, dbo11, dbo10, dbo9, dbo8, dbo7, dbo6, dbo5, dbo4, dbo3, dbo2, dbo1, dbo0,  cbo5, cbo4, cbo3, cbo2, cbo1, cbo0, sef, def)
+FUNCTION "U74630" ("s1", "s0", "db15", "db14", "db13", "db12", "db11", "db10", "db9", "db8", "db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0", "cb5", "cb4", "cb3", "cb2", "cb1", "cb0") 
+RETURNS ("db15", "db14", "db13", "db12", "db11", "db10", "db9", "db8", "db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0",  "cb5", "cb4", "cb3", "cb2", "cb1", "cb0", "sef", "def")
+END
+
+% 74636 %
+BEGIN
+FUNCTION 74636 (s1, s0, db7, db6, db5, db4, db3, db2, db1, db0, cb4, cb3, cb2, cb1, cb0) 
+RETURNS (dbo7, dbo6, dbo5, dbo4, dbo3, dbo2, dbo1, dbo0, cbo4, cbo3, cbo2, cbo1, cbo0, sef, def)
+FUNCTION "U74636" ("s1", "s0", "db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0", "cb4", "cb3", "cb2", "cb1", "cb0") 
+RETURNS ("db7", "db6", "db5", "db4", "db3", "db2", "db1", "db0", "cb4", "cb3", "cb2", "cb1", "cb0", "sef", "def")
+END
+
+% 74668 %
+BEGIN
+FUNCTION 74668 (clk, entn, enpn, u/dn, ldn, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "U74668" ("clk", "entn", "enpn", "udn", "ldn", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74669 %
+BEGIN
+FUNCTION 74669 (clk, entn, enpn, u/dn, ldn, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, tcn)
+FUNCTION "U74669" ("clk", "entn", "enpn", "udn", "ldn", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "tcn")
+END
+
+% 74670 %
+BEGIN
+FUNCTION 74670 (wb, wa, gwn, rb, ra, grn, d1, d2, d3, d4) 
+RETURNS (q1, q2, q3, q4)
+FUNCTION "U74670" ("wb", "wa", "gwn", "rb", "ra", "grn", "d1", "d2", "d3", "d4") 
+RETURNS ("q1", "q2", "q3", "q4")
+END
+
+% 74671 %
+BEGIN
+FUNCTION 74671 (gn, r/sn, srclrn, s1, s0, srclk, serl, serr, a, b, c, d, rclk) 
+RETURNS (qa, qb, qc, qd, casc)
+FUNCTION "U74671" ("gn", "rsn", "srclrn", "s1", "s0", "srclk", "serl", "serr", "a", "b", "c", "d", "rclk") 
+RETURNS ("qa", "qb", "qc", "qd", "casc")
+END
+
+% 74672 %
+BEGIN
+FUNCTION 74672 (gn, r/sn, srclrn, s1, s0, srclk, serl, serr, a, b, c, d, rclk) 
+RETURNS (qa, qb, qc, qd, casc)
+FUNCTION "U74672" ("gn", "rsn", "srclrn", "s1", "s0", "srclk", "serl", "serr", "a", "b", "c", "d", "rclk") 
+RETURNS ("qa", "qb", "qc", "qd", "casc")
+END
+
+% 74673 %
+BEGIN
+FUNCTION 74673 (csn, r/wn, srclk, stclrn, mode, ser) 
+RETURNS (y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, q15)
+FUNCTION "U74673" ("csn", "rwn", "srclk", "stclrn", "mode", "ser") 
+RETURNS ("y0", "y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8", "y9", "y10", "y11", "y12", "y13", "y14", "y15", "q15")
+END
+
+% 74674 %
+BEGIN
+FUNCTION 74674 (csn, r/wn, clk, mode, ser, p15, p14, p13, p12, p11, p10, p9, p8, p7, p6, p5, p4, p3, p2, p1, p0) 
+RETURNS (q15)
+FUNCTION "U74674" ("csn", "rwn", "clk", "mode", "ser", "p15", "p14", "p13", "p12", "p11", "p10", "p9", "p8", "p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0") 
+RETURNS ("q15")
+END
+
+% 74684 %
+BEGIN
+FUNCTION 74684 (p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0) 
+RETURNS (equaln, p_gr_qn)
+FUNCTION "U74684" ("p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0") 
+RETURNS ("equaln", "p_gr_qn")
+END
+
+% 74686 %
+BEGIN
+FUNCTION 74686 (g1n, g2n, p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0) 
+RETURNS (equaln, p_gr_qn)
+FUNCTION "U74686" ("g1n", "g2n", "p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0") 
+RETURNS ("equaln", "p_gr_qn")
+END
+
+% 74688 %
+BEGIN
+FUNCTION 74688 (gn, p7, p6, p5, p4, p3, p2, p1, p0, q7, q6, q5, q4, q3, q2, q1, q0) 
+RETURNS (equaln)
+FUNCTION "U74688" ("gn", "p7", "p6", "p5", "p4", "p3", "p2", "p1", "p0", "q7", "q6", "q5", "q4", "q3", "q2", "q1", "q0") 
+RETURNS ("equaln")
+END
+
+% 74690 %
+BEGIN
+FUNCTION 74690 (gn, cclrn, ldn, enp, ent, rclrn, rclk, r/cn, cclk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, rco)
+FUNCTION "U74690" ("gn", "cclrn", "ldn", "enp", "ent", "rclrn", "rclk", "rcn", "cclk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "rco")
+END
+
+% 74691 %
+BEGIN
+FUNCTION 74691 (gn, cclrn, ldn, enp, ent, rclrn, rclk, r/cn, cclk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, rco)
+FUNCTION "U74691" ("gn", "cclrn", "ldn", "enp", "ent", "rclrn", "rclk", "rcn", "cclk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "rco")
+END
+
+% 74693 %
+BEGIN
+FUNCTION 74693 (gn, cclrn, ldn, enp, ent, rclrn, rclk, r/cn, cclk, d3, d2, d1, d0) 
+RETURNS (q3, q2, q1, q0, rco)
+FUNCTION "U74693" ("gn", "cclrn", "ldn", "enp", "ent", "rclrn", "rclk", "rcn", "cclk", "d3", "d2", "d1", "d0") 
+RETURNS ("q3", "q2", "q1", "q0", "rco")
+END
+
+% 74696 %
+BEGIN
+FUNCTION 74696 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "U74696" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74697 %
+BEGIN
+FUNCTION 74697 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "U74697" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74698 %
+BEGIN
+FUNCTION 74698 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "U74698" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74699 %
+BEGIN
+FUNCTION 74699 (u/dn, r/cn, rclk, ldn, gn, entn, enpn, d3, d2, d1, d0, cclrn, cclk) 
+RETURNS (tcn, q3, q2, q1, q0)
+FUNCTION "U74699" ("udn", "rcn", "rclk", "ldn", "gn", "entn", "enpn", "d3", "d2", "d1", "d0", "cclrn", "cclk") 
+RETURNS ("tcn", "q3", "q2", "q1", "q0")
+END
+
+% 74821 %
+BEGIN
+FUNCTION 74821 (oen, clk, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "U74821" ("oen", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10")
+END
+
+% 74822 %
+BEGIN
+FUNCTION 74822 (oen, clk, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9, dn10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "U74822" ("oen", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9", "qn10")
+END
+
+% 74823 %
+BEGIN
+FUNCTION 74823 (oen, clrn, clkenn, clk, d1, d2, d3, d4, d5, d6, d7, d8, d9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "U74823" ("oen", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9")
+END
+
+% 74824 %
+BEGIN
+FUNCTION 74824 (oen, clrn, clkenn, clk, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "U74824" ("oen", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9")
+END
+
+% 74825 %
+BEGIN
+FUNCTION 74825 (oe1n, oe2n, oe3n, clrn, clkenn, clk, d1, d2, d3, d4, d5, d6, d7, d8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "U74825" ("oe1n", "oe2n", "oe3n", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8")
+END
+
+% 74826 %
+BEGIN
+FUNCTION 74826 (oe1n, oe2n, oe3n, clrn, clkenn, clk, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "U74826" ("oe1n", "oe2n", "oe3n", "clrn", "clkenn", "clk", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8")
+END
+
+% 74841 %
+BEGIN
+FUNCTION 74841 (oen, c, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "U74841" ("oen", "c", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10")
+END
+
+% 74842 %
+BEGIN
+FUNCTION 74842 (oen, c, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9, dn10) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+FUNCTION "U74842" ("oen", "c", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9", "qn10")
+END
+
+% 74843 %
+BEGIN
+FUNCTION 74843 (oen, clrn, pren, ena, d1, d2, d3, d4, d5, d6, d7, d8, d9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "U74843" ("oen", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9")
+END
+
+% 74844 %
+BEGIN
+FUNCTION 74844 (oen, clrn, pren, ena, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8, dn9) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8, q9)
+FUNCTION "U74844" ("oen", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9")
+END
+
+% 74845 %
+BEGIN
+FUNCTION 74845 (oen1, oen2, oen3, clrn, pren, ena, d1, d2, d3, d4, d5, d6, d7, d8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "U74845" ("oen1", "oen2", "oen3", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8")
+END
+
+% 74846 %
+BEGIN
+FUNCTION 74846 (oen1, oen2, oen3, clrn, pren, ena, dn1, dn2, dn3, dn4, dn5, dn6, dn7, dn8) 
+RETURNS (q1, q2, q3, q4, q5, q6, q7, q8)
+FUNCTION "U74846" ("oen1", "oen2", "oen3", "clrn", "pren", "ena", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8") 
+RETURNS ("qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8")
+END
+
+% 74990 %
+BEGIN
+FUNCTION 74990 (oerb, c) 
+RETURNS (d8, d7, d6, d5, d4, d3, d2, d1, q8, q7, q6, q5, q4, q3, q2, q1)
+FUNCTION "U74990" ("oerb", "c") 
+RETURNS ("d8", "d7", "d6", "d5", "d4", "d3", "d2", "d1", "q8", "q7", "q6", "q5", "q4", "q3", "q2", "q1")
+END
+

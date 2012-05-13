@@ -1,0 +1,9 @@
+(device file for capck62)
+package capck62
+class discrete
+pincount 2
+pinorder capck62 a b
+pinswap capck62 a b
+function g1 capck62 1 2
+end
+

@@ -1,0 +1,50 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Refresh Padstack                                                 )
+(                                                                     )
+(    Drawing          : TSSOP20EP.dra                                 )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Wed Mar 09 17:00:40 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Wed Mar 09 17:00:40 2011				Page     1
+
+
+------ Pad Stack Refresh Options ------
+
+OLD_LAYOUT_NAME = 'C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/TSSOP20EP.dra';
+NEW_LAYOUT_NAME = '';
+REFRESH_SYMBOL_TEXT_LOCATIONS = 'NO';
+
+
+------ Library Paths ------
+PSMPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           C:/Cadence/SPB_16.3/share/local/pcb/symbols 
+           C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_16.3/share/pcb/allegrolib/symbols 
+           C:\Cadence\SPB_16.3\share\pcb\pcb_lib\symbols\ 
+           C:\Cadence\SPB_16.3\share\pcb\pcb_lib\symbols\FootprintMaker 
+
+PADPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           C:/Cadence/SPB_16.3/share/local/pcb/padstacks 
+           C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_16.3/share/pcb/allegrolib/symbols 
+           C:\Cadence\SPB_16.3\share\pcb\pcb_lib\symbols\ 
+           C:\Cadence\SPB_16.3\share\pcb\pcb_lib\symbols\FootprintMaker 
+
+
+------ Pad Stack Refresh Messages ------
+
+'OX0_40Y1_65T'  pad stack refresh starting.
+
+     'OX0_40Y1_65T'  pad stack refreshed successfully.
+     
+Completed refreshing all pad stacks successfully.

@@ -1,0 +1,10 @@
+include $CDS_INST_DIR/tools/inca/files/hdl.var 
+define WORK simprim
+define WORK x4kelib
+define WORK x4kxlib
+define WORK x5klib
+define WORK x9klib
+define WORK logiblox
+define WORK unisim
+define WORK xilinxcorelib
+define WORK coolpack

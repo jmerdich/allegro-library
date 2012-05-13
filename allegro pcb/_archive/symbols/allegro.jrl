@@ -1,0 +1,56 @@
+\t (00:00:12) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:12) 
+
+\t (00:00:15) Opening existing drawing...
+\d (00:00:15) Database opened: C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/EP13.dra
+\i (00:00:16) trapsize 124
+\i (00:00:16) trapsize 120
+\i (00:00:16) trapsize 118
+\i (00:00:17) trapsize 99
+\i (00:00:17) trapsize 99
+\i (00:00:17) generaledit 
+\i (00:00:21) open 
+\i (00:00:27) fillin "QFN50P500X500X100-33A.dra"
+\t (00:00:27) Opening existing drawing...
+\i (00:00:27) trapsize 57
+\d (00:00:27) Database opened: C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/QFN50P500X500X100-33A.dra
+\i (00:00:27) generaledit 
+\i (00:00:31) add pin 
+\i (00:00:35) setwindow form.mini
+\i (00:00:35) FORM mini pad_browse  
+\f (00:00:35) Select a padstack:
+\i (00:00:46) fillin "Smd86x127"
+\t (00:00:46) Using 'SMD86X127.pad'.
+\i (00:00:50) FORM mini pad_browse  
+\f (00:00:50) Select a padstack:
+\i (00:00:55) fillin "Smd75x100"
+\t (00:00:55) Using 'SMD75X100.pad'.
+\i (00:00:59) FORM mini pad_browse  
+\f (00:00:59) Select a padstack:
+\i (00:01:03) fillin "Smd40x100"
+\t (00:01:03) Using 'SMD40X100.pad'.
+\i (00:01:14) FORM mini next_pin_number 33 
+\i (00:01:16) setwindow pcb
+\i (00:01:16) pick grid 0.048 0.036
+\t (00:01:16) last pick:  0.000  0.000
+\t (00:01:16) Using 'SMD40X100.pad'.
+\i (00:01:20) prepopup 1.010 -0.530
+\i (00:01:21) done 
+\t (00:01:21) Exiting from Add Pin.
+\i (00:01:21) generaledit 
+\i (00:01:23) pick grid -1.945 0.274
+\t (00:01:23) last pick:  -1.900  0.300
+\i (00:01:24) prepopup -1.968 0.308
+\i (00:01:25) pop dyn_option_select @:@Move 
+\i (00:01:25) move 
+\t (00:01:25) last pick:  -1.270  0.000
+\t (00:01:25) Pick new location for the element(s).
+\i (00:01:31) pick grid -0.552 -0.258
+\t (00:01:31) last pick:  -0.600  -0.300
+\i (00:01:31) generaledit 
+\i (00:01:38) save 
+\f (00:01:38) C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/QFN50P500X500X100-33A.dra: File Exists. Overwrite? 
+\i (00:01:43) fillin yes 
+\t (00:01:44) Symbol 'qfn50p500x500x100-33a.psm' created.
+\i (00:01:44) generaledit 
+\i (00:01:50) exit 

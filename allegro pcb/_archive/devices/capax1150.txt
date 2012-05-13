@@ -1,0 +1,9 @@
+(device file for capax1150)
+package capax1150
+class discrete
+pincount 2
+pinorder capax1150 a b
+pinswap capax1150 a b
+function g1 capax1150 1 2
+end
+

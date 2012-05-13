@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : TSSOP20EP.dra                                 )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Wed Mar 09 16:43:39 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = C:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols
+    Name      = tssop20ep.psm
+    User      = ffywzq
+    Machine   = BE-OU1-GD214
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

@@ -1,0 +1,88 @@
+--***************************************************************************
+--                                                                        
+--                         Copyright (C) 1987-1995                         
+--                              by OrCAD, INC.                             
+--                                                                         
+--                           All rights reserved.                          
+--
+--***************************************************************************
+--
+--
+-- Purpose:	  OrCAD VHDL Model Index
+-- Version:       v6.0
+-- File:	  AC11.LST
+-- Resource:	  Texas Instruments, Advanced CMOS Logic, Data Book 1993
+--                 AC11XXX/ACT11XXX Families
+-- Key:		  ":part_value   capture_olb  pin_count"
+
+:74AC11000                      TTL     16
+:74AC11002   TTL 16
+:74AC11004                      TTL     20
+:74AC11008                      TTL     16
+:74AC11010                      TTL     16
+:74AC11011                      TTL     16
+:74AC11014                      TTL     20
+:74AC11020                      TTL     14
+:74AC11021   TTL  14
+:74AC11027                      TTL     16
+:74AC11030                      TTL     14
+:74AC11032                      TTL     16
+:74AC11034                      TTL     20
+:74AC11074                      TTL     14
+:74AC11086   TTL 16
+:74AC11109              TTL     16
+:74AC11112              TTL     16
+:74AC11132                      TTL     16
+:74AC11138  TTL  16
+:74AC11240                      TTL     24
+:74AC11241                      TTL     24
+:74AC11244                      TTL     24
+:74AC11245   TTL  24
+:74AC11273  TTL  24
+:74AC11280  TTL  14
+:74AC11373  TTL  24
+:74AC11374  TTL  24
+:74AC11520   TTL  20
+:74AC11521   TTL  20
+:74AC11533   TTL  24
+:74AC11534                      TTL     24
+:74AC11620   TTL  24
+:74AC11623   TTL  24
+:74AC11640   TTL  24
+:74AC11643   TTL  24
+:74ACT11000                     TTL     16
+:74ACT11002                     TTL     16
+:74ACT11004                     TTL     20
+:74ACT11008                     TTL     16
+:74ACT11010                     TTL     16
+:74ACT11011                     TTL     16
+:74ACT11014                     TTL     20
+:74ACT11020                     TTL     14
+:74ACT11021   TTL  14
+:74ACT11027                     TTL     16
+:74ACT11030                     TTL     14
+:74ACT11032                     TTL     16
+:74ACT11034                     TTL     20
+:74ACT11074                     TTL     14
+:74ACT11086   TTL 16
+:74ACT11109             TTL     16
+:74ACT11112             TTL     16
+:74ACT11132                     TTL     16
+:74ACT11138  TTL  16
+:74ACT11174             TTL     20
+:74ACT11175             TTL     20
+:74ACT11240                     TTL     24
+:74ACT11244                     TTL     24
+:74ACT11245   TTL  24
+:74ACT11373   TTL  24
+:74ACT11520   TTL  20
+:74ACT11521   TTL  20
+:74ACT11533   TTL  24
+:74ACT11620   TTL  24
+:74ACT11623   TTL  24
+:74ACT11640   TTL  24
+:74ACT11643   TTL  24
+:74ACT11241                     TTL     24
+:74ACT11280  TTL  14
+:74ACT11374                     TTL     24
+:74ACT11534                     TTL     24

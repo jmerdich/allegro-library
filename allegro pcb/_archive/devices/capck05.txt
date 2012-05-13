@@ -1,0 +1,9 @@
+(device file for capck05)
+package capck05
+class discrete
+pincount 2
+pinorder capck05 a b
+pinswap capck05 a b
+function g1 capck05 1 2
+end
+

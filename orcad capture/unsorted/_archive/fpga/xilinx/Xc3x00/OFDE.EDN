@@ -1,0 +1,113 @@
+(edif ofde
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1998 01 29 17 27 55)
+   (program "CAPTURE.EXE" (Version "7.20.145"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "January 29, 1998")
+  (comment "G:\MANUFACTURER\XILINXM1\WORKINPROGRESS\XC3X00\OFDE.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell inv
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I (direction INPUT))
+     (port O (direction OUTPUT)))))
+  (cell ofdt
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port C (direction INPUT))
+     (port D (direction INPUT))
+     (port O (direction OUTPUT))
+     (port T (direction INPUT))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ofde
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port D (direction INPUT))
+     (port E (direction INPUT))
+     (port O (direction OUTPUT))
+     (port C (direction INPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef inv
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I12"))
+      (property EDIForiginalOrigin (string "(pt 20 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "inv"))
+      (portInstance I
+       (property PINTYPE (string "IN")))
+      (portInstance O
+       (property PARAM (string "INV"))
+       (property PINTYPE (string "OUT"))))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ofdt
+        (libraryRef OrCAD_LIB)))
+      (property Name (string "$1I15"))
+      (property EDIForiginalOrigin (string "(pt 20 -110)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ofdt"))
+      (portInstance C
+       (property PINTYPE (string "IN")))
+      (portInstance D
+       (property PINTYPE (string "IN")))
+      (portInstance O
+       (property PINTYPE (string "OUT")))
+      (portInstance T
+       (property PINTYPE (string "IN"))))
+     (net E
+      (joined
+       (portRef I (instanceRef U1))
+       (portRef E))
+      (property Name (string "E")))
+     (net T
+      (joined
+       (portRef O (instanceRef U1))
+       (portRef T (instanceRef U2)))
+      (property Name (string "T")))
+     (net C
+      (joined
+       (portRef C (instanceRef U2))
+       (portRef C))
+      (property Name (string "C")))
+     (net O
+      (joined
+       (portRef O (instanceRef U2))
+       (portRef O))
+      (property Name (string "O")))
+     (net D
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D))
+      (property Name (string "D")))))))
+ (design ofde
+  (cellRef ofde
+   (libraryRef MAIN_LIB))))

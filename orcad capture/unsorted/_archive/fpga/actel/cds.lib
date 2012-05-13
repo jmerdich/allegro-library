@@ -1,0 +1,8 @@
+include $CDS_INST_DIR/tools/inca/files/cds.lib 
+define act1 ./sim_lib/act1
+define act2 ./sim_lib/act2
+define act3 ./sim_lib/act3
+define a3200dx ./sim_lib/a3200dx
+define a40mx ./sim_lib/a40mx
+define a42mx ./sim_lib/a42mx
+define a54sx ./sim_lib/a54sx

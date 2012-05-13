@@ -1,0 +1,284 @@
+(edif iopad16
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 13 22 49 00)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000E\IOPAD16.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell iopad
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port IOPAD (direction INOUT)(designator "IOPAD"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell iopad16
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port IO9 (direction INOUT))
+     (port IO10 (direction INOUT))
+     (port IO11 (direction INOUT))
+     (port IO12 (direction INOUT))
+     (port IO0 (direction INOUT))
+     (port IO13 (direction INOUT))
+     (port IO1 (direction INOUT))
+     (port IO14 (direction INOUT))
+     (port IO2 (direction INOUT))
+     (port IO15 (direction INOUT))
+     (port IO3 (direction INOUT))
+     (port IO4 (direction INOUT))
+     (port IO5 (direction INOUT))
+     (port IO6 (direction INOUT))
+     (port IO7 (direction INOUT))
+     (port IO8 (direction INOUT)))
+    (contents
+     (instance U13
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U13")
+      (property Name (string "$1I37"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U14
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U14")
+      (property Name (string "$1I36"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U15
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U15")
+      (property Name (string "$1I35"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U16
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U16")
+      (property Name (string "$1I34"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U1
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "$1I45"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "$1I44"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "$1I43"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U4")
+      (property Name (string "$1I42"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U5
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U5")
+      (property Name (string "$1I38"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U6
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U6")
+      (property Name (string "$1I39"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U7
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U7")
+      (property Name (string "$1I40"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U8
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U8")
+      (property Name (string "$1I41"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U9
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U9")
+      (property Name (string "$1I30"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U10
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U10")
+      (property Name (string "$1I31"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U11
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U11")
+      (property Name (string "$1I32"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (instance U12
+      (viewRef NetlistView
+       (cellRef iopad
+        (libraryRef OrCAD_LIB))) (designator "U12")
+      (property Name (string "$1I33"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "iopad"))
+      (property EXT (string "BPAD")))
+     (net IO7
+      (joined
+       (portRef IOPAD (instanceRef U8))
+       (portRef IO7))
+      (property Name (string "IO7")))
+     (net IO8
+      (joined
+       (portRef IOPAD (instanceRef U9))
+       (portRef IO8))
+      (property Name (string "IO8")))
+     (net IO9
+      (joined
+       (portRef IOPAD (instanceRef U10))
+       (portRef IO9))
+      (property Name (string "IO9")))
+     (net IO10
+      (joined
+       (portRef IOPAD (instanceRef U11))
+       (portRef IO10))
+      (property Name (string "IO10")))
+     (net IO11
+      (joined
+       (portRef IOPAD (instanceRef U12))
+       (portRef IO11))
+      (property Name (string "IO11")))
+     (net IO13
+      (joined
+       (portRef IOPAD (instanceRef U14))
+       (portRef IO13))
+      (property Name (string "IO13")))
+     (net IO14
+      (joined
+       (portRef IOPAD (instanceRef U15))
+       (portRef IO14))
+      (property Name (string "IO14")))
+     (net IO15
+      (joined
+       (portRef IOPAD (instanceRef U16))
+       (portRef IO15))
+      (property Name (string "IO15")))
+     (net IO12
+      (joined
+       (portRef IOPAD (instanceRef U13))
+       (portRef IO12))
+      (property Name (string "IO12")))
+     (net IO0
+      (joined
+       (portRef IOPAD (instanceRef U1))
+       (portRef IO0))
+      (property Name (string "IO0")))
+     (net IO1
+      (joined
+       (portRef IOPAD (instanceRef U2))
+       (portRef IO1))
+      (property Name (string "IO1")))
+     (net IO2
+      (joined
+       (portRef IOPAD (instanceRef U3))
+       (portRef IO2))
+      (property Name (string "IO2")))
+     (net IO3
+      (joined
+       (portRef IOPAD (instanceRef U4))
+       (portRef IO3))
+      (property Name (string "IO3")))
+     (net IO4
+      (joined
+       (portRef IOPAD (instanceRef U5))
+       (portRef IO4))
+      (property Name (string "IO4")))
+     (net IO5
+      (joined
+       (portRef IOPAD (instanceRef U6))
+       (portRef IO5))
+      (property Name (string "IO5")))
+     (net IO6
+      (joined
+       (portRef IOPAD (instanceRef U7))
+       (portRef IO6))
+      (property Name (string "IO6")))))))
+ (design iopad16
+  (cellRef iopad16
+   (libraryRef MAIN_LIB))))

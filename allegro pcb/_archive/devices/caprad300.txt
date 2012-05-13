@@ -1,0 +1,10 @@
+(device file for caprad300)
+package caprad300
+class discrete
+pincount 2
+pinorder caprad300 a b
+pinswap caprad300 a b
+function g1 caprad300 1 2
+end
+
+

@@ -1,0 +1,47 @@
+ (VPIFile 980127
+	(Vendor "Actel VHDL Libraries")
+	(CompileRef "Actel VHDL Libraries Compilation")
+	(CompileTip "Before Compilation locate Actel Command Files")
+
+	(Family "ACT1 VHDL Libraries"
+		(CompileCMD "C_Act1.cmd")
+		(CompileRef "Actel ACT1 VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+
+	(Family "ACT2 VHDL Libraries"
+		(CompileCMD "C_Act2.cmd")
+		(CompileRef "Actel ACT2 VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+	(Family "ACT3 VHDL Libraries"
+		(CompileCMD "C_Act3.cmd")
+		(CompileRef "Actel ACT3 VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+
+	(Family "3200DX VHDL Libraries"
+		(CompileCMD "C_a3200.cmd")
+		(CompileRef "Actel 3200DX VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+	
+	(Family "40MX VHDL Libraries"
+		(CompileCMD "C_40mx.cmd")
+		(CompileRef "Actel 40MX VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+
+	(Family "42MX VHDL Libraries"
+		(CompileCMD "C_42mx.cmd")
+		(CompileRef "Actel 42MX VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+
+	(Family "54SX VHDL Libraries"
+		(CompileCMD "C_54sx.cmd")
+		(CompileRef "Actel 54SX VHDL Models")
+		(CompileTip "Actel V3.1 VHDL")
+	)
+
+)

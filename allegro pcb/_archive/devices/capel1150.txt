@@ -1,0 +1,7 @@
+(device file for capel1150)
+package capel1150
+class discrete
+pincount 2
+end
+
+

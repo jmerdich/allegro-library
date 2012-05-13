@@ -1,0 +1,178 @@
+(edif ram16x2d
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 14 01 27 41)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000EX\RAM16X2D.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram16x1d
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT)(designator "A0"))
+     (port A1 (direction INPUT)(designator "A1"))
+     (port A2 (direction INPUT)(designator "A2"))
+     (port A3 (direction INPUT)(designator "A3"))
+     (port D (direction INPUT)(designator "D"))
+     (port DPO (direction OUTPUT)(designator "DPO"))
+     (port DPRA0 (direction INPUT)(designator "DPRA0"))
+     (port DPRA1 (direction INPUT)(designator "DPRA1"))
+     (port DPRA2 (direction INPUT)(designator "DPRA2"))
+     (port DPRA3 (direction INPUT)(designator "DPRA3"))
+     (port SPO (direction OUTPUT)(designator "SPO"))
+     (port WCLK (direction INPUT)(designator "WCLK"))
+     (port WE (direction INPUT)(designator "WE"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ram16x2d
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port A0 (direction INPUT))
+     (port SPO0 (direction OUTPUT))
+     (port A1 (direction INPUT))
+     (port SPO1 (direction OUTPUT))
+     (port A2 (direction INPUT))
+     (port DPRA0 (direction INPUT))
+     (port A3 (direction INPUT))
+     (port DPRA1 (direction INPUT))
+     (port DPRA2 (direction INPUT))
+     (port DPRA3 (direction INPUT))
+     (port WCLK (direction INPUT))
+     (port D0 (direction INPUT))
+     (port DPO0 (direction OUTPUT))
+     (port D1 (direction INPUT))
+     (port DPO1 (direction OUTPUT))
+     (port WE (direction INPUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "O0"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ram16x1d
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "$1I95"))
+      (property EDIForiginalOrigin (string "(pt 20 -260)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ram16x1d")))
+     (net DPO1
+      (joined
+       (portRef DPO (instanceRef U2))
+       (portRef DPO1))
+      (property Name (string "DPO1")))
+     (net A0
+      (joined
+       (portRef A0 (instanceRef U2))
+       (portRef A0 (instanceRef U1))
+       (portRef A0))
+      (property Name (string "A0")))
+     (net WCLK
+      (joined
+       (portRef WCLK (instanceRef U2))
+       (portRef WCLK (instanceRef U1))
+       (portRef WCLK))
+      (property Name (string "WCLK")))
+     (net WE
+      (joined
+       (portRef WE (instanceRef U2))
+       (portRef WE (instanceRef U1))
+       (portRef WE))
+      (property Name (string "WE")))
+     (net D0
+      (joined
+       (portRef D (instanceRef U1))
+       (portRef D0))
+      (property Name (string "D0")))
+     (net DPRA3
+      (joined
+       (portRef DPRA3 (instanceRef U2))
+       (portRef DPRA3 (instanceRef U1))
+       (portRef DPRA3))
+      (property Name (string "DPRA3")))
+     (net A3
+      (joined
+       (portRef A3 (instanceRef U2))
+       (portRef A3 (instanceRef U1))
+       (portRef A3))
+      (property Name (string "A3")))
+     (net A1
+      (joined
+       (portRef A1 (instanceRef U2))
+       (portRef A1 (instanceRef U1))
+       (portRef A1))
+      (property Name (string "A1")))
+     (net A2
+      (joined
+       (portRef A2 (instanceRef U2))
+       (portRef A2 (instanceRef U1))
+       (portRef A2))
+      (property Name (string "A2")))
+     (net DPRA1
+      (joined
+       (portRef DPRA1 (instanceRef U2))
+       (portRef DPRA1 (instanceRef U1))
+       (portRef DPRA1))
+      (property Name (string "DPRA1")))
+     (net DPRA0
+      (joined
+       (portRef DPRA0 (instanceRef U2))
+       (portRef DPRA0 (instanceRef U1))
+       (portRef DPRA0))
+      (property Name (string "DPRA0")))
+     (net SPO0
+      (joined
+       (portRef SPO (instanceRef U1))
+       (portRef SPO0))
+      (property Name (string "SPO0")))
+     (net DPO0
+      (joined
+       (portRef DPO (instanceRef U1))
+       (portRef DPO0))
+      (property Name (string "DPO0")))
+     (net DPRA2
+      (joined
+       (portRef DPRA2 (instanceRef U2))
+       (portRef DPRA2 (instanceRef U1))
+       (portRef DPRA2))
+      (property Name (string "DPRA2")))
+     (net D1
+      (joined
+       (portRef D (instanceRef U2))
+       (portRef D1))
+      (property Name (string "D1")))
+     (net SPO1
+      (joined
+       (portRef SPO (instanceRef U2))
+       (portRef SPO1))
+      (property Name (string "SPO1")))))))
+ (design ram16x2d
+  (cellRef ram16x2d
+   (libraryRef MAIN_LIB))))

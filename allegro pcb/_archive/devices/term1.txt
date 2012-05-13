@@ -1,0 +1,13 @@
+package sip8
+class ic
+pincount 8
+pinorder term t g
+pinuse term in power
+function g1 term 2 1
+function g2 term 3 1
+function g3 term 4 1
+function g4 term 5 1
+function g5 term 6 1
+function g6 term 7 1
+function g7 term 8 1
+end

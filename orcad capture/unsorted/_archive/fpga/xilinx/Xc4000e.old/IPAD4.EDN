@@ -1,0 +1,104 @@
+(edif ipad4
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 1997 08 13 22 50 24)
+   (program "EXPRESS.EXE" (Version "7.10.375"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "August 13, 1997")
+  (comment "G:\M1_LIBS\XC4000E\IPAD4.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ipad
+   (cellType generic)
+   (comment "From OrCAD library MENTOR_LIB.OLB")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port IPAD (direction INOUT)(designator "IPAD"))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell ipad4
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port I0 (direction INOUT))
+     (port I1 (direction INOUT))
+     (port I2 (direction INOUT))
+     (port I3 (direction INOUT)))
+    (contents
+     (instance U1
+      (viewRef NetlistView
+       (cellRef ipad
+        (libraryRef OrCAD_LIB))) (designator "U1")
+      (property Name (string "$1I43"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ipad"))
+      (property EXT (string "IPAD")))
+     (instance U2
+      (viewRef NetlistView
+       (cellRef ipad
+        (libraryRef OrCAD_LIB))) (designator "U2")
+      (property Name (string "$1I44"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ipad"))
+      (property EXT (string "IPAD")))
+     (instance U3
+      (viewRef NetlistView
+       (cellRef ipad
+        (libraryRef OrCAD_LIB))) (designator "U3")
+      (property Name (string "$1I46"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ipad"))
+      (property EXT (string "IPAD")))
+     (instance U4
+      (viewRef NetlistView
+       (cellRef ipad
+        (libraryRef OrCAD_LIB))) (designator "U4")
+      (property Name (string "$1I47"))
+      (property EDIForiginalOrigin (string "(pt 0 -20)"))
+      (property EDIFviewName (string "VIEW_1"))
+      (property Value (string "ipad"))
+      (property EXT (string "IPAD")))
+     (net I2
+      (joined
+       (portRef IPAD (instanceRef U3))
+       (portRef I2))
+      (property Name (string "I2")))
+     (net I1
+      (joined
+       (portRef IPAD (instanceRef U2))
+       (portRef I1))
+      (property Name (string "I1")))
+     (net I0
+      (joined
+       (portRef IPAD (instanceRef U1))
+       (portRef I0))
+      (property Name (string "I0")))
+     (net I3
+      (joined
+       (portRef IPAD (instanceRef U4))
+       (portRef I3))
+      (property Name (string "I3")))))))
+ (design ipad4
+  (cellRef ipad4
+   (libraryRef MAIN_LIB))))
