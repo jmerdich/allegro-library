@@ -1,0 +1,57 @@
+# Allegro script for generating assembly pdfs of the top and bottom layers
+version 0.1
+
+setwindow pcb
+generaledit
+
+echo "Plotting Assembly files"
+
+plot setup 
+setwindow form.fpfileplotsetup
+FORM fpfileplotsetup fpplotfittopage YES 
+FORM fpfileplotsetup fpplotblackwhite YES 
+FORM fpfileplotsetup done  
+
+echo "Plotting Assembly TOP"
+
+color192 
+setwindow cvf.dialog
+cvf global_invisible
+cvf layer_tree_item 'Board Geometry'
+cvf layers_visible board_geometry/outline TRUE
+cvf layer_tree_item 'Package Geometry'
+cvf layers_visible package_geometry/assembly_top TRUE
+cvf layer_tree_item 'Components'
+cvf layers_visible components ref_des/assembly_top TRUE
+cvf okay
+
+plotwint initialize "CutePDF Writer"
+plotwint orientation 2
+plotwint papername "A4"
+plotwint scale 100
+plotwint copies 1
+plotwint defaultsource 15
+plotwint printquality 600
+plotwint color 2
+plotwint execute
+
+echo "Plotting Assembly BOTTOM"
+
+color192 
+setwindow cvf.dialog
+cvf global_invisible
+cvf layer_tree_item 'Board Geometry'
+cvf layers_visible board_geometry/outline TRUE
+cvf layer_tree_item 'Package Geometry'
+cvf layers_visible package_geometry/assembly_bottom TRUE
+cvf layer_tree_item 'Components'
+cvf layers_visible components ref_des/assembly_bottom TRUE
+cvf okay
+
+plotwint initialize "CutePDF Writer"
+plotwint execute
+
+color192 
+setwindow cvf.dialog
+cvf global_visible
+cvf okay

@@ -1,0 +1,14 @@
+# Allegro script for generating assembly pick and place file
+version 0.1
+
+setwindow pcb
+generaledit
+
+echo "Generating Pick-and-Place file"
+
+plctxt out 
+setwindow form.plctxt
+FORM plctxt symbol_origin YES 
+FORM plctxt execute  
+FORM plctxt cancel  
+
