@@ -1,0 +1,15 @@
+# Allegro script for generating drill and route files
+version 0.1
+
+setwindow pcb
+generaledit
+
+nctape_full 
+setwindow form.nc_drill
+FORM nc_drill execute  
+FORM nc_drill close  
+
+ncroute 
+setwindow form.nc_route
+FORM nc_route execute  
+FORM nc_route close  

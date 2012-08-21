@@ -1,0 +1,15 @@
+# Allegro script for generating gerbers for a 4-layer print
+version 0.1
+
+setwindow pcb
+generaledit
+
+artwork 
+setwindow form.film_control
+FORM film_control gerber_rs274x YES 
+FORM film_control format_dec_places 5 
+FORM film_control replace  
+fillin "C:\Repositories\Hardware Libraries\trunk\allegro pcb\film-setup-4layer.txt"
+FORM film_control select_all  
+FORM film_control create  
+FORM film_control ok
