@@ -1,5 +1,5 @@
 # Allegro script for generating gerbers for a 4-layer print
-version 0.1
+version 16.3
 
 setwindow pcb
 generaledit

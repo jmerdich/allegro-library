@@ -1,0 +1,31 @@
+# Allegro script for generating autosilk
+version 16.3
+
+setwindow pcb
+generaledit
+
+silkscreen param 
+setwindow form.autosilk
+FORM autosilk both_layers YES 
+FORM autosilk component_value None 
+FORM autosilk device_type None 
+FORM autosilk package_geometry Silk 
+FORM autosilk refdes Silk 
+FORM autosilk tolerance None 
+FORM autosilk user_part None 
+FORM autosilk text_0 YES 
+FORM autosilk text_90 NO 
+FORM autosilk text_180 NO 
+FORM autosilk text_270 NO 
+FORM autosilk both_elements YES 
+FORM autosilk text_under_comp YES 
+FORM autosilk lock_autosilk_text NO 
+FORM autosilk text_vector_checking YES 
+FORM autosilk max_text_disp 0 
+FORM autosilk min_linelength 5 
+FORM autosilk clear_solder_pad YES 
+FORM autosilk clearance 0 
+FORM autosilk done  
+
+echo "Caution: Board geometry/silkscreen will not be clipped with solderpath"
+echo "Please verify manually"
