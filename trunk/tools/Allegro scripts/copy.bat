@@ -1,3 +1,5 @@
+mkdir "output"
+
 echo "copying output files"
 
 ren "*.art,1" "*.ar1"

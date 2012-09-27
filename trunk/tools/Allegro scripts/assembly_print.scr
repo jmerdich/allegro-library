@@ -1,5 +1,5 @@
 # Allegro script for generating assembly pdfs of the top and bottom layers
-version 0.1
+version 16.3
 
 setwindow pcb
 generaledit

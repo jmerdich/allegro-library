@@ -1,0 +1,13 @@
+# Allegro script for generating outputs from a pcb
+version 16.3
+
+setwindow pcb
+generaledit
+
+replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/silkscreen.scr'
+replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/gerbers-4layer.scr'
+replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/drill_route.scr'
+replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/assembly_place.scr'   
+replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/assembly_print.scr' 
+
+shell "C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/copy.bat" 

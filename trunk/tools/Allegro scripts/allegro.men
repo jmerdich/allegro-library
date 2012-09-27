@@ -1,0 +1,902 @@
+// $Header: /vobs/psd_backend_data/data/men/allegro.men /main/221 2009-10-20T17:03:47-04 abhay $
+//------------------------------------------------------------------------
+//
+//	Cadence Design Systems
+//
+// (C) COPYRIGHT, Cadence Design Systems, Inc. 1997
+// All Rights Reserved
+// Licensed Materials - Property of Cadence Design Systems
+//
+// No part of this file may be reproduced, stored in a retrieval system,
+// or transmitted in any form or by any means --- electronic, mechanical,
+// photocopying, recording, or otherwise --- without prior written permission
+// of Cadence Design Systems, Inc.
+//
+// WARRANTY:
+// Use all material in this file at your own risk.  Cadence Design Systems 
+// makes no claims about any material contained in this file.
+//
+//------------------------------------------------------------------------
+
+// Loadable Menu File
+// *******************  Commoen menu file for 4 tiers of Allegro, expert, 
+//			designer, pcb and librarian expert
+// This does not support the symbol menus or the old-style allegro_librarian
+// menu
+
+// ENVIRONMENT VARIABLES USED
+//	_ALLEGRO_PCB_GXL
+//	_ALLEGRO_EXPERT	
+//	_ALLEGRO_DESIGNER
+//	_ALLEGRO_STUDIO
+//	_ALLEGRO_STUDIO_ANL
+//	_ALLEGRO_ORCAD
+//	__unix
+//
+// Product options
+//	_allegro_partition
+//	_allegro_rfpcb
+//	_orcad_basics
+//	_orcad_si
+//      _ALLEGRO_GRE_ALL
+//      _ALLEGRO_GRE_FEAS
+//      _ALLEGRO_GRE_IFD
+
+exp_layout MENU DISCARDABLE
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New...",			"new"
+        MENUITEM "&Open...",			"open"
+        MENUITEM SEPARATOR
+        MENUITEM "&Save",			"save"
+        MENUITEM "Save &As...",			"save_as"
+        MENUITEM SEPARATOR
+	POPUP "&Import"
+	BEGIN
+	    MENUITEM "&Logic...",		"netin"
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+            MENUITEM "&Bundle...",              "bundle import"
+#endif
+	    MENUITEM SEPARATOR
+            MENUITEM "&Artwork...",		"load photoplot"
+	    MENUITEM "I&PF...",  		"load plot"
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+            MENUITEM "Strea&m...",              "load stream"
+#endif
+	    MENUITEM SEPARATOR
+	    MENUITEM "D&XF...",			"dxf in"
+	    MENUITEM "&IDF...",			"idf in"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL
+#ifdef eap_idx 
+	    MENUITEM "I&DX...",			"idx in"
+#endif
+#endif
+            MENUITEM "I&FF...",                 "iff in"
+            MENUITEM "&Router...",            "specctra_in"
+	    POPUP "&CAD Translators"
+	    BEGIN
+	    MENUITEM SEPARATOR
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_EXPERT || _ALLEGRO_DESIGNER
+	    MENUITEM "&Mentor...",		 "import mentor"
+#endif
+            MENUITEM "&PADS...",		"pads in"
+            MENUITEM "P&CAD...",		"pcad in"
+#ifndef __unix
+            MENUITEM "&OrCAD Layout...",	"orcad in"
+#endif
+	    END
+	    MENUITEM "&Sub-Drawing",		"clppaste"
+	    MENUITEM "Tech&file...",		"techfile in"
+          MENUITEM "Param&eters...",		"param in"
+	    MENUITEM "Placeme&nt...",		"plctxt in"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL
+	    MENUITEM "Active &Times...",	"signal atimes"
+#endif
+	    MENUITEM SEPARATOR
+	    MENUITEM "Annotations...",	        "annotation in"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL
+            MENUITEM "Pin delay...",            "pin_delay in"
+#endif
+	END
+	POPUP "&Export"
+	BEGIN
+            MENUITEM "&Logic...",		"feedback"
+            MENUITEM "&Netlist w/Properties...","netout"
+            MENUITEM SEPARATOR
+	    MENUITEM "I&PF...", 		"create plot"
+            MENUITEM SEPARATOR
+	    MENUITEM "D&XF...",			"dxf out"
+            MENUITEM "&IDF...",			"idf out"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL
+#ifdef eap_idx 
+            MENUITEM "I&DX...",			"idx out"
+#endif
+#endif
+            MENUITEM SEPARATOR
+            MENUITEM "&Router...",            "specctra_out"
+            MENUITEM SEPARATOR
+	    MENUITEM "&Sub-Drawing",		"clpcopy"
+	    MENUITEM "&Techfile...",		"techfile out"
+          MENUITEM "Param&eters...",		"param out"
+            MENUITEM "Li&braries...",		"dlib"
+	    MENUITEM "Pl&acement...",		"plctxt out"
+	    MENUITEM SEPARATOR
+	    MENUITEM "Ann&otations...",		"annotation out"
+	    MENUITEM SEPARATOR
+            MENUITEM "InterComm...",           "icm_out"
+	    MENUITEM "IP&C 356...",		"ipc356 out"
+            MENUITEM "&ODB++ inside...",        "odb_out"
+            MENUITEM "Save design to 16.01...",  "downrev"
+            MENUITEM "Save design to 16.2...",   "downrev2"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL
+            MENUITEM "Pin delay...",            "pin_delay out"
+#endif
+	END
+        MENUITEM SEPARATOR
+        MENUITEM "&Viewlog...",			"viewlog -last"
+        MENUITEM "&File Viewer...",		"viewlog -browse"
+        MENUITEM "Plot Set&up...",		"plot setup"
+#ifndef __unix
+        MENUITEM "Plot Previe&w...",		"plot preview"
+#endif
+        MENUITEM "&Plot...",			"plot"
+        MENUITEM "Capture &Canvas Image...",	"capture image"
+        MENUITEM SEPARATOR
+	MENUITEM "P&roperties...", 		"file_property"
+        MENUITEM "C&hange Editor...",           "toolswap"
+        MENUITEM "S&cript...",			"script"
+        MENUITEM SEPARATOR
+        POPUP "Recent &Designs"
+        BEGIN
+            MENUITEM "Recent File List",        "|mru"
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",			"exit"
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",			"undo"
+        MENUITEM "&Redo",			"redo"
+        MENUITEM SEPARATOR
+        MENUITEM "&Move",			"move"
+        MENUITEM "&Copy",			"copy"
+        MENUITEM "M&irror",			"mirror"
+	MENUITEM "&Spin",			"spin"
+        MENUITEM "C&hange",			"change"
+        MENUITEM "&Delete",			"delete"
+        MENUITEM SEPARATOR
+	MENUITEM "&Z-Copy",			"zcopy shape"
+        POPUP "Split &Plane"
+        BEGIN
+            MENUITEM "&Parameters...",		"split plane param"
+            MENUITEM "&Create",			"split plane create"
+	END
+        MENUITEM SEPARATOR
+        MENUITEM "&Vertex",			"vertex"
+        MENUITEM "Delete Verte&x",              "delete vertex"
+        MENUITEM "&Text",			"text edit"
+        MENUITEM SEPARATOR
+        MENUITEM "&Groups",			"groupedit"
+        MENUITEM "P&roperties",			"property edit"
+        MENUITEM "&Net Properties...",          "net_properties"
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Zoom By Points",		"zoom points"
+        MENUITEM "Zoom &Fit",			"zoom fit"
+        MENUITEM "Zoom &In",			"zoom in"
+        MENUITEM "Zoom &Out",			"zoom out"
+        MENUITEM "Zoom &World",			"zoom world"
+        MENUITEM "Zoo&m Center",		"zoom center"
+        MENUITEM "Zoom Pre&vious",              "zoom previous"
+        MENUITEM SEPARATOR
+        MENUITEM "Color View &Save",         	"colorview create"
+        MENUITEM "Color View Restore &Last",	"colorview restore"	
+       MENUITEM SEPARATOR
+        MENUITEM "&3D View",                    "3d_viewer"
+        MENUITEM "&Flip Design",                "flipdesign"
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh",			"redraw"
+        POPUP "Wi&ndows"
+        BEGIN
+            MENUITEM "Command",          "showhide text"
+            MENUITEM "World View",       "showhide view"
+            MENUITEM "Options",          "showhide options"
+            MENUITEM "Find",             "showhide find"
+            MENUITEM "Visibility",       "showhide vis"
+            MENUITEM "Show All",         "show allpanes"
+        END
+      MENUITEM "&Customize Toolbar...",             "display toolbar param"
+      MENUITEM "Reset UI to Cadence Default...", "reset dockwindows"
+    END
+    POPUP "&Add"
+    BEGIN
+        MENUITEM "&Line",			"add line"
+        MENUITEM "&Arc w/Radius",		"add rarc"
+        MENUITEM "&3pt Arc",			"add arc"
+        MENUITEM "&Circle",			"add circle"
+        MENUITEM "&Rectangle",			"add rect"
+        MENUITEM "&Frectangle",			"add frect"
+        MENUITEM "&Text",			"add text"
+    END
+    POPUP "&Display"
+    BEGIN
+        MENUITEM "&Color/Visibility...",	"color192"
+        MENUITEM "&Layer Priority...",		"layer priority"
+        MENUITEM SEPARATOR
+        MENUITEM "S&tatus...",		        "status"
+        MENUITEM "&Element",			"show element"
+        MENUITEM "&Measure",			"show measure"
+        MENUITEM "Constra&int",         "cns show"
+        MENUITEM "P&roperty...",		"show property"
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	MENUITEM "P&arasitic",			"show parasitic"
+#endif
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL 
+        MENUITEM "Segments Over &Voids",	"highlight sov"
+#endif
+        MENUITEM SEPARATOR
+        MENUITEM "&Assign Color",               "assign color"
+        MENUITEM "&Highlight",			"hilight"
+        MENUITEM "&Dehighlight",		"dehilight"
+        MENUITEM SEPARATOR
+        POPUP "&Waive DRCs"
+        BEGIN
+            MENUITEM "&Waive",            "waive drc"
+            MENUITEM "&Show",             "show waived drcs"
+            MENUITEM "&Blank",            "blank waived drcs"
+            MENUITEM "&Restore",          "restore waived drc"
+            MENUITEM "&Restore All",      "restore waived drcs"
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Show Rats"
+        BEGIN
+            MENUITEM "&All",			"rats all"
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+            MENUITEM "A&ll Unbundled Rats",     "rats unbundled show_all"
+            MENUITEM "&All Bundled Rats",       "rats bundled show_all"
+            MENUITEM "&Unplanned Rats",         "rats show unplanned"
+#endif
+            MENUITEM "&Components",		"rats component"
+            MENUITEM "&Net",			"rats net"
+            MENUITEM "&Of Selection",           "rats show"
+        END
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+        POPUP "Show B&undles"
+        BEGIN
+            MENUITEM "&All",                    "bundle show_all"
+            MENUITEM "&Unplanned",              "bundle show_unplanned"
+            MENUITEM "&Selected",               "bundle show"
+        END
+        POPUP "Show R&outer Plan"
+        BEGIN
+            MENUITEM "&All",                    "rplan show_all"
+            MENUITEM "All &Bundles",            "rplan bundled show_all"
+            MENUITEM "All &Random Logic",       "rplan unbundled show_all"
+            MENUITEM "Of &Selection",           "rplan show"
+            MENUITEM "B&undle Plan of Selection", "rplan bundled show"
+        END
+#endif
+        POPUP "&Blank Rats"
+        BEGIN
+            MENUITEM "&All",			"unrats all"
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+            MENUITEM "&All Bundled Rats",       "rats bundled blank_all"
+#endif
+            MENUITEM "&Components",		"unrats component"
+            MENUITEM "&Nets",			"unrats net"
+            MENUITEM "&Of Selection",           "rats blank"
+        END
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+        POPUP "Blank Bu&ndles"
+        BEGIN
+            MENUITEM "&All",                    "bundle blank_all"
+            MENUITEM "&Selected",               "bundle blank"
+	    MENUITEM "&Unselected",		"bundle blank_unselected"
+        END
+        POPUP "B&lank Router Plan"
+        BEGIN
+            MENUITEM "&All",                    "rplan blank_all"
+            MENUITEM "All &Bundles",            "rplan bundled blank_all"
+            MENUITEM "All &Random Logic",       "rplan unbundled blank_all"
+            MENUITEM "Of &Selection",           "rplan blank"
+            MENUITEM "B&undle Plan of Selection", "rplan bundled blank"
+        END
+#endif
+    END
+    POPUP "Set&up"
+    BEGIN
+	MENUITEM "Desi&gn Parameters...",        "prmed"
+	POPUP "Applica&tion Mode"
+	BEGIN
+	  MENUITEM "General Edit",		"generaledit"
+#ifndef _ALLEGRO_ORCAD
+	  MENUITEM "Placement Edit",		"placementedit"	 
+#endif
+	  MENUITEM "Etch Edit",			"etchedit"
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+	  MENUITEM "Flow Planning",		"ifp"
+#endif
+	  MENUITEM "None",              	"noappmode"
+	END
+        MENUITEM "&Grids...",           	"define grid"
+	MENUITEM "C&hange Drawing Origin",      "chg origin"
+        MENUITEM "&Cross-section...",           "xsection"
+        MENUITEM "&Unused Pads Suppression...", "unused pads"
+        MENUITEM "Su&bclasses...",		"define subclass"
+        MENUITEM "&Materials...",		"define materials"
+        POPUP "B/B &Via Definitions"
+        BEGIN
+          MENUITEM "&Define B/B Via...",        "define bbvia"
+          MENUITEM "&Auto Define B/B Via...",   "auto define bbvia"
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Enable On-Line D&RC",          "cns onlinedrc"
+	POPUP "Co&nstraints"
+	BEGIN
+	   MENUITEM "&Modes...",             "cns cmmodes"
+#ifndef _ALLEGRO_ORCAD
+           MENUITEM "&Electrical...",       "cmgr_elec"
+#endif
+           MENUITEM "&Physical...",       "cmgr_phys"
+           MENUITEM "&Spacing...",       "cmgr_spac"
+           MENUITEM "Sa&me Net Spacing...",       "cmgr_snspac"
+	   MENUITEM "P&hysical Net Overrides...",     "property edit -net_data"
+	   MENUITEM "Sp&acing Net Overrides...",     "property edit -net_space"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL 
+           MENUITEM "D&FA Constraint Spreadsheet...", "dfa_spreadsheet"
+#endif
+           MENUITEM "&Constraint Manager...",       "cmgr"
+	END
+
+        MENUITEM SEPARATOR
+	MENUITEM "&Property Definitions...",	"define property"
+        MENUITEM "Define &Lists...",		"define list"
+        MENUITEM SEPARATOR
+        POPUP "&Areas"
+        BEGIN
+            MENUITEM "&Package Keepin",		"keepin package"
+            MENUITEM "Package &Keepout",	"keepout package"
+            MENUITEM "Package &Height",		"package_height"
+            MENUITEM SEPARATOR
+            MENUITEM "&Route Keepin",		"keepin router"
+            MENUITEM "Ro&ute Keepout",		"keepout router"
+            MENUITEM "&Wire Keepout",		"keepout wire"
+            MENUITEM "&Via Keepout",		"keepout via"
+            MENUITEM "&Shape Keepout",		"keepout shape"
+            MENUITEM SEPARATOR
+            MENUITEM "Pro&be Keepout",		"keepout probe"
+            MENUITEM "&Gloss Keepout",		"keepout gloss"
+            MENUITEM SEPARATOR
+            MENUITEM "Photoplot &Outline",	"keepin photo"
+        END
+        POPUP "O&utlines"
+        BEGIN
+            MENUITEM "&Room Outline...",	"room outline"
+            MENUITEM "&Board Outline...",	"board outline"
+            MENUITEM "&Keepout...",	        "board keepout"
+            MENUITEM "&Plane Outline...",	"board plane"
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Datatip Customization...",      "custom datatips"
+        MENUITEM "U&ser Preferences...",        "enved"
+    END
+    POPUP "&Shape"
+    BEGIN
+        MENUITEM "&Polygon",                "shape add"
+        MENUITEM "&Rectangular",            "shape add rect"
+        MENUITEM "&Circular",               "shape add circle"
+        MENUITEM SEPARATOR
+        MENUITEM "&Select Shape or Void",   "shape select"
+        MENUITEM SEPARATOR
+        POPUP "Manual &Void"
+        BEGIN
+            MENUITEM "&Polygon",            "shape void polygon"
+            MENUITEM "&Rectangular",        "shape void rectangle"
+            MENUITEM "&Circular",           "shape void circle"
+            MENUITEM "&Delete",             "shape void delete"
+            MENUITEM "&Element",            "shape void element"
+            MENUITEM "&Move",               "shape void move"
+            MENUITEM "&Copy",               "shape void copy"
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Edit &Boundary",      "shape edit boundary"
+//        MENUITEM "Mi&ter Corners",    "shape miter corners"
+        MENUITEM "&Delete Islands",     "island_delete"
+        MENUITEM SEPARATOR
+        MENUITEM "Change Shape T&ype",  "shape change type"
+        MENUITEM "&Merge Shapes",       "shape merge shapes"
+        MENUITEM "Chec&k",      	"shape check"
+        MENUITEM SEPARATOR
+        MENUITEM "C&ompose Shape",       "compose shape"
+        MENUITEM "D&ecompose Shape",     "decompose shape"
+        MENUITEM SEPARATOR
+        MENUITEM "&Global Dynamic Params...",    "shape global param"
+    END
+    POPUP "&Logic"
+    BEGIN
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+        MENUITEM "Net &Logic",                  "net logic"
+	MENUITEM "&Net Schedule",		"net schedule"
+#endif
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD 
+        MENUITEM "Assign &Differential Pair...", "diff pairs"
+#endif
+	MENUITEM "&Identify DC Nets...",        "identify nets"
+	MENUITEM SEPARATOR
+        MENUITEM "&Assign RefDes",		"assign refdes"
+#ifdef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+        MENUITEM "&Auto Rename Refdes...",   	"rename param"
+#endif
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+        POPUP "Auto R&ename Refdes"
+        BEGIN
+            MENUITEM "&Rename...",      	"rename param"
+            MENUITEM "&Design",         	"rename area design"
+            MENUITEM "R&oom",           	"rename area room"
+            MENUITEM "&Window",         	"rename area window"
+            MENUITEM "&List",           	"rename area list"
+	END
+	MENUITEM SEPARATOR
+	MENUITEM "&Change Parts",		"partedit"	
+	MENUITEM "&Part Logic...",		"partlogic"	
+	MENUITEM SEPARATOR
+	MENUITEM "&Terminator Assignment...",	"ecl param"	
+#endif
+    END
+    POPUP "&Place"
+    BEGIN
+        MENUITEM "&Manually...",                "place manual"
+	MENUITEM "&Quickplace...",		"quickplace"
+        MENUITEM SEPARATOR
+        POPUP "&Autoplace"
+        BEGIN
+            MENUITEM "&Insight...",		"place insight"
+            MENUITEM "&Parameters...",		"place param"
+            MENUITEM "&Top Grids",		"place set topgrid"
+            MENUITEM "&Bottom Grids",		"place set bottomgrid"
+	    MENUITEM SEPARATOR
+            MENUITEM "&Design",			"place area design"
+            MENUITEM "&Room",			"place area room"
+	    MENUITEM "&Window",                 "place area window"
+	    MENUITEM "&List",                   "place area list"
+        END
+	MENUITEM "&Interactive",		"place interactive"
+        POPUP "S&wap"
+        BEGIN
+            MENUITEM "&Pins",			"swap pins"
+            MENUITEM "&Functions",		"swap functions"
+            MENUITEM "&Components",		"swap components"
+        END
+        POPUP "A&utoswap..."
+	BEGIN
+	    MENUITEM "&Parameters...",		"swap param"
+	    MENUITEM "&Design",			"swap area design"
+	    MENUITEM "&Room",			"swap area room"
+	    MENUITEM "&Window",			"swap area window"
+	    MENUITEM "&List",			"swap area list"
+	END
+#ifndef _orcad_basics
+        POPUP "&Via Arrays"
+        BEGIN
+            MENUITEM "&Matrix", 	"add_viaarray"
+            MENUITEM "&Boundary", 	"add_bviaarray"
+            MENUITEM "&Unplace", 	"del_viaarray"
+        END
+#endif
+        MENUITEM SEPARATOR
+	MENUITEM "Up&date Symbols...",          "refresh symbol"
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	POPUP "Rep&lace SQ Temporary"
+	BEGIN
+	    MENUITEM "&Devices",  		"replace temp_devices"
+	    MENUITEM "&Symbols",  		"replace temp_symbols"
+	END
+#endif
+#ifdef _allegro_partition
+        MENUITEM SEPARATOR
+        POPUP "&Design Partition"
+        BEGIN
+            MENUITEM "&Create Partitions", "partition"
+            MENUITEM "&Workflow Manager",  "workflow"
+            MENUITEM "&Guideports",        "guideport"
+            MENUITEM "&Soft Net Assignment", "soft net"
+        END
+#endif
+    END
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS || _ALLEGRO_GRE_IFD
+    POPUP "FlowPla&n"
+    BEGIN
+        MENUITEM "Auto Bundle",                 "autobundle"
+        MENUITEM "&Create Bundle",              "bundle create"
+        MENUITEM "&Delete Bundle",              "bundle delete"
+        MENUITEM "&Edit Bundle",                "bundle edit"
+        MENUITEM "&Split Bundle",               "bundle split"
+        MENUITEM "Bundle &Properties",          "bundle properties"
+        MENUITEM SEPARATOR
+        MENUITEM "Insert Flow Via",             "flow via insert"
+        MENUITEM "Delete Flow Via",             "flow via delete"
+        MENUITEM "Move Flow Via",               "flow via move"
+        MENUITEM "Slide Flow",                  "flow slide"
+        MENUITEM "Edit Flow Vertex",            "flow vertex"
+        MENUITEM "Delete Flow Vertex",          "flow vertex delete"
+        MENUITEM "Move Flow",                   "flow move" 
+        MENUITEM "Copy Flow",                   "flow copy"
+        MENUITEM "Restore Default Flow",        "flow default"
+#ifdef _ALLEGRO_PCB_GXL || _ALLEGRO_GRE_ALL || _ALLEGRO_GRE_FEAS
+        MENUITEM SEPARATOR
+#ifndef _ALLEGRO_GRE_FEAS
+        POPUP "Plan"
+        BEGIN
+            MENUITEM "Spatial",                 "rplan plan spatial"
+            MENUITEM "Topological",             "rplan plan topological"
+            MENUITEM "Accurate",                "rplan plan accurate"
+        END
+        MENUITEM "Optimize",                    "rplan optimize"
+#endif
+#ifdef _ALLEGRO_GRE_FEAS
+        MENUITEM "Plan Spatial",                "rplan plan spatial"
+#endif
+        MENUITEM "Plan Status",                 "rplan status"
+#ifndef _ALLEGRO_GRE_FEAS
+        MENUITEM "Commit Plan",                 "rplan commit"
+#endif
+#ifndef _ALLEGRO_GRE_FEAS
+        POPUP "Convert"
+        BEGIN
+            MENUITEM "to Topological",          "rplan convert topological"
+            MENUITEM "to Spatial",              "rplan convert spatial"
+        END
+#endif
+#ifdef _ALLEGRO_GRE_FEAS
+        MENUITEM "Convert to Spatial",          "rplan convert spatial"
+#endif
+        MENUITEM "Delete Plan",                 "rplan delete"
+#endif
+    END
+#endif
+    POPUP "&Route"
+    BEGIN
+        MENUITEM "&Connect",			"add connect"
+        MENUITEM "&Slide",			"slide"
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+        MENUITEM "&Delay Tune",			"delay tune"
+#endif
+        MENUITEM "Cust&om Smooth",              "custom smooth"
+        MENUITEM SEPARATOR
+	MENUITEM "Create Fanout",		"create fanout"
+	MENUITEM "Copy Fanout",		        "copy fanout"
+	MENUITEM "Define Via Structure...",	"define via structure"
+        POPUP "&Convert Fanout"
+        BEGIN
+            MENUITEM "Mark",                    "mark fanout"
+            MENUITEM "Unmark",                  "unmark fanout"
+        END
+        MENUITEM SEPARATOR
+#ifndef _ORCAD_BASICS
+        POPUP "&PCB Router"
+        BEGIN
+            MENUITEM "&Fanout By Pick",		"fanout_by_pick"
+	    MENUITEM "Route Net(s) By &Pick",	"route_by_pick"
+	    MENUITEM "&Miter By Pick",		"miter_by_pick"
+	    MENUITEM "&UnMiter By Pick",		"unmiter_by_pick"
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	    MENUITEM "&Elongation By Pick",		"elong_by_pick"
+#endif
+            MENUITEM SEPARATOR
+	    MENUITEM "Router C&hecks",		"specctra checks"
+	    MENUITEM "Optimize Rat &Ts",		"optimize_ts"
+	    MENUITEM "Route &Automatic...",		"auto_route"
+	    MENUITEM "Route Custom...",		"custom_route"
+	    MENUITEM "&Route Editor...",		"specctra"
+        END
+#endif
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL 
+        POPUP "Resize/Respace"
+        BEGIN
+	    MENUITEM "Spread Between &Voids",	"spread between voids"
+	    MENUITEM "Via-Via Line Fattening...",	"line fattening"
+//            MENUITEM "Diff Pairs",              "resize_respace_dp"
+        END
+#endif
+#ifdef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	MENUITEM "&Gloss...",			"gloss param"
+#endif
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	POPUP "&Gloss"
+	BEGIN
+	    MENUITEM "&Add Fillet",             "add fillet"
+	    MENUITEM "D&elete Fillet",          "delete fillet"
+            MENUITEM SEPARATOR
+            MENUITEM "&Parameters...",	"gloss param"
+            MENUITEM "&Design",			"gloss area design"
+            MENUITEM "&Room",			"gloss area room"
+            MENUITEM "&Window",			"gloss area window"
+            MENUITEM "&Highlight",		"gloss area highlight"
+            MENUITEM "&List",			"gloss area list"
+	END
+#endif
+#ifdef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	MENUITEM "D&elete Fillet",          "delete fillet"
+#endif
+    END
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL || _ALLEGRO_STUDIO_ANL
+    POPUP "Analy&ze"
+        BEGIN
+        POPUP "&SI/EMI Sim"
+        BEGIN
+            MENUITEM "&Initialize...",		"signal init"
+            MENUITEM "Model &Browser...",	"signal library"
+            MENUITEM "&Model Assigment...",	"signal model"
+	    MENUITEM "Model &Dump/Refresh...",  "signal model refresh"
+            MENUITEM "&Preferences",		"signal prefs"
+            POPUP "&Audit"
+               BEGIN
+                   MENUITEM "&Design Audit...",     "signal audit"
+                   MENUITEM "&Net Audit...",        "signal audit net"
+                   MENUITEM "Audit &One Library...",       "signal lib audit"
+                   MENUITEM "Audit &List Of Libraries...", "signal libs audit"
+               END
+            MENUITEM "P&robe...",			"signal probe"
+            MENUITEM "&Xtalk Table...",			"signal xtalktable"
+        END
+#ifdef !_ALLEGRO_STUDIO_ANL
+        MENUITEM "EMI Rule &Checker",         "emcontrol"
+	MENUITEM "&Transmission Line Calculator", "tline calculator"
+#endif
+    END
+#endif
+    POPUP "&Manufacture"
+    BEGIN
+		POPUP "Output &Script"
+		BEGIN
+			MENUITEM "&2 Layer Board",		"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/alloutputs-2layer.scr'"
+			MENUITEM "&4 Layer Board",		"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/alloutputs-4layer.scr'"
+		END	
+        MENUITEM SEPARATOR
+        POPUP "&Dimension/Draft"
+        BEGIN
+            MENUITEM "&Parameters...",		"draft param"
+			MENUITEM "&LineFont",		"linefont"
+            MENUITEM SEPARATOR
+            MENUITEM "Linear &Dim",		"dimension linear"
+            MENUITEM "D&atum Dim",		"dimension datum"
+            MENUITEM "A&ngular Dim",		"dimension angular"
+            MENUITEM SEPARATOR
+            MENUITEM "L&eader Lines",		"leader only"
+            MENUITEM "D&iametral Leader",	"leader diametral"
+            MENUITEM "&Radial Leader",		"leader radial"
+            MENUITEM "&Balloon Leader",		"leader balloon"
+            MENUITEM "&Chamfer Leader",		"leader chamfer"
+            MENUITEM SEPARATOR
+            MENUITEM "Cha&mfer",		"draft chamfer"
+            MENUITEM "&Fillet",			"draft fillet"
+            MENUITEM SEPARATOR
+            MENUITEM "Crea&te Detail",		"create detail"
+        END
+        MENUITEM SEPARATOR
+	MENUITEM "&Artwork...",			"artwork"
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+        MENUITEM "Stream &Out",                 "stream out"
+#endif
+        POPUP "&NC"
+        BEGIN
+            MENUITEM "Drill &Customization...",               "ncdrill customization"
+            MENUITEM "Drill &Legend...",                      "ncdrill legend"
+#ifdef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL 
+            MENUITEM "&Backdrill Setup and Analysis...",      "backdrill setup"
+#endif
+            MENUITEM "NC &Parameters...",                     "ncdrill param"
+            MENUITEM "NC &Drill...",                          "nctape_full"
+            MENUITEM "NC &Route...",                          "ncroute"
+        END
+        MENUITEM "Cut &Marks",                  "cut marks"
+#ifndef	_ALLEGRO_STUDIO  || _ALLEGRO_ORCAD
+        MENUITEM SEPARATOR
+        MENUITEM "&Create Coupons...",		"create coupons"	
+        MENUITEM "D&Fx Check (legacy)...",      "dfa"
+#endif
+        MENUITEM "&Silkscreen...",		"silkscreen param"
+        MENUITEM "T&hieving...",		"thieving"	
+        POPUP "&Testprep"
+        BEGIN
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+            MENUITEM "&Automatic...",             "testprep automatic"
+#endif
+            MENUITEM "&Manual...",                "testprep manual"
+            MENUITEM "&Properties...",            "testprep properties"
+            MENUITEM "&Fix/unfix testpoints...",  "testprep fix"
+            MENUITEM "&Create FIXTURE...",        "testprep createfixture"
+            MENUITEM "Create &NC drill data",     "testprep ncdrill"
+            MENUITEM "&Density check...",         "testprep density"
+            MENUITEM "&Resequence...",            "testprep resequence"
+            MENUITEM "Parameters...",              "testprep prmed"
+
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Variants"
+        BEGIN
+            MENUITEM "Create &Assembly Drawing...",  "variant assembly"
+            MENUITEM "Create &Bill of Materials...", "variant bom"
+        END
+    END
+
+#ifdef _ALLEGRO_RFPCB
+    POPUP "RF-PC&B"
+    BEGIN
+        MENUITEM "&Setup", 			"rf_setup"
+        MENUITEM "&Quickplace", 			"rf_quickplace"
+        MENUITEM "&Autoplace", 			"rf_autoplace"
+        MENUITEM SEPARATOR
+        MENUITEM "&Load Module",		"rf_load_module"
+        MENUITEM SEPARATOR
+        MENUITEM "Add C&omponent", 		"rf_add_component"
+	MENUITEM "Add Co&nnect", 		"rf_add_connect"
+        POPUP "&Edit"
+        BEGIN
+            MENUITEM "&Change", 		"rf_change"
+            MENUITEM "&Snap", 		"rf_snap"
+            MENUITEM "&Delete", 		"rf_delete"
+            MENUITEM "Scaled Co&py", 		"rf_scaled_copy"
+            MENUITEM SEPARATOR
+            MENUITEM "&Modify Connectivity",		"rf_modify_net"
+            MENUITEM SEPARATOR
+            MENUITEM "C&opy", 		"rf_group_copy"
+            MENUITEM "&Flip", 			"rf_flip"
+            MENUITEM "P&ush",			"rf_push"
+            MENUITEM SEPARATOR
+            MENUITEM "&VAR Edit...",		"rf_varedit"
+        END
+        POPUP "Con&vert"
+        BEGIN
+            MENUITEM "&Tapered Pin Connect", 	"rf_tapered_connect"
+            MENUITEM "&Chamfer", 		"rf_chamfer"
+            MENUITEM SEPARATOR
+            MENUITEM "&Shape to Component", 	"rf_shape2component"
+            MENUITEM "C&omponent to Shape", 	"rf_component2shape"
+            MENUITEM SEPARATOR
+            MENUITEM "Cline to Tline Con&version",	"rf_cline_convert"
+        END
+        POPUP "&Clearance"
+	BEGIN
+	    MENUITEM "&Settings...",			"rf_ac_setup"
+	    MENUITEM "&Initialize", 		"rf_ac_init"
+	    MENUITEM "&Assemble",			"rf_ac_assemble"
+	    MENUITEM "Disasse&mble", 		"rf_ac_disassemble"
+	    MENUITEM "&Delete", 		"rf_ac_delete"
+	END
+	POPUP "&Display"
+        BEGIN
+            MENUITEM "&Information", 		"rf_display_info"
+            MENUITEM "&Measurement", 		"rf_measure"
+	    MENUITEM "&New Component", 		"rf_display_newcomp"
+        END
+        MENUITEM SEPARATOR
+        POPUP "&IFF Interface"
+        BEGIN
+            MENUITEM "&Import...", 		"rf_iff_import"
+            MENUITEM "&Export...", 		"rf_iff_export"
+            MENUITEM "SMT Library &Translator...",		"rf_libxlator"
+        END
+        MENUITEM SEPARATOR
+        POPUP "Fle&xible Shape Editor"
+        BEGIN
+            MENUITEM "Edge &Move", 		"fse_edge_move"
+            MENUITEM "Edge St&retch", 		"fse_edge_stretch"
+            MENUITEM "Edge S&pread", 		"fse_edge_spread"
+            MENUITEM SEPARATOR
+            MENUITEM "&Tangent Segment", 	"fse_seg_tangent"
+            MENUITEM "&Arc Tangent", 		"fse_arc_tangent"
+            MENUITEM "&Line End Connect", 	"fse_end_connect"
+            MENUITEM "&Break and Delete",	"fse_break_delete"
+            MENUITEM SEPARATOR
+            MENUITEM "Vertex &Insert", 		"fse_vertex_insert"
+            MENUITEM "Vertex &Move", 		"fse_vertex_move"
+            MENUITEM "Vertex &Convert",		"fse_vertex_convert"
+            MENUITEM SEPARATOR
+            MENUITEM "Shape &Operations", 	"fse_shape_logicop"
+            MENUITEM "Shape Corner C&hamfer", 	"fse_shape_chamfer"
+            MENUITEM "Shape &Scale", 		"fse_shape_scale"
+            MENUITEM "Multi-Layer Shape &ZCopy", "fse_shape_zcopy"
+            MENUITEM "Multi-Layer Shape Z&Delete",	"fse_shape_zdelete"
+        END
+    END
+#endif
+
+    POPUP "&Tools"
+    BEGIN
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+        MENUITEM "Create &Module...",           "create module"
+#endif
+        POPUP "&Padstack"
+        BEGIN
+            MENUITEM "Modify &Design Padstack...",  "padeditdb"
+            MENUITEM "Modify &Library Padstack...", "padeditlib"
+            MENUITEM "&Replace...",		"replace padstack"
+            MENUITEM "&Group Edit...", 		"multpadedit"
+	    MENUITEM "Re&fresh...",   		"refresh padstack"
+        END
+#ifndef _ALLEGRO_STUDIO || _ALLEGRO_ORCAD
+	POPUP "P&ad"
+        BEGIN
+            MENUITEM "&Boundary",		"editpad boundary"
+            MENUITEM "&Restore",		"editpad restore"
+            MENUITEM "Restore &ALL",		"editpad restore all"
+        END
+#endif
+        MENUITEM "&Derive Connectivity...",	"derive connectivity"
+        MENUITEM SEPARATOR
+        MENUITEM "&Reports...",			"reports"
+        POPUP "Quick Reports"
+        BEGIN
+            MENUITEM "Reports...", "reports"
+        END
+        MENUITEM SEPARATOR
+#ifndef _ALLEGRO_EXPERT || _ALLEGRO_PCB_GXL
+	MENUITEM "Topology E&xtract",           "topology template"
+#endif
+	MENUITEM "&Technology File Compare...",	"techfile compare"
+        MENUITEM "Setup Ad&visor...",           "setup advisor"
+#ifdef _ORCAD_SI && 
+        POPUP "Anal&ysis"
+        BEGIN
+            MENUITEM "Model &Browser...",	"signal library"
+            MENUITEM "&Model Assignment...",	"signal model"
+	    MENUITEM "Model &Dump/Refresh...",  "signal model refresh"
+	END
+#endif
+        MENUITEM SEPARATOR
+        MENUITEM "Database &Check...",		"dbdoctor"	
+	MENUITEM "&Update DRC",			"drc update"
+        MENUITEM SEPARATOR
+        MENUITEM "Design C&ompare...",		"design compare"
+        MENUITEM SEPARATOR
+	POPUP "Uti&lities"
+	BEGIN
+            MENUITEM "&File Manager...", 	"filemgr"
+            MENUITEM SEPARATOR
+            MENUITEM "&Env Variables...", 	"set"
+            MENUITEM "&Aliases/Function Keys...", "alias"
+            MENUITEM "&Keyboard Commands", 	"helpcmd"
+            MENUITEM "&OpenGL Status", 		"opengl report"
+            MENUITEM SEPARATOR
+            MENUITEM "&Licenses Used...", 	"license_use"
+            MENUITEM "&Stroke Editor...", 	"stroke editor"
+	END
+    #ifdef _ALLEGRO_PCB_GXL && THOREAU_PROTOTYPE
+    MENUITEM SEPARATOR
+    POPUP "&Interface"
+    BEGIN
+        MENUITEM "&Create",                     "aim_defn_edit"
+        MENUITEM "&Map",                        "aim_defn_map"
+        MENUITEM "&Planner",                    "interface planner"
+        MENUITEM "&Export",                     "interface export"
+        MENUITEM "Imp&ort",                     "interface import"
+    END
+    #endif
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Documentation",              "cdsdoc allegro allegrolaunch"
+        MENUITEM "&What's New",                 "cdsdoc allegro AllegroPN"
+
+        MENUITEM "&Message Detail",             "smi_message_detail"
+        POPUP "&Web Resources"
+	BEGIN
+           MENUITEM "&Community",		"http http://www.cadence.com/community"
+           MENUITEM "&Online Support",		"http http://support.cadence.com"
+           MENUITEM "&Web Collaboration",	"http http://collaboration.cadence.com"
+           MENUITEM "&Education Services",	"http http://www.cadence.com/education"
+#ifndef _ALLEGRO_ORCAD
+	   MENUITEM "Software &Updates",       "http http://downloads.cadence.com"
+#endif
+	   MENUITEM SEPARATOR
+           MENUITEM "&PCB Forum",	"http http://www.cadence.com/community/pcb"
+        END
+	MENUITEM SEPARATOR
+        MENUITEM "&About...",	"about"
+    END
+END
+
