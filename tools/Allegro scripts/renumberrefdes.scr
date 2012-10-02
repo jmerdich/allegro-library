@@ -1,0 +1,33 @@
+# Allegro script to renumber reference designators 
+version 16.3
+
+setwindow pcb
+generaledit
+rename param 
+setwindow form.rename
+FORM rename more  
+setwindow form.rename_more
+FORM rename_more layer_side BOTH 
+FORM rename_more first_side 'Top Layer' 
+FORM rename_more component_origin 'Body Center' 
+FORM rename_more top_direction Horizontal 
+FORM rename_more bottom_direction Horizontal 
+FORM rename_more top_first 'Left to Right' 
+FORM rename_more top_second Downwards 
+FORM rename_more bottom_first 'Right to Left' 
+FORM rename_more bottom_second Downwards 
+FORM rename_more refdes_prefix * 
+FORM rename_more top_comp_des  
+FORM rename_more bottom_comp_des  
+FORM rename_more skip_characters  
+FORM rename_more naming_convention Sequential 
+FORM rename_more preserve_prefix YES 
+FORM rename_more refdes_no 1 
+FORM rename_more close  
+setwindow form.rename
+FORM rename rename  
+setwindow pcb
+rename execute 
+generaledit 
+setwindow form.rename
+FORM rename close  
