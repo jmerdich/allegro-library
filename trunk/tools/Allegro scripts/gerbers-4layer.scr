@@ -4,6 +4,13 @@ version 16.3
 setwindow pcb
 generaledit
 
+shape global param 
+generaledit 
+setwindow form.dyn_xshape
+FORM dyn_xshape art_format Gerber RS274X 
+FORM dyn_xshape done  
+setwindow pcb
+
 artwork 
 setwindow form.film_control
 FORM film_control gerber_rs274x YES 
