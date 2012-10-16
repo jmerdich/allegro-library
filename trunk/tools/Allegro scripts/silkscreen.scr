@@ -26,6 +26,8 @@ FORM autosilk min_linelength 5
 FORM autosilk clear_solder_pad YES 
 FORM autosilk clearance 0 
 FORM autosilk done  
+setwindow pcb
+silkscreen execute 
 
 echo "Caution: Board geometry/silkscreen will not be clipped with solderpath"
 echo "Please verify manually"
