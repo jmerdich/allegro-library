@@ -1,4 +1,4 @@
-mkdir "output"
+mkdir "..\output"
 
 echo "copying output files"
 
