@@ -22,7 +22,7 @@ FORM autosilk text_under_comp YES
 FORM autosilk lock_autosilk_text NO 
 FORM autosilk text_vector_checking YES 
 FORM autosilk max_text_disp 0 
-FORM autosilk min_linelength 5 
+FORM autosilk min_linelength 0 
 FORM autosilk clear_solder_pad YES 
 FORM autosilk clearance 0 
 FORM autosilk done  
