@@ -10,4 +10,4 @@ replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/drill_rou
 replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/assembly_place.scr'   
 replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/assembly_print.scr' 
 
-shell "C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/copy.bat" 
+shell "C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/copy-4layer.bat" 
