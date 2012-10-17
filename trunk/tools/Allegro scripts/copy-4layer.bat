@@ -15,7 +15,7 @@ copy "SOLDER_TOP.art" "..\output\SOLDER_TOP.art" /y
 copy "TOP.art" "..\output\TOP.art" /y
 copy "place_txt.txt" "..\output\placement.txt" /y
 
-copy "C:\Repositories\Hardware Libraries\trunk\tools\gerberviewer\4layer.gvp" "..\output\4layer.gvp" /y
+copy "C:\Repositories\Hardware Libraries\trunk\tools\gerberviewer\4layer.gvp" "..\4layer.gvp" /y
 
 ren "*.drl,1" "*.dr1"
 ren "*.drl,2" "*.dr2"
