@@ -4,6 +4,7 @@ version 16.3
 setwindow pcb
 generaledit
 
+replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/renumberrefdes.scr'
 replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/silkscreen.scr'
 replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/gerbers-4layer.scr'
 replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/drill_route.scr'

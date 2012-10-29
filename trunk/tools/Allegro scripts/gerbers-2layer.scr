@@ -16,6 +16,8 @@ setwindow form.film_control
 FORM film_control gerber_rs274x YES 
 FORM film_control format_dec_places 5 
 FORM film_control replace  
+# Warning film setup assumes mils with 2 digit accuracy
+# Film setup format does not indicate where the decimal point is supposed to be
 fillin "C:\Repositories\Hardware Libraries\trunk\allegro pcb\film-setup-2layer.txt"
 FORM film_control select_all  
 FORM film_control create  
