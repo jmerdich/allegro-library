@@ -1,0 +1,11 @@
+# Allegro script for general setup of 4-layer board according to unitel design rules
+version 16.3
+
+setwindow pcb
+generaledit
+
+# Import board cross-section
+
+# Import clearances and track widths
+
+ 

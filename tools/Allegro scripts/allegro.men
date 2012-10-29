@@ -222,7 +222,12 @@ BEGIN
     END
     POPUP "&Display"
     BEGIN
-        MENUITEM "&Color/Visibility...",	"color192"
+        POPUP "Scripted &Views"
+		BEGIN
+			MENUITEM "&Top",				"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/top.scr'" 	
+			MENUITEM "&Bottom",				"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/bot.scr'"
+		END
+		MENUITEM "&Color/Visibility...",	"color192"
         MENUITEM "&Layer Priority...",		"layer priority"
         MENUITEM SEPARATOR
         MENUITEM "S&tatus...",		        "status"
@@ -308,6 +313,11 @@ BEGIN
     POPUP "Set&up"
     BEGIN
 	MENUITEM "Desi&gn Parameters...",        "prmed"
+	POPUP "Setup Board"
+	BEGIN
+		MENUITEM "Unitel 4 layer",			"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/boardsetup_unitel_4layer.scr'"
+		MENUITEM "Unitel 2 layer",			"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/boardsetup_unitel_2layer.scr'"	
+	END
 	POPUP "Applica&tion Mode"
 	BEGIN
 	  MENUITEM "General Edit",		"generaledit"

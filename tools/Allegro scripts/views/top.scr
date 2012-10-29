@@ -1,0 +1,76 @@
+# Allegro script
+version 16.3
+
+setwindow pcb
+generaledit
+color192 
+generaledit 
+setwindow cvf.dialog
+cvf global_invisible
+cvf layers_visible stack-up stack-up/top TRUE
+cvf layers_visible stack-up stack-up/soldermask_top TRUE
+cvf layers_visible stack-up stack-up/pastemask_top TRUE
+cvf layers_visible stack-up stack-up/filmmasktop TRUE
+cvf layers_visible stack-up stack-up/through_all TRUE
+cvf layers_visible stack-up stack-up/package_top TRUE
+#cvf layer_tree_item 'Areas'
+cvf layers_visible areas areas/top TRUE
+cvf layers_visible areas areas/outer_layers TRUE
+cvf layers_visible areas areas/through_all TRUE
+#cvf layer_tree_item 'Board Geometry'
+cvf layers_visible board_geometry/assembly_detail TRUE
+cvf layers_visible board_geometry/assembly_notes TRUE
+cvf layers_visible board_geometry/both_rooms TRUE
+cvf layers_visible board_geometry/dimension TRUE
+cvf layers_visible board_geometry/ncroute_path TRUE
+cvf layers_visible board_geometry/off_grid_area TRUE
+cvf layers_visible board_geometry/outline TRUE
+cvf layers_visible board_geometry/place_grid_top TRUE
+cvf layers_visible board_geometry/plating_bar TRUE
+cvf layers_visible board_geometry/silkscreen_top TRUE
+cvf layers_visible board_geometry/soldermask_top TRUE
+cvf layers_visible board_geometry/switch_area_top TRUE
+cvf layers_visible board_geometry/tooling_corners TRUE
+cvf layers_visible board_geometry/top_room TRUE
+cvf layers_visible board_geometry/wb_guide_line TRUE
+#cvf layer_tree_item 'Package Geometry'
+cvf layers_visible package_geometry/assembly_top TRUE
+cvf layers_visible package_geometry/dfa_bound_top TRUE
+cvf layers_visible package_geometry/body_center TRUE
+cvf layers_visible package_geometry/display_top TRUE
+cvf layers_visible package_geometry/modules TRUE
+cvf layers_visible package_geometry/pad_stack_name TRUE
+cvf layers_visible package_geometry/pastemask_top TRUE
+cvf layers_visible package_geometry/pin_number TRUE
+cvf layers_visible package_geometry/place_bound_top TRUE
+cvf layers_visible package_geometry/silkscreen_top TRUE
+cvf layers_visible package_geometry/soldermask_top TRUE
+#cvf layer_tree_item 'Components'
+cvf layers_visible components components/assembly_top TRUE
+cvf layers_visible components components/display_top TRUE
+cvf layers_visible components components/silkscreen_top TRUE
+#cvf layer_tree_item 'Manufacturing'
+cvf layers_visible manufacturing/autosilk_top TRUE
+cvf layers_visible manufacturing/ncdrill_figure TRUE
+cvf layers_visible manufacturing/ncdrill_legend TRUE
+cvf layers_visible manufacturing/no_gloss_all TRUE
+cvf layers_visible manufacturing/no_gloss_top TRUE
+cvf layers_visible manufacturing/no_probe_top TRUE
+cvf layers_visible manufacturing/photoplot_outline TRUE
+cvf layers_visible manufacturing/probe_top TRUE
+#cvf layer_tree_item 'Drawing Format'
+cvf layers_visible drawing_format/drawing_origin TRUE
+cvf layers_visible drawing_format/outline TRUE
+cvf layers_visible drawing_format/revision_block TRUE
+cvf layers_visible drawing_format/revision_data TRUE
+cvf layers_visible drawing_format/title_block TRUE
+cvf layers_visible drawing_format/title_data TRUE
+cvf layer_tree_item 'Analysis'
+cvf layers_visible analysis/low_isocontour TRUE
+cvf layers_visible analysis/medium1_isocontour TRUE
+cvf layers_visible analysis/medium2_isocontour TRUE
+cvf layers_visible analysis/medium3_isocontour TRUE
+cvf layers_visible analysis/high_isocontour TRUE
+cvf layers_visible analysis/pcb_temperature TRUE
+cvf okay
+setwindow pcb
