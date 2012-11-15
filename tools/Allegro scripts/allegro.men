@@ -226,6 +226,10 @@ BEGIN
 		BEGIN
 			MENUITEM "&Top",				"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/top.scr'" 	
 			MENUITEM "&Bottom",				"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/bot.scr'"
+			MENUITEM "&Silk Top",			"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/silktop.scr'" 	
+			MENUITEM "S&ilk Bottom",		"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/silkbot.scr'"
+			MENUITEM "&Assembly Top",		"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/asstop.scr'" 	
+			MENUITEM "Ass&embly Bottom",	"replay 'C:/Repositories/Hardware Libraries/trunk/tools/Allegro scripts/views/assbot.scr'"
 		END
 		MENUITEM "&Color/Visibility...",	"color192"
         MENUITEM "&Layer Priority...",		"layer priority"

@@ -1,0 +1,26 @@
+# Allegro script
+version 16.3
+
+setwindow pcb
+generaledit
+color192 
+generaledit 
+setwindow cvf.dialog
+cvf global_invisible
+cvf layer_tree_item 'Board Geometry'
+cvf layers_visible board_geometry/outline TRUE
+cvf layers_visible board_geometry/silkscreen_bottom TRUE
+cvf layer_tree_item 'Stack-Up'
+cvf layers_visible stack-up stack-up/bottom TRUE
+cvf layer_tree_item 'Areas'
+cvf layers_visible areas areas/all_row TRUE
+cvf layer_tree_item 'Board Geometry'
+cvf layer_tree_item 'Package Geometry'
+cvf layers_visible package_geometry/silkscreen_bottom TRUE
+cvf layer_tree_item 'Components'
+cvf layers_visible components components/silkscreen_bottom TRUE
+cvf layer_tree_item 'Manufacturing'
+cvf layer_tree_item 'Drawing Format'
+cvf layer_tree_item 'Analysis'
+cvf okay
+setwindow pcb
